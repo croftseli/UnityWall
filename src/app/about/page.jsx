@@ -9,31 +9,31 @@ const team = [
   {
     name: "Elijah Crofts",
     title: "Project Manager",
-    image: "/images/team/elijah.jpg",
+    image: "/images/team/elijah.png",
     contact: "elijah@unitywall.co",
   },
   {
     name: "Iman Motlagh",
     title: "Full-Stack Developer",
-    image: "/images/team/iman.jpg",
+    image: "/images/team/iman.png",
     contact: "iman@unitywall.co",
   },
   {
     name: "Michael Sanei",
     title: "Back-End Developer",
-    image: "/images/team/michael.jpg",
+    image: "/images/team/michael.png",
     contact: "michael@unitywall.co",
   },
   {
     name: "Simeon Checherin",
     title: "Front-End Developer",
-    image: "/images/team/simeon.jpg",
+    image: "/images/team/simeon.png",
     contact: "simeon@unitywall.co",
   },
   {
     name: "Jalen M. Johnson",
     title: "Social Media Manager",
-    image: "/images/team/jalen.jpg",
+    image: "/images/team/jalen.png",
     contact: "jalen@unitywall.co",
   },
 ];
