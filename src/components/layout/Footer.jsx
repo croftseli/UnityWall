@@ -13,7 +13,7 @@ export default function Footer() {
           {/* About Section */}
           <div className="flex flex-col items-center md:items-start">
             <Image 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="UnityWall Logo" 
               width={150} 
               height={70} 

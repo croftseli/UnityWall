@@ -44,7 +44,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/">
                     <Image
-                        src="/logo.jpg"
+                        src="/logo.png"
                         alt="UnityWall Logo"
                         width={70}
                         height={70}
