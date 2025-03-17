@@ -1,8 +1,8 @@
 import Hero from "@/components/home/Hero";
 
 export const metadata = {
-  title: "MochiNut",
-  description: "MochiNut TN Shop",
+  title: "UnityWall",
+  description: "UnityWall - Website Development, Design and Maintanance",
 }
 
 export default function Home() {
