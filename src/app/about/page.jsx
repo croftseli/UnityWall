@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Team members
 const team = [
@@ -36,15 +36,27 @@ const team = [
     image: "/images/team/Jalen.png",
     contact: "jalen@unitywall.co",
   },
+  {
+    name: "Mey Spiegel",
+    title: "UX and Design",
+    image: "/images/team/mey.png",
+    contact: "mey@unitywall.co",
+  },
+  {
+    name: "Nassim Akbari",
+    title: "Visual Design and Social Media",
+    image: "/images/team/nassim.png",
+    contact: "nassim@unitywall.co",
+  },
 ];
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gray-100 py-10 px-4 md:px-8">
+    <main className="min-h-screen bg-gray-900 py-10 px-4 md:px-8 text-gray-200">
       {/* Title */}
       <div className="text-center mb-10">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold text-amber-700"
+          className="text-4xl md:text-6xl font-bold text-blue-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -59,12 +71,12 @@ export default function About() {
           {team.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-lg rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center w-full p-4 group"
+              className="bg-gray-800 shadow-lg rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center w-full p-4 group border border-gray-700"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-amber-700">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-600">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -74,9 +86,13 @@ export default function About() {
                 />
               </div>
               <div className="text-center mt-4">
-                <h2 className="text-2xl font-bold text-amber-700">{member.name}</h2>
-                <p className="text-gray-600 mt-2">{member.title}</p>
-                <p className="text-gray-500 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{member.contact}</p>
+                <h2 className="text-2xl font-bold text-blue-300">
+                  {member.name}
+                </h2>
+                <p className="text-gray-400 mt-2">{member.title}</p>
+                <p className="text-gray-000 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {member.contact}
+                </p>
               </div>
             </motion.div>
           ))}
