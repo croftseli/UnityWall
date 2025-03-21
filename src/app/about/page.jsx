@@ -14,19 +14,19 @@ const team = [
   },
   {
     name: "Iman Motlagh",
-    title: "Full-Stack Developer",
+    title: "Technical Architect & Team Lead",
     image: "/images/team/Iman.png",
     contact: "iman@unitywall.co",
   },
   {
     name: "Michael Sanei",
-    title: "Back-End Developer",
+    title: "Integration Engineer & Full-Stack",
     image: "/images/team/Michael.png",
     contact: "michael@unitywall.co",
   },
   {
     name: "Simeon Checherin",
-    title: "Front-End Developer",
+    title: "Database Engineer & Full-Stack",
     image: "/images/team/Simeon.png",
     contact: "simeon@unitywall.co",
   },
