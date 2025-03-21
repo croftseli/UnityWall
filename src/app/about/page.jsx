@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const team = [
   {
     name: "Elijah Crofts",
-    title: "Project Manager",
+    title: "Managing Director & Founder",
     image: "/images/team/Elijah.png",
     contact: "elijah@unitywall.co",
   },
