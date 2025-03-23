@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 pl-4 pr-4 ${
         isScrolled
           ? "bg-gray-900 shadow-md py-2"
           : "bg-gray-800 bg-opacity-90 py-4"
@@ -53,7 +53,7 @@ export default function Navbar() {
             alt="UnityWall Logo"
             width={70}
             height={70}
-            className="cursor-pointer"
+            className="cursor-pointer rounded-full"
           />
         </Link>
 
