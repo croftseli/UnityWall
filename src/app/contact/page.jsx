@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { PhoneAndroid } from "@mui/icons-material";
@@ -10,17 +11,33 @@ import { Email } from "@mui/icons-material";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState(null);
+  const [formErrors, setFormErrors] = useState({});
+  const formRef = useRef();
 
-  // This would be replaced with your actual form submission logic
+  // Replace these with your actual EmailJS credentials
+  const SERVICE_ID = "service_u861zjh";
+  const TEMPLATE_ID = "template_l7n7cu1";
+  const PUBLIC_KEY = "EYjZPvB2Kv3urKZ5u";
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     setFormStatus("sending");
+    setFormErrors({});
 
-    setTimeout(() => {
-      setFormStatus("success");
-      // Reset form fields here if needed
-    }, 1500);
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then((result) => {
+        console.log("Email sent successfully:", result.text);
+        setFormStatus("success");
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error.text);
+        setFormStatus("error");
+        setFormErrors({
+          general: "Failed to send your message. Please try again later.",
+        });
+      });
   };
 
   return (
@@ -127,11 +144,12 @@ export default function Contact() {
                 Send Us a Message
               </h2>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-gray-300 mb-2">Your Name</label>
                   <input
                     type="text"
+                    name="user_name"
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -139,10 +157,11 @@ export default function Contact() {
 
                 <div>
                   <label className="block text-gray-300 mb-2">
-                    Email Address
+                    Your Email Address
                   </label>
                   <input
                     type="email"
+                    name="user_email"
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -152,6 +171,7 @@ export default function Contact() {
                   <label className="block text-gray-300 mb-2">Subject</label>
                   <input
                     type="text"
+                    name="subject"
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -161,6 +181,7 @@ export default function Contact() {
                   <label className="block text-gray-300 mb-2">Message</label>
                   <textarea
                     rows="5"
+                    name="message"
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   ></textarea>
@@ -185,6 +206,13 @@ export default function Contact() {
                 {formStatus === "success" && (
                   <div className="text-green-400 text-center">
                     Thanks for reaching out! We'll get back to you soon.
+                  </div>
+                )}
+
+                {formStatus === "error" && (
+                  <div className="text-red-400 text-center">
+                    {formErrors.general ||
+                      "An error occurred. Please try again later."}
                   </div>
                 )}
               </form>
