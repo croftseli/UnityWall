@@ -83,6 +83,14 @@ export default function Footer() {
                   About Us
                 </Link>
               </li>
+              {/* <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Contact
+                </Link>
+              </li> */}
             </ul>
           </div>
 
@@ -104,7 +112,7 @@ export default function Footer() {
               </p>
               <p className="pt-4">
                 <Link
-                  href="/about#contact"
+                  href="/contact"
                   className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition-colors inline-block mt-2"
                 >
                   Contact Us

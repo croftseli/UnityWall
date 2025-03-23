@@ -62,34 +62,35 @@ const team = [
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gray-900 py-10 px-4 md:px-8 text-gray-200">
-      {/* Title */}
-      <div className="text-center mb-10">
-        {(() => {
-          const titleRef = useRef(null);
-          const isTitleInView = useInView(titleRef, {
-            once: true,
-            amount: 0.6,
-          });
+    <main className="min-h-screen bg-gray-900 text-gray-200">
+      {/* Meet the Team Section */}
+      <section className="relative h-96 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
 
-          return (
-            <motion.h1
-              ref={titleRef}
-              className="text-4xl md:text-6xl font-bold text-blue-600"
-              initial={{ opacity: 0, y: -20 }}
-              animate={
-                isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
-              }
-              transition={{ duration: 0.8 }}
-            >
-              Meet the Team
-            </motion.h1>
-          );
-        })()}
-      </div>
+        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Meet the <span className="text-blue-400">Team</span>
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Get to know the talented individuals behind our success and discover
+            what makes our team exceptional.
+          </motion.p>
+        </div>
+      </section>
 
       {/* Team Members */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, index) => {
             const cardRef = useRef(null);
@@ -170,61 +171,6 @@ export default function About() {
           })}
         </div>
       </div>
-
-      {/* Contact Form */}
-      <section id="contact" className="py-20 px-4 md:px-8">
-        <div className="max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-blue-300 mb-8 text-center">
-            Get in Touch
-          </h2>
-
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-300 mb-2">Your Name</label>
-                <input
-                  type="text"
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-300 mb-2">Subject</label>
-              <input
-                type="text"
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-300 mb-2">Message</label>
-              <textarea
-                rows="5"
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-              ></textarea>
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded-lg transition-colors duration-300"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
     </main>
   );
 }
