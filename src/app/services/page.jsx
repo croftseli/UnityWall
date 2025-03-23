@@ -113,67 +113,12 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="#contact"
+              href="/about#contact"
               className="inline-block bg-transparent border-2 border-blue-600 text-blue-400 hover:bg-blue-600/10 font-bold py-3 px-8 rounded-lg transition-colors duration-300 mx-2"
             >
               Contact Form
             </a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section id="contact" className="py-20 px-4 md:px-8">
-        <div className="max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-blue-300 mb-8 text-center">
-            Get in Touch
-          </h2>
-
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-300 mb-2">Your Name</label>
-                <input
-                  type="text"
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-300 mb-2">Subject</label>
-              <input
-                type="text"
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-300 mb-2">Message</label>
-              <textarea
-                rows="5"
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
-              ></textarea>
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded-lg transition-colors duration-300"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
         </div>
       </section>
     </main>

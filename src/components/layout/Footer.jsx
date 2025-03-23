@@ -93,10 +93,10 @@ export default function Footer() {
               <p>
                 <span className="font-semibold">Email: </span>
                 <a
-                  href="mailto:support@mochinutspringhill.com"
+                  href="mailto:support@unitywall.co"
                   className="text-blue-500 hover:underline"
                 >
-                  support@mochinutspringhill.com
+                  support@unitywall.co
                 </a>
               </p>
               <p>
@@ -104,7 +104,7 @@ export default function Footer() {
               </p>
               <p className="pt-4">
                 <Link
-                  href="/about"
+                  href="/about#contact"
                   className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition-colors inline-block mt-2"
                 >
                   Contact Us

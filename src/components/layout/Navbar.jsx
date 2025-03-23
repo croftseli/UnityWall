@@ -71,22 +71,22 @@ export default function Navbar() {
           ))}
 
           {/* Social Media Icons */}
-          {/* <a 
-                        href="https://instagram.com/unitywall" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-blue-500 transition-colors"
-                    >
-                        <InstagramIcon />
-                    </a>
-                    <a 
-                        href="https://linkedin.com/company/unitywall" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-blue-500 transition-colors"
-                    >
-                        <LinkedInIcon />
-                    </a> */}
+          {/* <a
+            href="https://instagram.com/unitywall"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-500 transition-colors"
+          >
+            <InstagramIcon />
+          </a> */}
+          <a
+            href="https://linkedin.com/company/unitywall"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-500 transition-colors"
+          >
+            <LinkedInIcon />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -117,14 +117,14 @@ export default function Navbar() {
 
               {/* Social Media Icons for Mobile */}
               <div className="flex items-center space-x-4 py-2">
-                <a
+                {/* <a
                   href="https://instagram.com/unitywall"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-500 transition-colors"
                 >
                   <InstagramIcon />
-                </a>
+                </a> */}
                 <a
                   href="https://linkedin.com/company/unitywall"
                   target="_blank"
