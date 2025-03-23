@@ -113,10 +113,10 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="/about#contact"
+              href="/contact"
               className="inline-block bg-transparent border-2 border-blue-600 text-blue-400 hover:bg-blue-600/10 font-bold py-3 px-8 rounded-lg transition-colors duration-300 mx-2"
             >
-              Contact Form
+              Contact Us
             </a>
           </motion.div>
         </div>

@@ -12,6 +12,15 @@ const projects = [
       "A vibrant website for MochiNut SpringHill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project focused on creating an engaging online presence that showcases their colorful products and streamlines the ordering process.",
     logo: "/images/mochiNutLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://mochinutspringhill.com",
+  },
+  {
+    id: 2,
+    title: "Centro Studi Baha'i - Hotel Panoramica",
+    description:
+      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in the Italian Alps. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
+    logo: "/images/hotelLaPanoramicaLogo.jpg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
 ];
 
@@ -86,6 +95,22 @@ export default function Portfolio() {
                           </span>
                         ))}
                       </div>
+                      {project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          className="inline-block px-8 py-4 mt-2 mb-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-300"
+                        >
+                          View Project
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className="inline-block px-8 py-4 mt-2 mb-2 bg-gray-500 text-gray-300 font-medium rounded-lg cursor-not-allowed opacity-70"
+                        >
+                          Coming Soon
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -141,7 +166,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="/about#contact"
+              href="/contact"
               className="inline-block bg-transparent border-2 border-blue-600 text-blue-400 hover:bg-blue-600/10 font-bold py-3 px-8 rounded-lg transition-colors duration-300 mx-2"
             >
               Contact Us
