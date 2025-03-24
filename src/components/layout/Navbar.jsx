@@ -108,7 +108,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`font-medium py-2 text-blue-500 transition-colors hover:text-blue-500 ${
-                    pathname === link.href ? "text-blue-500" : "text-gray-600"
+                    pathname === link.href ? "text-blue-500" : "text-gray-400"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
