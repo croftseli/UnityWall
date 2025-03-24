@@ -98,7 +98,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                // EasterEgg
+
                 <div className="flex items-start space-x-4">
                   <div className="text-blue-400 text-3xl mt-1">
                     <PhoneAndroid />
