@@ -101,14 +101,14 @@ export default function Navbar() {
 
         {/* Mobile Nav */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white bg-opacity-95 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900 bg-opacity-95 shadow-lg">
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium py-2 text-gray-600 transition-colors hover:text-blue-500 ${
-                    pathname === link.href ? "text-blue-500" : "text-gray-600"
+                  className={`font-medium py-2 text-blue-500 transition-colors hover:text-blue-500 ${
+                    pathname === link.href ? "text-blue-500" : "text-gray-400"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

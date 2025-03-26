@@ -94,7 +94,7 @@ export default function Contact() {
                     </h3>
                     <p className="text-gray-400">support@unitywall.co</p>
                     <p className="text-gray-400 mt-1">
-                      We respond within 24 hours
+                      We usually respond within 24 hours
                     </p>
                   </div>
                 </div>
@@ -109,11 +109,10 @@ export default function Contact() {
                     </h3>
                     <p className="text-gray-400">+1 (615)-424-3176</p>
                     <p className="text-gray-400 mt-1">
-                      Mon-Fri: 9:00 AM - 5:00 PM EST
+                      Text or WhatsApp for quick responses
                     </p>
                   </div>
                 </div>
-
                 <div className="flex items-start space-x-4">
                   <div className="text-blue-400 text-3xl mt-1">
                     <LinkedInIcon />
