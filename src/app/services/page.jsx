@@ -78,7 +78,9 @@ export default function Services() {
                   <h3 className="text-xl sm:text-2xl font-bold text-blue-300 mb-2 sm:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-base sm:text-lg">{service.description}</p>
+                  <p className="text-gray-400 text-base sm:text-lg">
+                    {service.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -87,24 +89,24 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-20 px-4 md:px-8 bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-blue-700 text-center">
+        <div className="max-w-4xl mx-auto">
           <motion.h2
-            className="text-2xl sm:text-3xl font-bold text-blue-300 mb-4 sm:mb-6"
+            className="text-4xl font-extrabold text-white mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Ready to Get Started?
+            Ready to Start Your Project?
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8"
+            className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Contact us below for more information about our services and how we
-            can help your business grow online.
+            Let's discuss how we can help bring your vision to life. Contact us
+            today to get started.
           </motion.p>
           <motion.div
             className="space-y-4"
@@ -114,7 +116,7 @@ export default function Services() {
           >
             <a
               href="/contact"
-              className="inline-block bg-transparent border-2 border-blue-600 text-blue-400 hover:bg-blue-600/10 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-colors duration-300"
+              className="inline-block bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg shadow-blue-500/50 transform hover:scale-105 transition duration-300"
             >
               Contact Us
             </a>
