@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 //import { CartProvider } from '@/context/CartContext';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-grow pt-20">{children}</main>
         <Analytics />
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
