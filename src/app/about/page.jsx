@@ -8,7 +8,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useRef } from "react";
 
 // Team members
-const team = [
+const engineersTeam = [
   {
     name: "Elijah Crofts",
     title: "Managing Director & Founder",
@@ -37,6 +37,9 @@ const team = [
     contact: "simeon@unitywall.co",
     linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
   },
+];
+
+const designersTeam = [
   {
     name: "Jalen M. Johnson",
     title: "Social Media Manager",
@@ -57,6 +60,13 @@ const team = [
     image: "/images/team/nassim.png",
     contact: "nassim@unitywall.co",
     linkedin: "https://linkedin.com/",
+  },
+  {
+    name: "Saoirse Kane",
+    title: "Social Media Consultant",
+    image: "/images/team/saoirse.jpg",
+    contact: "saoirse@unitywall.co",
+    linkedin: "https://www.linkedin.com/in/saoirse-kane-005908225/",
   },
 ];
 
@@ -92,7 +102,7 @@ export default function About() {
       {/* Team Members */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => {
+          {engineersTeam.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.3 });
 
