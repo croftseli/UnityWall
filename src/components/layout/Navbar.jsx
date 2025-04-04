@@ -30,12 +30,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className= "fixed top-0 w-full z-50 shadow-sm"
-      style={{
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)', // For Safari support
-      }}
-    >
+    <nav className= "fixed top-0 w-full z-50 shadow-sm">
       <div className="container mx-auto flex justify-center items-center px-4 py-4 relative">
         {/* Centered Capsule for Desktop */}
         <div className="hidden md:flex bg-white rounded-full px-6 py-3 items-center justify-center">
