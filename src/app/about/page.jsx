@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { useRef } from "react";
 
 // Team members
 const engineersTeam = [
@@ -15,6 +14,7 @@ const engineersTeam = [
     image: "/images/team/Elijah.png",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
+    isFoundingMember: true, // founding member 
   },
   {
     name: "Iman Motlagh",
@@ -22,6 +22,7 @@ const engineersTeam = [
     image: "/images/team/Iman.png",
     contact: "iman@unitywall.co",
     linkedin: "https://linkedin.com/in/iman-motlagh",
+    isFoundingMember: true,
   },
   {
     name: "Michael Sanei",
@@ -29,6 +30,7 @@ const engineersTeam = [
     image: "/images/team/Michael.png",
     contact: "michael@unitywall.co",
     linkedin: "https://linkedin.com/in/michael-sanei",
+    isFoundingMember: true,
   },
   {
     name: "Simeon Checherin",
@@ -36,27 +38,37 @@ const engineersTeam = [
     image: "/images/team/Simeon.png",
     contact: "simeon@unitywall.co",
     linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
+    isFoundingMember: true,
   },
 ];
 
 const designersTeam = [
+  {
+    name: "Elijah Crofts",
+    title: "Managing Director & Founder",
+    image: "/images/team/Elijah.png",
+    contact: "elijah@unitywall.co",
+    linkedin: "https://linkedin.com/in/elijahcrofts",
+    isFoundingMember: true, // founding member 
+  },
   {
     name: "Jalen M. Johnson",
     title: "Social Media Manager",
     image: "/images/team/Jalen.png",
     contact: "jalen@unitywall.co",
     linkedin: "https://linkedin.com/in/jalen-m-johnson-120510251",
+    isFoundingMember: true,
   },
   {
     name: "Mey Spiegel",
-    title: "UX and Design",
+    title: "UX & Design",
     image: "/images/team/mey.png",
     contact: "mey@unitywall.co",
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
   },
   {
     name: "Nassim Akbari",
-    title: "Visual Design and Social Media",
+    title: "Graphic Design & Social Media",
     image: "/images/team/nassim.png",
     contact: "nassim@unitywall.co",
     linkedin: "https://linkedin.com/",
@@ -80,8 +92,12 @@ const TeamSection = ({ title, description, members }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">{title}</h2>
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto px-4">{description}</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
+          {title}
+        </h2>
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto px-4">
+          {description}
+        </p>
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -129,6 +145,10 @@ const TeamSection = ({ title, description, members }) => {
                       <h2 className="text-2xl font-bold text-blue-300">
                         {member.name}
                       </h2>
+                      {/* Always render this span with a fixed min-height to reserve space */}
+                      <span className="mt-2 block text-xs font-medium text-yellow-400 min-h-[1.5rem]">
+                        {member.isFoundingMember ? "Founding Member" : "\u00A0"}
+                      </span>
                     </CardItem>
 
                     <CardItem
@@ -200,10 +220,10 @@ export default function About() {
 
       {/* Engineering Team Section */}
       <section className="pt-16">
-        <TeamSection 
-          title="Engineering Team" 
+        <TeamSection
+          title="Engineering Team"
           description="Our expert engineers build robust, scalable solutions that drive innovation and deliver results."
-          members={engineersTeam} 
+          members={engineersTeam}
         />
       </section>
 
@@ -214,23 +234,22 @@ export default function About() {
         </div>
         <div className="relative flex justify-center">
           <div className="bg-gray-900 px-6">
-            <motion.div 
+            <motion.div
               className="h-12 w-12 bg-blue-600 rounded-full flex items-center justify-center"
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: 0 }}
-            >
-            </motion.div>
+            ></motion.div>
           </div>
         </div>
       </div>
 
       {/* Design Team Section */}
       <section className="pt-16">
-        <TeamSection 
-          title="Design & Marketing Team" 
+        <TeamSection
+          title="Design & Marketing Team"
           description="Our creative designers and marketers craft beautiful experiences and compelling narratives that connect with audiences."
-          members={designersTeam} 
+          members={designersTeam}
         />
       </section>
 
