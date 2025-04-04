@@ -6,6 +6,7 @@ import { motion, useScroll, useInView } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useRef } from "react";
+import CTA from "@/components/layout/CTA";
 
 // Team members
 const team = [
@@ -81,7 +82,7 @@ export default function About() {
             className="text-xl text-gray-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
             Get to know the talented individuals behind our success and discover
             what makes our team exceptional.
@@ -94,7 +95,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, index) => {
             const cardRef = useRef(null);
-            const isInView = useInView(cardRef, { once: true, amount: 0.3 });
+            const isInView = useInView(cardRef, { once: true, amount: 0.01 });
 
             return (
               <motion.div
@@ -107,7 +108,7 @@ export default function About() {
                     : { opacity: 0, scale: 0.9 }
                 }
                 transition={{
-                  duration: 0.7,
+                  duration: 0.4,
                   delay: isInView ? index * 0.2 : 0,
                 }}
               >
@@ -172,41 +173,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-blue-700 text-center">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="text-4xl font-extrabold text-white mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Ready to Start Your Project?
-          </motion.h2>
-          <motion.p
-            className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Let's discuss how we can help bring your vision to life. Contact us
-            today to get started.
-          </motion.p>
-          <motion.div
-            className="space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <a
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg shadow-blue-500/50 transform hover:scale-105 transition duration-300"
-            >
-              Contact Us
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <CTA />
     </main>
   );
 }

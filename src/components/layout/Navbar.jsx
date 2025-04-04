@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 // Import Material UI icons
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,17 +14,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,48 +30,49 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 pl-4 pr-4 ${
-        isScrolled
-          ? "bg-gray-900 shadow-md py-2"
-          : "bg-gray-800 bg-opacity-90 py-4"
-      }`}
+    <nav className= "fixed top-0 w-full z-50 shadow-sm"
+      style={{
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)', // For Safari support
+      }}
     >
-      <div className="container mx-auto flex px-4 justify-between items-center">
-        {/* Logo */}
-        <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="UnityWall Logo"
-            width={70}
-            height={70}
-            className="cursor-pointer rounded-full"
-          />
-        </Link>
+      <div className="container mx-auto flex justify-center items-center px-4 py-4 relative">
+        {/* Centered Capsule for Desktop */}
+        <div className="hidden md:flex bg-white rounded-full px-6 py-3 items-center justify-center">
+          {/* Logo */}
+          <Link href="/" className="mr-8">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="cursor-pointer rounded-full"
+            />
+          </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`font-medium transition-colors hover:text-blue-500 ${
-                pathname === link.href ? "text-blue-500" : "text-white"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {/* Nav Links */}
+          <div className="flex items-center">
+            {navLinks.map((link, index) => (
+              <div key={link.href} className="flex items-center">
+                {index > 0 && <div className="h-4 w-px bg-gray-300 mx-4"></div>}
+                <Link
+                  href={link.href}
+                  className={`font-medium transition-colors hover:text-blue-500 ${
+                    pathname === link.href ? "text-blue-500" : "text-black"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          {/* Social Media Icons */}
-          {/* <a
-            href="https://instagram.com/unitywall"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-blue-500 transition-colors"
-          >
-            <InstagramIcon />
-          </a> */}
+        {/* Social Links - Right Side */}
+        <motion.div 
+          className="hidden md:flex absolute right-6 items-center space-x-6"
+          whileHover={{ scale: 1.1, rotate: "10deg"}}
+        >
           <a
             href="https://linkedin.com/company/unitywall"
             target="_blank"
@@ -88,27 +81,49 @@ export default function Navbar() {
           >
             <LinkedInIcon />
           </a>
+        </motion.div>
+
+        {/* Mobile View */}
+        <div className="md:hidden w-full">
+          <div className="bg-white rounded-full px-5 py-3 flex items-center justify-between">
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="cursor-pointer rounded-full"
+              />
+            </Link>
+            {!isMenuOpen ? (
+              <button
+                onClick={toggleMenu}
+                aria-label="toggle menu"
+                className="text-black"
+              >
+                <MenuIcon />
+              </button>) : (
+              <button 
+                onClick={toggleMenu}
+                aria-label="close menu"
+                className="text-black"
+              >
+                <CloseIcon />
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white hover:text-blue-500 transition-colors"
-          onClick={toggleMenu}
-          aria-label="toggle menu"
-        >
-          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
-
-        {/* Mobile Nav */}
+        {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900 bg-opacity-95 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium py-2 text-blue-500 transition-colors hover:text-blue-500 ${
-                    pathname === link.href ? "text-blue-500" : "text-gray-400"
+                  className={`font-medium py-2 transition-colors hover:text-blue-500 ${
+                    pathname === link.href ? "text-blue-500" : "text-black"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -116,16 +131,8 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* Social Media Icons for Mobile */}
-              <div className="flex items-center space-x-4 py-2">
-                {/* <a
-                  href="https://instagram.com/unitywall"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-500 transition-colors"
-                >
-                  <InstagramIcon />
-                </a> */}
+              {/* Social Links for Mobile */}
+              <div className="flex items-center py-2">
                 <a
                   href="https://linkedin.com/company/unitywall"
                   target="_blank"
