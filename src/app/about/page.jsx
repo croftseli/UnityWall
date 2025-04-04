@@ -66,43 +66,27 @@ const designersTeam = [
     title: "Social Media Consultant",
     image: "/images/team/saoirse.jpg",
     contact: "saoirse@unitywall.co",
-    linkedin: "https://www.linkedin.com/in/saoirse-kane-005908225/",
+    linkedin: "https://www.linkedin.com/in/saoirse-kane/",
   },
 ];
 
-export default function About() {
+// Reusable team section component
+const TeamSection = ({ title, description, members }) => {
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-200">
-      {/* Meet the Team Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
+    <div className="mb-20">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">{title}</h2>
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto px-4">{description}</p>
+      </motion.div>
 
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Meet the <span className="text-blue-400">Team</span>
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Get to know the talented individuals behind our success and discover
-            what makes our team exceptional.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Team Members */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {engineersTeam.map((member, index) => {
+          {members.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.3 });
 
@@ -181,6 +165,74 @@ export default function About() {
           })}
         </div>
       </div>
+    </div>
+  );
+};
+
+export default function About() {
+  return (
+    <main className="min-h-screen bg-gray-900 text-gray-200">
+      {/* Hero Section */}
+      <section className="relative h-96 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
+
+        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Meet the <span className="text-blue-400">Team</span>
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Get to know the talented individuals behind our success and discover
+            what makes our team exceptional.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Engineering Team Section */}
+      <section className="pt-16">
+        <TeamSection 
+          title="Engineering Team" 
+          description="Our expert engineers build robust, scalable solutions that drive innovation and deliver results."
+          members={engineersTeam} 
+        />
+      </section>
+
+      {/* Divider */}
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-gray-700"></div>
+        </div>
+        <div className="relative flex justify-center">
+          <div className="bg-gray-900 px-6">
+            <motion.div 
+              className="h-12 w-12 bg-blue-600 rounded-full flex items-center justify-center"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: 0 }}
+            >
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Design Team Section */}
+      <section className="pt-16">
+        <TeamSection 
+          title="Design & Marketing Team" 
+          description="Our creative designers and marketers craft beautiful experiences and compelling narratives that connect with audiences."
+          members={designersTeam} 
+        />
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-blue-700 text-center">
