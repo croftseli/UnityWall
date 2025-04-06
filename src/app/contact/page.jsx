@@ -253,7 +253,7 @@ export default function Contact() {
               {
                 question: "What are your payment terms?",
                 answer:
-                  "We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. For larger projects, we may establish a milestone-based payment schedule.",
+                  "We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. Continual updates and maintenance will be separately billed. If it suits your business model, we can also establish a profit sharing agreement instead of / in addition to a flat fee.",
               },
             ].map((faq, index) => (
               <motion.div
