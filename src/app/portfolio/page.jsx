@@ -85,7 +85,7 @@ export default function Portfolio() {
                       <p className="text-gray-400 text-lg mb-6">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-5">
                         {project.technologies.map((tech, i) => (
                           <span
                             key={i}
