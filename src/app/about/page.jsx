@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { useRef } from "react";
 import CTA from "@/components/layout/CTA";
 
 // Team members
-const team = [
+const engineersTeam = [
   {
     name: "Elijah Crofts",
     title: "Managing Director & Founder",
     image: "/images/team/Elijah.png",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
+    isFoundingMember: true, // founding member 
   },
   {
     name: "Iman Motlagh",
@@ -23,6 +23,7 @@ const team = [
     image: "/images/team/Iman.png",
     contact: "iman@unitywall.co",
     linkedin: "https://linkedin.com/in/iman-motlagh",
+    isFoundingMember: true,
   },
   {
     name: "Michael Sanei",
@@ -30,6 +31,7 @@ const team = [
     image: "/images/team/Michael.png",
     contact: "michael@unitywall.co",
     linkedin: "https://linkedin.com/in/michael-sanei",
+    isFoundingMember: true,
   },
   {
     name: "Simeon Checherin",
@@ -37,6 +39,18 @@ const team = [
     image: "/images/team/Simeon.png",
     contact: "simeon@unitywall.co",
     linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
+    isFoundingMember: true,
+  },
+];
+
+const designersTeam = [
+  {
+    name: "Elijah Crofts",
+    title: "Managing Director & Founder",
+    image: "/images/team/Elijah.png",
+    contact: "elijah@unitywall.co",
+    linkedin: "https://linkedin.com/in/elijahcrofts",
+    isFoundingMember: true, // founding member 
   },
   {
     name: "Jalen M. Johnson",
@@ -44,56 +58,52 @@ const team = [
     image: "/images/team/Jalen.png",
     contact: "jalen@unitywall.co",
     linkedin: "https://linkedin.com/in/jalen-m-johnson-120510251",
+    isFoundingMember: true,
   },
   {
     name: "Mey Spiegel",
-    title: "UX and Design",
+    title: "UX & Design",
     image: "/images/team/mey.png",
     contact: "mey@unitywall.co",
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
   },
   {
     name: "Nassim Akbari",
-    title: "Visual Design and Social Media",
+    title: "Graphic Design & Social Media",
     image: "/images/team/nassim.png",
     contact: "nassim@unitywall.co",
     linkedin: "https://linkedin.com/",
   },
+  {
+    name: "Saoirse Kane",
+    title: "Social Media Consultant",
+    image: "/images/team/saoirse.jpg",
+    contact: "saoirse@unitywall.co",
+    linkedin: "https://www.linkedin.com/in/saoirse-kane/",
+  },
 ];
 
-export default function About() {
+// Reusable team section component
+const TeamSection = ({ title, description, members }) => {
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-200">
-      {/* Meet the Team Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
+    <div className="mb-20">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
+          {title}
+        </h2>
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto px-4">
+          {description}
+        </p>
+      </motion.div>
 
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Meet the <span className="text-blue-400">Team</span>
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            Get to know the talented individuals behind our success and discover
-            what makes our team exceptional.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Team Members */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => {
+          {members.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.01 });
 
@@ -136,6 +146,10 @@ export default function About() {
                       <h2 className="text-2xl font-bold text-blue-300">
                         {member.name}
                       </h2>
+                      {/* Always render this span with a fixed min-height to reserve space */}
+                      <span className="mt-2 block text-xs font-medium text-yellow-400 min-h-[1.5rem]">
+                        {member.isFoundingMember ? "Founding Member" : "\u00A0"}
+                      </span>
                     </CardItem>
 
                     <CardItem
@@ -172,8 +186,32 @@ export default function About() {
           })}
         </div>
       </div>
-
-      <CTA />
-    </main>
+    </div>
   );
-}
+};
+
+// Main Team Page component that uses the TeamSection component
+const TeamPage = () => {
+  return (
+    <div className="bg-gray-900 min-h-screen py-20">
+      <TeamSection 
+        title="Our Engineering Team" 
+        description="Meet the skilled engineers who build our robust solutions and ensure technical excellence in everything we do."
+        members={engineersTeam} 
+      />
+      
+      <TeamSection 
+        title="Our Design & Media Team" 
+        description="The creative minds behind our visual identity, user experience, and social media presence."
+        members={designersTeam} 
+      />
+      
+      {/* Single CTA section at the bottom of the page */}
+      <div className="mt-24">
+        <CTA />
+      </div>
+    </div>
+  );
+};
+
+export default TeamPage;

@@ -10,16 +10,16 @@ const projects = [
     id: 1,
     title: "MochiNut SpringHill",
     description:
-      "A vibrant website for MochiNut SpringHill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project focused on creating an engaging online presence that showcases their colorful products and streamlines the ordering process.",
+      "A vibrant website for MochiNut SpringHill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project aims to create an engaging online presence that showcases their colorful, creative menu offerings in a fun and interactive manner.",
     logo: "/images/mochiNutLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://mochinutspringhill.com",
   },
   {
     id: 2,
-    title: "Centro Studi Baha'i - Hotel Panoramica",
+    title: "Centro Studi Baha'i - Hotel la Panoramica",
     description:
-      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in the Italian Alps. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
+      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
@@ -86,7 +86,7 @@ export default function Portfolio() {
                       <p className="text-gray-400 text-lg mb-6">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-5">
                         {project.technologies.map((tech, i) => (
                           <span
                             key={i}

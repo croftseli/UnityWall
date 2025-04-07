@@ -21,9 +21,9 @@ const services = [
   },
   {
     id: 3,
-    title: "E-commerce Solutions",
+    title: "Social Media, Branding Solutions, and More.",
     description:
-      "Transform your business with our powerful e-commerce solutions featuring secure payment processing, inventory management, and streamlined checkout experiences.",
+      "Transform your social media presence with advice from our experienced social team. Powerful Social media more sales! Need to manage your platform too? Look no further!",
     icon: "🛒",
   },
 ];
