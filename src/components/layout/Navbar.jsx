@@ -6,10 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-// Import Material UI icons
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-// Remove the original LinkedInIcon import
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SocialMediaIcons from "../ui/linkedin-icon"; 
 
@@ -139,7 +137,7 @@ export default function Navbar() {
 
         {/* Social Links - Right Side */}
         <motion.div 
-          className="hidden md:flex absolute right-6 items-center space-x-6"
+          className="hidden md:flex absolute right-0 items-center"
           whileHover={{ scale: 1.1, rotate: "10deg"}}
         >
           <a
