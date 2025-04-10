@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { PhoneAndroid } from "@mui/icons-material";
 import { Email } from "@mui/icons-material";
+import { Input } from "@/components/ui/input"; // Updated import to use the new Input component
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState(null);
@@ -146,10 +147,9 @@ export default function Contact() {
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-gray-300 mb-2">Your Name</label>
-                  <input
+                  <Input
                     type="text"
                     name="user_name"
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
                 </div>
@@ -158,20 +158,18 @@ export default function Contact() {
                   <label className="block text-gray-300 mb-2">
                     Your Email Address
                   </label>
-                  <input
+                  <Input
                     type="email"
                     name="user_email"
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-gray-300 mb-2">Subject</label>
-                  <input
+                  <Input
                     type="text"
                     name="subject"
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                     required
                   />
                 </div>

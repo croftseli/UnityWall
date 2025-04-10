@@ -89,7 +89,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/about", label: "About Us" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -137,7 +137,7 @@ export default function Navbar() {
 
         {/* Social Links - Right Side */}
         <motion.div 
-          className="hidden md:flex absolute right-0 items-center"
+          className="hidden md:flex absolute right-1 items-center"
           whileHover={{ scale: 1.1, rotate: "10deg"}}
         >
           <a
