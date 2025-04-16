@@ -68,13 +68,6 @@ const designersTeam = [
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
   },
   {
-    name: "Nassim Akbari",
-    title: "Graphic Design & Social Media",
-    image: "/images/team/nassim.png",
-    contact: "nassim@unitywall.co",
-    linkedin: "https://linkedin.com/",
-  },
-  {
     name: "Saoirse Kane",
     title: "Social Media Consultant",
     image: "/images/team/saoirse.jpg",
