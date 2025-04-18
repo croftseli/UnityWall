@@ -61,18 +61,25 @@ const designersTeam = [
     isFoundingMember: true,
   },
   {
-    name: "Mey Spiegel",
-    title: "UX & Design",
-    image: "/images/team/mey.png",
-    contact: "mey@unitywall.co",
-    linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
-  },
-  {
     name: "Saoirse Kane",
     title: "Social Media Consultant",
     image: "/images/team/saoirse.jpg",
     contact: "saoirse@unitywall.co",
     linkedin: "https://www.linkedin.com/in/saoirse-kane/",
+  },
+  {
+    name: "Zimeng Cheng",
+    title: "Brand Unity & UI Designer", 
+    image: "/images/team/Zimeng profile.jpeg",
+    contact: "zimeng@unitywall.co",
+    linkedin: "https://www.linkedin.com/in/zimeng-elizabeth-cheng-41492030a/",
+  },
+  {
+    name: "Mey Spiegel",
+    title: "Graphic Design",
+    image: "/images/team/mey.png",
+    contact: "mey@unitywall.co",
+    linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
   },
 ];
 
