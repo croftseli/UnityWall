@@ -15,7 +15,6 @@ export default function Contact() {
   const [formErrors, setFormErrors] = useState({});
   const formRef = useRef();
 
-  // Replace these with your actual EmailJS credentials
   const SERVICE_ID = "service_u861zjh";
   const TEMPLATE_ID = "template_l7n7cu1";
   const PUBLIC_KEY = "EYjZPvB2Kv3urKZ5u";
