@@ -24,7 +24,7 @@ const FlipLink = ({ children, href, isActive, onClick }) => {
       initial="initial"
       whileHover="hovered"
       className={`relative block overflow-hidden whitespace-nowrap font-medium ${
-        isActive ? "text-blue-500" : "text-black"
+        isActive ? "text-blue-500" : "text-white"
       }`}
     >
       <div>
@@ -87,7 +87,6 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
@@ -102,35 +101,21 @@ export default function Navbar() {
     );
   };
 
-
   return (
-    <nav className="fixed top-0 w-full z-50 shadow-sm">
-      <div className="container mx-auto flex justify-center items-center px-4 py-4 relative">
-        {/* Centered Capsule for Desktop */}
-        <div className="hidden md:flex bg-white rounded-full px-6 py-3 items-center justify-center">
-          {/* Logo */}
-          <Link href="/" className="mr-8">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={40}
-              height={40}
-              className="cursor-pointer rounded-full"
-            />
-          </Link>
-
+    <nav className="fixed top-0 w-full z-50 p-4">
+      <div className="container mx-auto flex justify-center items-center relative">
+        {/* Centered Capsule with Gradient Border for Desktop */}
+        <div className="hidden md:flex navbar-gradient navbar-border rounded-full px-20 py-3 items-center justify-center w-3/4 max-w-3xl">
           {/* Nav Links with FlipLink animation */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-between w-full">
             {navLinks.map((link, index) => (
-              <div key={link.href} className="flex items-center">
-                {index > 0 && <div className="h-4 w-px bg-gray-300 mx-4"></div>}
-                <FlipLink
-                  href={link.href}
-                  isActive={pathname === link.href}
-                >
-                  {link.label}
-                </FlipLink>
-              </div>
+              <FlipLink
+                key={link.href}
+                href={link.href}
+                isActive={pathname === link.href}
+              >
+                {link.label}
+              </FlipLink>
             ))}
           </div>
         </div>
@@ -151,7 +136,7 @@ export default function Navbar() {
 
         {/* Mobile View */}
         <div className="md:hidden w-full">
-          <div className="bg-white rounded-full px-5 py-3 flex items-center justify-between">
+          <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
             <Link href="/">
               <Image
                 src="/logo.png"
@@ -165,14 +150,14 @@ export default function Navbar() {
               <button
                 onClick={toggleMenu}
                 aria-label="toggle menu"
-                className="text-black"
+                className="text-white"
               >
                 <MenuIcon />
               </button>) : (
               <button 
                 onClick={toggleMenu}
                 aria-label="close menu"
-                className="text-black"
+                className="text-white"
               >
                 <CloseIcon />
               </button>
@@ -185,14 +170,14 @@ export default function Navbar() {
           <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <FlipLink
+                <Link
                   key={link.href}
                   href={link.href}
-                  isActive={pathname === link.href}
+                  className={`font-medium ${pathname === link.href ? "text-blue-500" : "text-black"}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
-                </FlipLink>
+                </Link>
               ))}
 
               {/* Social Links for Mobile */}

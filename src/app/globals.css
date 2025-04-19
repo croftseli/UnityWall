@@ -1,5 +1,45 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-style {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(270deg, rgb(168, 235, 242), rgb(235, 252, 217) 47.115%);
+  }
+}
+@layer components {
+  .navbar-gradient {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  }
+  
+  .navbar-border {
+    position: relative;
+    background: transparent;
+  }
+  
+  .navbar-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(270deg, rgb(108, 136, 141), rgb(166, 234, 241) 50%, rgb(243, 254, 214));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1; /* Ensure the border appears above the blurred content */
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -46,7 +86,5 @@ body {
 .group:hover .group-hover\:rotate-y-360 {
   animation: rotateY360 0.5s forwards;
 }
-
-@import "tailwindcss";
 
 

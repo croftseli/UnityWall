@@ -8,7 +8,7 @@ export default function CTA() {
             <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-blue-700 text-center">
                 <div className="max-w-4xl mx-auto">
                 <motion.h2
-                    className="text-4xl font-extrabold text-white mb-6"
+                    className="text-4xl font-extrabold text-white mb-6 drop-shadow-xl"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
@@ -32,7 +32,7 @@ export default function CTA() {
                 >
                     <a
                     href="/contact"
-                    className="inline-block bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg shadow-blue-500/50 transform hover:scale-105 transition duration-300"
+                    className="custom-style py-3 px-6 text-black rounded-lg"
                     >
                     Contact Us
                     </a>
