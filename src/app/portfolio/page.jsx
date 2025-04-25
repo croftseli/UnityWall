@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import CTA from "@/components/layout/CTA";
 
 // Portfolio projects data
 const projects = [
@@ -11,7 +12,7 @@ const projects = [
     description:
       "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project aims to create an engaging online presence that showcases their colorful, creative menu offerings in a fun and interactive manner.",
     logo: "/images/mochiNutLogo.jpg",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "test"],
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://mochinutspringhill.com",
   },
   {
@@ -54,7 +55,7 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-8 px-4 md:px-8">
+      <section className="py-12 px-4 md:px-8">  {/* Reduced vertical padding */}
         <div className="max-w-6xl mx-auto">
           <div className="space-y-20">
             {projects.map((project, index) => (
@@ -65,7 +66,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="p-6 md:p-12">
+                <div className="p-6 md:p-8">  {/* Reduced padding inside the card */}
                   <div className="flex flex-col md:flex-row gap-8 items-center">
                     <div className="w-full md:w-1/3 flex justify-center">
                       <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden">
@@ -85,7 +86,7 @@ export default function Portfolio() {
                       <p className="text-gray-400 text-lg mb-6">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-5">
                         {project.technologies.map((tech, i) => (
                           <span
                             key={i}
@@ -140,40 +141,7 @@ export default function Portfolio() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-blue-700 text-center">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="text-4xl font-extrabold text-white mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Ready to Start Your Project?
-          </motion.h2>
-          <motion.p
-            className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Let's discuss how we can help bring your vision to life. Contact us
-            today to get started.
-          </motion.p>
-          <motion.div
-            className="space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <a
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg shadow-blue-500/50 transform hover:scale-105 transition duration-300"
-            >
-              Contact Us
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <CTA />
     </main>
   );
 }
