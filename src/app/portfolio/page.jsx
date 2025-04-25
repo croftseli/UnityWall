@@ -54,7 +54,7 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section className="py-8 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-20">
             {projects.map((project, index) => (
@@ -65,7 +65,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="p-8 md:p-12">
+                <div className="p-6 md:p-12">
                   <div className="flex flex-col md:flex-row gap-8 items-center">
                     <div className="w-full md:w-1/3 flex justify-center">
                       <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden">
