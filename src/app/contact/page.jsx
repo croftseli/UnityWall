@@ -94,7 +94,7 @@ export default function Contact() {
                     </h3>
                     <a
                       href="mailto:support@unitywall.co"
-                      className="text-gray-400 hover:underline"
+                      className="text-gray-400 hover:underline hover:text-blue-400"
                     >
                       support@unitywall.co
                     </a>
@@ -114,7 +114,7 @@ export default function Contact() {
                     </h3>
                     <a
                       href="tel:+16154243176"
-                      className="text-gray-400 hover:underline"
+                      className="text-gray-400 hover:underline hover:text-blue-400"
                     >
                       +1 (615)-424-3176
                     </a>
@@ -144,7 +144,7 @@ export default function Contact() {
                       href="https://linkedin.com/company/unitywall"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 block hover:text-blue-400 transition-colors"
+                      className="text-gray-400 block hover:text-blue-400 hover:underline transition-colors"
                     >
                       linkedin.com/company/unitywall
                     </a>
