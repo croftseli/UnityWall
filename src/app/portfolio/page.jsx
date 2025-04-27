@@ -8,7 +8,7 @@ import CTA from "@/components/layout/CTA";
 const projects = [
   {
     id: 1,
-    title: "Mochinut SpringHill",
+    title: "Mochinut Spring Hill",
     description:
       "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project aims to create an engaging online presence that showcases their colorful, creative menu offerings in a fun and interactive manner.",
     logo: "/images/mochiNutLogo.jpg",
