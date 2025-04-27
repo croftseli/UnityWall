@@ -92,7 +92,12 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Email
                     </h3>
-                    <p className="text-gray-400">support@unitywall.co</p>
+                    <a
+                      href="mailto:support@unitywall.co"
+                      className="text-gray-400 hover:underline"
+                    >
+                      support@unitywall.co
+                    </a>
                     <p className="text-gray-400 mt-1">
                       We usually respond within 24 hours
                     </p>
@@ -107,9 +112,23 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Phone
                     </h3>
-                    <p className="text-gray-400">+1 (615)-424-3176</p>
+                    <a
+                      href="tel:+16154243176"
+                      className="text-gray-400 hover:underline"
+                    >
+                      +1 (615)-424-3176
+                    </a>
                     <p className="text-gray-400 mt-1">
-                      Text or WhatsApp for quick responses
+                      Text or{" "}
+                      <a
+                        href="https://wa.me/16154243176"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-400 hover:underline"
+                      >
+                        WhatsApp
+                      </a>{" "}
+                      for quick responses
                     </p>
                   </div>
                 </div>
@@ -146,31 +165,19 @@ export default function Contact() {
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-gray-300 mb-2">Your Name</label>
-                  <Input
-                    type="text"
-                    name="user_name"
-                    required
-                  />
+                  <Input type="text" name="user_name" required />
                 </div>
 
                 <div>
                   <label className="block text-gray-300 mb-2">
                     Your Email Address
                   </label>
-                  <Input
-                    type="email"
-                    name="user_email"
-                    required
-                  />
+                  <Input type="email" name="user_email" required />
                 </div>
 
                 <div>
                   <label className="block text-gray-300 mb-2">Subject</label>
-                  <Input
-                    type="text"
-                    name="subject"
-                    required
-                  />
+                  <Input type="text" name="subject" required />
                 </div>
 
                 <div>
