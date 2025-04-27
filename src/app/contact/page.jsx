@@ -85,9 +85,12 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-3xl mt-1">
+                  <a
+                    href="mailto:support@unitywall.co"
+                    className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
+                  >
                     <Email />
-                  </div>
+                  </a>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Email
@@ -106,7 +109,12 @@ export default function Contact() {
 
                 <div className="flex items-start space-x-4">
                   <div className="text-blue-400 text-3xl mt-1">
-                    <PhoneAndroid />
+                    <a
+                      href="tel:+16154243176"
+                      className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
+                    >
+                      <PhoneAndroid />
+                    </a>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
@@ -134,7 +142,13 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="text-blue-400 text-3xl mt-1">
-                    <LinkedInIcon />
+                    <a
+                      href="https://linkedin.com/company/unitywall"
+                      target="_blank"
+                      className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
+                    >
+                      <LinkedInIcon />
+                    </a>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
