@@ -15,7 +15,7 @@ const engineersTeam = [
     image: "/images/team/Elijah.png",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
-    isFoundingMember: true, // founding member 
+    isFoundingMember: true, // founding member
   },
   {
     name: "Iman Motlagh",
@@ -50,7 +50,7 @@ const designersTeam = [
     image: "/images/team/Elijah.png",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
-    isFoundingMember: true, // founding member 
+    isFoundingMember: true, // founding member
   },
   {
     name: "Jalen M. Johnson",
@@ -69,10 +69,10 @@ const designersTeam = [
   },
   {
     name: "Zimeng Cheng",
-    title: "Brand Unity & UI Designer", 
+    title: "Brand Unity & UI Designer",
     image: "/images/team/Zimeng profile.jpeg",
     contact: "zimeng@unitywall.co",
-    linkedin: "https://www.linkedin.com/in/zimeng-elizabeth-cheng-41492030a/",
+    linkedin: "https://www.linkedin.com/in/zimeng-elizabeth-cheng/",
   },
   {
     name: "Mey Spiegel",
@@ -194,18 +194,18 @@ const TeamSection = ({ title, description, members }) => {
 const TeamPage = () => {
   return (
     <div className="bg-gray-900 min-h-screen py-20">
-      <TeamSection 
-        title="Our Engineering Team" 
+      <TeamSection
+        title="Our Engineering Team"
         description="Meet the skilled engineers who build our robust solutions and ensure technical excellence in everything we do."
-        members={engineersTeam} 
+        members={engineersTeam}
       />
-      
-      <TeamSection 
-        title="Our Design & Media Team" 
+
+      <TeamSection
+        title="Our Design & Media Team"
         description="The creative minds behind our visual identity, user experience, and social media presence."
-        members={designersTeam} 
+        members={designersTeam}
       />
-      
+
       {/* Single CTA section at the bottom of the page */}
       <div className="mt-24">
         <CTA />
