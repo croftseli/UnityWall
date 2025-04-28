@@ -84,49 +84,39 @@ export default function Contact() {
               </h2>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <a
-                    href="mailto:support@unitywall.co"
-                    className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
-                  >
+                {/* Email Button */}
+                <a
+                  href="mailto:support@unitywall.co"
+                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
+                >
+                  <div className="text-blue-400 text-3xl">
                     <Email />
-                  </a>
+                  </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Email
                     </h3>
-                    <a
-                      href="mailto:support@unitywall.co"
-                      className="text-gray-400 hover:underline hover:text-blue-400"
-                    >
-                      support@unitywall.co
-                    </a>
-                    <p className="text-gray-400 mt-1">
+                    <p className="text-gray-400">support@unitywall.co</p>
+                    <p className="text-gray-400 text-sm mt-1">
                       We usually respond within 24 hours
                     </p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-3xl mt-1">
-                    <a
-                      href="tel:+16154243176"
-                      className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
-                    >
-                      <PhoneAndroid />
-                    </a>
+                {/* Phone Button */}
+                <a
+                  href="tel:+16154243176"
+                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
+                >
+                  <div className="text-blue-400 text-3xl">
+                    <PhoneAndroid />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Phone
                     </h3>
-                    <a
-                      href="tel:+16154243176"
-                      className="text-gray-400 hover:underline hover:text-blue-400"
-                    >
-                      +1 (615)-424-3176
-                    </a>
-                    <p className="text-gray-400 mt-1">
+                    <p className="text-gray-400">+1 (615)-424-3176</p>
+                    <p className="text-gray-400 text-sm mt-1">
                       Text or{" "}
                       <a
                         href="https://wa.me/16154243176"
@@ -139,34 +129,30 @@ export default function Contact() {
                       for quick responses
                     </p>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-3xl mt-1">
-                    <a
-                      href="https://linkedin.com/company/unitywall"
-                      target="_blank"
-                      className="text-blue-400 text-3xl mt-1 hover:text-blue-500 transform transition-transform duration-200 hover:scale-110"
-                    >
-                      <LinkedInIcon />
-                    </a>
+                </a>
+
+                {/* LinkedIn Button */}
+                <a
+                  href="https://linkedin.com/company/unitywall"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
+                >
+                  <div className="text-blue-400 text-3xl">
+                    <LinkedInIcon />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Connect with Us
                     </h3>
-                    <a
-                      href="https://linkedin.com/company/unitywall"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 block hover:text-blue-400 hover:underline transition-colors"
-                    >
+                    <p className="text-gray-400">
                       linkedin.com/company/unitywall
-                    </a>
-                    <p className="text-gray-400 mt-1">
+                    </p>
+                    <p className="text-gray-400 text-sm mt-1">
                       Follow for updates and opportunities
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
