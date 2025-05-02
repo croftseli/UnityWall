@@ -23,6 +23,14 @@ const projects = [
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
+  {
+    id: 3,
+    title: "Client awaiting board approval...",
+    description:
+      "More information and details about this project will be available soon. Stay tuned for updates!",
+    logo: "",
+    technologies: ["Coming Soon"],
+  },
 ];
 
 export default function Portfolio() {
