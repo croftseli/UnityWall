@@ -193,7 +193,7 @@ const TeamSection = ({ title, description, members }) => {
 // Main Team Page component that uses the TeamSection component
 const TeamPage = () => {
   return (
-    <div className="bg-gray-900 min-h-screen py-20">
+    <div className="bg-gray-900 min-h-screen py-32">
       <TeamSection
         title="Our Engineering Team"
         description="Meet the skilled engineers who build our robust solutions and ensure technical excellence in everything we do."

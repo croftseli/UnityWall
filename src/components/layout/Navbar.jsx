@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SocialMediaIcons from "../ui/linkedin-icon"; 
+import SocialMediaIcons from "../ui/linkedin-icon";
 
 // Animation constants for FlipLink
 const DURATION = 0.25;
@@ -88,7 +88,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/about", label: "About" },
+    { href: "/team", label: "Our Team" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -104,6 +104,16 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 p-4">
       <div className="container mx-auto flex justify-center items-center relative">
+        {/* Logo on the left side */}
+        <Link href="/" className="absolute left-4">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={70}
+            height={70}
+            className="cursor-pointer rounded-full"
+          />
+        </Link>
         {/* Centered Capsule with Gradient Border for Desktop */}
         <div className="hidden md:flex navbar-gradient navbar-border rounded-full px-20 py-3 items-center justify-center w-3/4 max-w-3xl">
           {/* Nav Links with FlipLink animation */}
@@ -121,9 +131,9 @@ export default function Navbar() {
         </div>
 
         {/* Social Links - Right Side */}
-        <motion.div 
+        <motion.div
           className="hidden md:flex absolute right-1 items-center"
-          whileHover={{ scale: 1.1, rotate: "10deg"}}
+          whileHover={{ scale: 1.1, rotate: "10deg" }}
         >
           <a
             href="https://linkedin.com/company/unitywall"
@@ -153,8 +163,9 @@ export default function Navbar() {
                 className="text-white"
               >
                 <MenuIcon />
-              </button>) : (
-              <button 
+              </button>
+            ) : (
+              <button
                 onClick={toggleMenu}
                 aria-label="close menu"
                 className="text-white"
@@ -173,7 +184,9 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium ${pathname === link.href ? "text-blue-500" : "text-black"}`}
+                  className={`font-medium ${
+                    pathname === link.href ? "text-blue-500" : "text-black"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
@@ -187,7 +200,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LinkedInIcon sx={{color:"#0077b5"}}/>
+                  <LinkedInIcon sx={{ color: "#0077b5" }} />
                 </a>
               </div>
             </div>

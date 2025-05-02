@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-200">
       {/* Hero Section */}
-      <section className="relative h-70 flex items-center justify-center overflow-hidden">
+      <section className="relative pt-32 pb-16 h-70 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
 
@@ -69,7 +69,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section className="pb-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-12"

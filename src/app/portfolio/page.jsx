@@ -29,7 +29,7 @@ export default function Portfolio() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-200">
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
+      <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
 
@@ -55,7 +55,9 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-12 px-4 md:px-8">  {/* Reduced vertical padding */}
+      <section className="py-12 px-4 md:px-8">
+        {" "}
+        {/* Reduced vertical padding */}
         <div className="max-w-6xl mx-auto">
           <div className="space-y-20">
             {projects.map((project, index) => (
@@ -66,7 +68,9 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="p-6 md:p-8">  {/* Reduced padding inside the card */}
+                <div className="p-6 md:p-8">
+                  {" "}
+                  {/* Reduced padding inside the card */}
                   <div className="flex flex-col md:flex-row gap-8 items-center">
                     <div className="w-full md:w-1/3 flex justify-center">
                       <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden">
