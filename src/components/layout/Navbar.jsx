@@ -105,15 +105,17 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 p-4">
       <div className="container mx-auto flex justify-center items-center relative">
         {/* Logo on the left side */}
-        <Link href="/" className="absolute left-4">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={70}
-            height={70}
-            className="cursor-pointer rounded-full"
-          />
-        </Link>
+        <div className="hidden md:block absolute left-4">
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={70}
+              height={70}
+              className="cursor-pointer rounded-full object-cover"
+            />
+          </Link>
+        </div>
         {/* Centered Capsule with Gradient Border for Desktop */}
         <div className="hidden md:flex navbar-gradient navbar-border rounded-full px-20 py-3 items-center justify-center w-3/4 max-w-3xl">
           {/* Nav Links with FlipLink animation */}
