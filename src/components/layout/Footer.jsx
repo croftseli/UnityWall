@@ -13,11 +13,11 @@ export default function Footer() {
           {/* About Section */}
           <div className="flex flex-col items-center md:items-start">
             <Image
-              src="/logo.png"
+              src="/unitywall logos/Full Logo.jpg"
               alt="UnityWall Logo"
               width={150}
               height={70}
-              className="mb-4 rounded-full"
+              className="mb-4 rounded-lg"
             />
             <p className="text-gray-300 mb-6 text-center md:text-left">
               UnityWall is a dedicated team focused on designing, developing,

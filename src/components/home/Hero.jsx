@@ -16,13 +16,14 @@ export default function Hero() {
 
         <Boxes />
         <div className="flex flex-col items-center justify-center z-10 max-w-6xl">
-          <motion.h1 
+          <motion.h1
             layoutId="hero-title"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold md:leading-tight">
-            Welcome to Unity Wall
+            className="text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold md:leading-tight"
+          >
+            Welcome to UnityWall
           </motion.h1>
 
           <motion.p
@@ -30,7 +31,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center text-white text-sm sm:text-base md:text-lg font-bold mt-4 md:mt-6 max-w-md sm:max-w-lg md:max-w-2xl">
+            className="text-center text-white text-sm sm:text-base md:text-lg font-bold mt-4 md:mt-6 max-w-md sm:max-w-lg md:max-w-2xl"
+          >
             We are a dedicated web development team focused on designing,
             developing, and maintaining modern, high-performance websites.
           </motion.p>

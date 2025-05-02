@@ -107,7 +107,7 @@ export default function Navbar() {
         {/* Logo on the left side */}
         <Link href="/" className="absolute left-4">
           <Image
-            src="/logo.png"
+            src="/unitywall logos/Icon Logo Full Background.jpg"
             alt="Logo"
             width={70}
             height={70}
