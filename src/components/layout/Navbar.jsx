@@ -149,7 +149,7 @@ export default function Navbar() {
           <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/unitywall logos/Icon Logo Full Background.jpg"
                 alt="Logo"
                 width={40}
                 height={40}
