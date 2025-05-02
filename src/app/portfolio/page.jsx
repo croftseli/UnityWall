@@ -25,9 +25,17 @@ const projects = [
   },
   {
     id: 3,
-    title: "Client awaiting board approval...",
+    title: "Client website in the works...",
     description:
-      "More information and details about this project will be available soon. Stay tuned for updates!",
+      "This is a non-profit project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
+    logo: "",
+    technologies: ["Coming Soon"],
+  },
+  {
+    id: 4,
+    title: "Client website in the works...",
+    description:
+      "This is a project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
     logo: "",
     technologies: ["Coming Soon"],
   },
