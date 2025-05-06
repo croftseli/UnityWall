@@ -19,7 +19,7 @@ const engineersTeam = [
   },
   {
     name: "Iman Motlagh",
-    title: "Technical Architect & Team Lead",
+    title: "Technical Architect & Dev Team Lead",
     image: "/images/team/Iman.png",
     contact: "iman@unitywall.co",
     linkedin: "https://linkedin.com/in/iman-motlagh",
@@ -40,6 +40,14 @@ const engineersTeam = [
     contact: "simeon@unitywall.co",
     linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
     isFoundingMember: true,
+  },
+  {
+    name: "Jason Terjenian",
+    title: "Outreach Coordinator & Full-Stack",
+    image: "/images/team/Jason.png",
+    contact: "jason@unitywall.co",
+    linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
+    isFoundingMember: false,
   },
 ];
 
@@ -69,14 +77,14 @@ const designersTeam = [
   },
   {
     name: "Zimeng Cheng",
-    title: "Brand Unity & UI Designer",
+    title: "Brand Unity & Design Lead",
     image: "/images/team/Zimeng profile.jpeg",
     contact: "zimeng@unitywall.co",
     linkedin: "https://www.linkedin.com/in/zimeng-elizabeth-cheng/",
   },
   {
     name: "Mey Spiegel",
-    title: "Graphic Design",
+    title: "Graphic Design & UX",
     image: "/images/team/mey.png",
     contact: "mey@unitywall.co",
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
