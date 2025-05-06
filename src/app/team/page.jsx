@@ -46,7 +46,7 @@ const engineersTeam = [
     title: "Outreach Coordinator & Full-Stack",
     image: "/images/team/Jason.png",
     contact: "jason@unitywall.co",
-    linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
+    linkedin: "https://linkedin.com/in/jasonterjenian",
     isFoundingMember: false,
   },
 ];
