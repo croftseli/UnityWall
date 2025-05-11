@@ -7,39 +7,47 @@ import React from "react";
 import { Boxes } from "../ui/background-boxes";
 import { cn } from "@/lib/utils";
 import CTA from "../layout/CTA";
-
 export default function Hero() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200">
-      <div className="min-h-[600px] md:min-h-[800px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center px-4">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+<div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
+  <Boxes className="!top-1/3" />
 
-        <Boxes />
-        <div className="flex flex-col items-center justify-center z-10 max-w-6xl">
-          <motion.h1
-            layoutId="hero-title"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold md:leading-tight"
-          >
-            Welcome to UnityWall
-          </motion.h1>
+  {/* only this wrapper changes */}
+  <div className="relative z-10 flex items-end justify-start h-screen pl-16 pr-0 pb-32 pointer-events-none">
+    <div className="flex items-center space-x-16">
+      <div className="box pointer-events-none">
+        <div className="title">
+          <div className="div">Welcome to</div>
+          <div className="text-wrapper !top-[60px]">UnityWall</div>
+        </div>
+        <div className="line" />
 
-          <motion.p
-            layoutId="hero-description"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white text-sm sm:text-base md:text-lg font-bold mt-4 md:mt-6 max-w-md sm:max-w-lg md:max-w-2xl"
-          >
-            We are a dedicated web development team focused on designing,
-            developing, and maintaining modern, high-performance websites.
-          </motion.p>
+        {/* tightened up wrapping + relaxed line-height */}
+        <div className="p whitespace-normal leading-relaxed max-w-[560px]">
+          We are a dedicated web development team focused on<br />
+          designing, developing, and maintaining modern, high-<br />
+          performance websites.
         </div>
       </div>
-
-      <CTA />
+          {/* right button; re-enable events here */}
+          <div>
+            <Link href="/projects" passHref>
+              <button
+                className="
+                  pointer-events-auto      /* <<< catch clicks again */
+                  inline-block px-6 py-3 
+                  border border-white 
+                  rounded-md uppercase tracking-wider 
+                  font-semibold transition
+                  hover:bg-white hover:text-gray-900
+                "
+              >
+                VIEW PROJECTS
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

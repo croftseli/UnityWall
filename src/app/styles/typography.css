@@ -1,0 +1,72 @@
+/* styles/typography.css – your Figma text & line styles */
+
+.box {
+  position: relative;
+  width: 963px;
+  height: 392px;
+}
+
+.box .title {
+  position: absolute;     /* was fixed in export, but we want it inside .box */
+  top: 0;
+  left: 0;
+  width: 963px;
+  height: 392px;
+}
+
+.box .div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 928px;
+  font-family: "Inter-Light", Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: #b9d7e6;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.box .text-wrapper {
+  position: absolute;
+  top: 89px;
+  left: 0;
+  width: 963px;
+  font-family: "Inter-ExtraBold", Helvetica, sans-serif;
+  font-size: 160px;
+  font-weight: 800;
+  background: conic-gradient(
+    from 64deg at 58% 61%,
+    rgba(177, 211, 233, 1) 21%,
+    rgba(128, 154, 195, 1) 97%,
+    rgba(248, 255, 211, 1) 97%
+  );
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 5px 10px 6px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+.box .line {
+  position: absolute;
+  top: 301px;
+  left: 18px;
+  width: 1px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.box .p {
+  position: absolute;
+  top: 301px;
+  left: 52px;
+  width: 572px;
+  font-family: "Roboto-Light", Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: normal;
+  white-space: nowrap;
+}

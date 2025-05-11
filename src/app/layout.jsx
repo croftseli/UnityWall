@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 //import { CartProvider } from '@/context/CartContext';
 import { StarsBackground } from "@/components/ui/stars-background";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import "./styles/typography.css";  
 
 const inter = Inter({ subsets: ["latin"] });
 
