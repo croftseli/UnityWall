@@ -22,6 +22,7 @@ const clients = [
       "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://centrostudibahai.it",
   },
   {
     id: 3,
