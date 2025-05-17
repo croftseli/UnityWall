@@ -259,6 +259,12 @@ export default function Contact() {
                 answer:
                   "We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. Continual updates and maintenance will be separately billed. If it suits your business model, we can also establish a profit sharing agreement instead of / in addition to a flat fee.",
               },
+              {
+                question:
+                  "Do you offer a consultation before starting a project?",
+                answer:
+                  "Yes, we offer a free 30-minute consultation to discuss your needs and determine the best approach for your website. Please note that we do not begin any work without a signed contract. Contact us to schedule your consultation and learn more.",
+              },
             ].map((faq, index) => (
               <motion.div
                 key={index}

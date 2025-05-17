@@ -69,10 +69,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/clients"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Portfolio
+                  Clients
                 </Link>
               </li>
               <li>

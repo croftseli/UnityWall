@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import CTA from "@/components/layout/CTA";
 
-// Portfolio projects data
-const projects = [
+// Clients data
+const clients = [
   {
     id: 1,
     title: "Mochinut Spring Hill",
@@ -41,7 +41,7 @@ const projects = [
   },
 ];
 
-export default function Portfolio() {
+export default function Clients() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-200">
       {/* Hero Section */}
@@ -56,7 +56,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our <span className="text-blue-400">Portfolio</span>
+            Our <span className="text-blue-400">Clients</span>
           </motion.h1>
           <motion.p
             className="text-xl text-gray-300"
@@ -64,19 +64,20 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Explore our featured projects and see how we've helped businesses
-            establish their digital presence.
+            Take a look at some of our current and past clients! Explore how we
+            have helped businesses and organizations establish their digital
+            presence (note: for privacy reasons, not all clients are listed).
           </motion.p>
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Clients Section */}
       <section className="py-12 px-4 md:px-8">
         {" "}
         {/* Reduced vertical padding */}
         <div className="max-w-6xl mx-auto">
           <div className="space-y-20">
-            {projects.map((project, index) => (
+            {clients.map((project, index) => (
               <motion.div
                 key={project.id}
                 className="bg-gray-800 rounded-xl overflow-hidden shadow-xl"
