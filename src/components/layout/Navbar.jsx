@@ -105,7 +105,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 p-4">
       <div className="container mx-auto flex justify-center items-center relative">
         {/* Logo on the left side */}
-        <Link href="/" className="absolute left-4">
+        <Link href="/" className="hidden md:block absolute left-4">
           <Image
             src="/unitywall logos/Icon Logo Full Background.jpg"
             alt="Logo"
