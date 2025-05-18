@@ -10,17 +10,14 @@ export const BoxesCore = ({
   const rows = new Array(100).fill(1);
   const cols = new Array(50).fill(1);
   
-  // Changed to brick colors
+  // colors that fit our scheme better now
   let colors = [
-    "#c2492d", // brick red
-    "#a1432c", // dark brick
-    "#bc5d3b", // terracotta
-    "#cd6d4e", // light clay
-    "#803a26", // brown brick
-    "#b5523a", // rust brick
-    "#d47d56", // pale brick
-    "#b44c36", // standard brick
-    "#9b4634", // aged brick
+  "#3B82F6", // blue-500 
+  "#60A5FA", // blue-400
+  "#2563EB", // blue-600 
+  "#93C5FD", // blue-300 
+
+  
   ];
   
   const getRandomColor = () => {

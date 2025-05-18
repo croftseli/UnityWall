@@ -7,13 +7,17 @@ import React from "react";
 import { Boxes } from "../ui/background-boxes";
 import { cn } from "@/lib/utils";
 import CTA from "../layout/CTA";
+import useMediaQuery from "@/lib/useMediaQuery"
+
 
 export default function Hero() {
+  const shouldRenderBoxes = useMediaQuery("(min-width: 768px)");
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
       <div className="min-h-[600px] md:min-h-[800px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center px-4">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-
+        
+        {shouldRenderBoxes && <Boxes />}
         <div className="flex flex-col items-center justify-center z-10 max-w-6xl">
           <motion.h1
             layoutId="hero-title"
