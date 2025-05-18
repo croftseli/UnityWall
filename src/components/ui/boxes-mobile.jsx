@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const BoxesCore = ({
@@ -12,17 +11,11 @@ export const BoxesCore = ({
   
   // colors that fit our scheme better now
   let colors = [
-  "#3B82F6", // blue-500 
-  "#60A5FA", // blue-400
-  "#2563EB", // blue-600 
-  "#93C5FD", // blue-300 
-
-  
+    "#3B82F6", // blue-500 
+    "#60A5FA", // blue-400
+    "#2563EB", // blue-600 
+    "#93C5FD", // blue-300 
   ];
-  
-  const getRandomColor = () => {
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
   
   return (
     <div
@@ -35,16 +28,9 @@ export const BoxesCore = ({
       )}
       {...rest}>
       {rows.map((_, i) => (
-        <motion.div key={`row` + i} className="relative h-8 w-16 border-l border-slate-700">
+        <div key={`row` + i} className="relative h-8 w-16 border-l border-slate-700">
           {cols.map((_, j) => (
-            <motion.div
-              whileHover={{
-                backgroundColor: `${getRandomColor()}`,
-                transition: { duration: 0 },
-              }}
-              animate={{
-                transition: { duration: 2 },
-              }}
+            <div
               key={`col` + j}
               className="relative h-8 w-16 border-t border-r border-slate-700">
               {j % 2 === 0 && i % 2 === 0 ? (
@@ -58,9 +44,9 @@ export const BoxesCore = ({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
                 </svg>
               ) : null}
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       ))}
     </div>
   );
