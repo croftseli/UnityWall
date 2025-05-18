@@ -27,26 +27,30 @@
   line-height: normal;
 }
 
+
+
 .box .text-wrapper {
-  position: absolute;
-  top: 89px;
-  left: 0;
-  width: 963px;
-  font-family: "Inter-ExtraBold", Helvetica, sans-serif;
-  font-size: 160px;
-  font-weight: 800;
-  background: conic-gradient(
-    from 64deg at 58% 61%,
-    rgba(177, 211, 233, 1) 21%,
-    rgba(128, 154, 195, 1) 97%,
-    rgba(248, 255, 211, 1) 97%
-  );
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 5px 10px 6px rgba(0, 0, 0, 0.25);
-  white-space: nowrap;
+-webkit-background-clip: text !important;
+-webkit-text-fill-color: transparent;
+background: linear-gradient(
+  64deg,
+  rgba(139, 172, 223, 1) 0%,
+  rgba(177, 211, 233, 1) 61%,
+  rgba(248, 255, 211, 1) 100%
+);
+position: absolute;
+background-clip: text;
+color: transparent;
+font-family: "Inter-ExtraBold", Helvetica;
+font-size: 160px;
+font-weight: 800;
+left: 0;
+letter-spacing: 0;
+line-height: normal;
+text-fill-color: transparent;
+top: 84;
+width: 963px;
+
 }
 
 .box .line {

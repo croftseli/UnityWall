@@ -12,15 +12,16 @@ export const BoxesCore = ({
   
   // Changed to brick colors
   let colors = [
-    "#c2492d", // brick red
-    "#a1432c", // dark brick
-    "#bc5d3b", // terracotta
-    "#cd6d4e", // light clay
-    "#803a26", // brown brick
-    "#b5523a", // rust brick
-    "#d47d56", // pale brick
-    "#b44c36", // standard brick
-    "#9b4634", // aged brick
+  "#3B82F6", // blue-500 (Your CTA button color)
+  "#60A5FA", // blue-400 (A lighter, vibrant blue)
+  "#2563EB", // blue-600 (Your CTA button hover color)
+  "#93C5FD", // blue-300 (A softer, lighter blue)
+
+  // Whites and Grays
+  // "#FFFFFF", // White (Matches text and lines)
+  // "#E5E7EB", // gray-200 (A light gray, provides subtle contrast)
+  // "#D1D5DB", // gray-300 (Matches some of your paragraph text)
+  // "#9CA3AF", // gray-400 (Matches your dimmer CTA text)
   ];
   
   const getRandomColor = () => {
