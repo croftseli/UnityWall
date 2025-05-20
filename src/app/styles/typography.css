@@ -1,4 +1,5 @@
 /* styles/typography.css – your Figma text & line styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .box {
   position: relative;
@@ -73,4 +74,39 @@ width: 963px;
   color: #ffffff;
   line-height: normal;
   white-space: nowrap;
+}
+
+
+.service-title-matched {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FFFDD0; /* Cream Title Text */
+  font-weight: 700; /* Bold */
+}
+
+.service-body-matched {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #ffffff; /* Light Gray */
+  font-weight: 400; /* Normal */
+  line-height: 1.6; /* Line spacing */
+}
+
+.service-line-matched {
+  background-color: #FFFFFF; /* White */
+  width: 1px; /* Thinner line */
+}
+
+.website-maintenance-title {
+  /* Corresponds to Tailwind's font-bold */
+  font-weight: 700;
+  /* Corresponds to Tailwind's text-sky-300. You can adjust the hex code. */
+  color: #7dd3fc;
+  /* If you want a specific font for the title: */
+  /* font-family: 'Your Title Font', sans-serif; */
+}
+
+.website-maintenance-body {
+  /* Corresponds to Tailwind's text-gray-200. You can adjust the hex code. */
+  color: #e5e7eb;
+  /* If you want a specific font for the body: */
+  /* font-family: 'Your Body Font', sans-serif; */
 }
