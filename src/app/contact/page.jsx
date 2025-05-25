@@ -226,15 +226,23 @@ export default function Contact() {
 
       {/* FAQ Section */}
       <section className="py-20 px-4 md:px-8 bg-gray-800">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-3xl font-bold text-blue-300 mb-10 text-center"
+            className="text-3xl font-bold text-blue-300 mb-2 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             Frequently Asked Questions
           </motion.h2>
+          <motion.p
+            className="text-xl text-gray-300 mb-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Please note that we do not begin any work without a signed contract.
+          </motion.p>
 
           <div className="space-y-6">
             {[
@@ -263,7 +271,7 @@ export default function Contact() {
                 question:
                   "Do you offer a consultation before starting a project?",
                 answer:
-                  "Yes, we offer a free 30-minute consultation to discuss your needs and determine the best approach for your website. Please note that we do not begin any work without a signed contract. Contact us to schedule your consultation and learn more.",
+                  "Yes, we offer a free 30-minute consultation to discuss your needs and determine the best approach for your website. Contact us to schedule your consultation and find out more.",
               },
             ].map((faq, index) => (
               <motion.div
