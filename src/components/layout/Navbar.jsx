@@ -83,7 +83,7 @@ return (
        <Link href="/">
          <div className="hidden md:flex w-16 h-16 items-center justify-center hover:scale-110 transition-transform"> {/* Applied hidden md:flex */}
            <Image
-             src="/icons/unitywall.png"
+             src="/icons/Unitywall.png"
              alt="UW"
              width={58}
              height={58}
