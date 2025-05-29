@@ -5,208 +5,201 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SocialMediaIcons from "../ui/linkedin-icon";
+import SocialMediaIcons from "/src/components/ui/linkedin-icon.jsx"
 
 // Animation constants for FlipLink
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-// FlipLink component
-const FlipLink = ({ children, href, isActive, onClick }) => {
-  return (
-    <motion.a
-      href={href}
-      onClick={onClick}
-      initial="initial"
-      whileHover="hovered"
-      className={`relative block overflow-hidden whitespace-nowrap font-medium ${
-        isActive ? "text-blue-500" : "text-white"
-      }`}
-    >
-      <div>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: 0,
-              },
-              hovered: {
-                y: "-100%",
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-      <div className="absolute inset-0 text-blue-500">
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: "100%",
-              },
-              hovered: {
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-    </motion.a>
-  );
-};
+// FlipLink component (unchanged)
+const FlipLink = ({ children, href, isActive, onClick }) => (
+  <motion.a
+    href={href}
+    onClick={onClick}
+    initial="initial"
+    whileHover="hovered"
+    className={`relative block overflow-hidden whitespace-nowrap font-medium ${
+      isActive ? "text-white" : "text-gray-300"
+    }`}
+  >
+    {/* bottom (exiting) letters */}
+    <div>
+      {children.split("").map((l, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            initial: { y: 0 },
+            hovered: { y: "-100%" },
+          }}
+          transition={{ duration: DURATION, ease: "easeInOut", delay: STAGGER * i }}
+          className="inline-block"
+        >
+          {l}
+        </motion.span>
+      ))}
+    </div>
+    {/* top (incoming) letters */}
+    <div className="absolute inset-0 text-white">
+      {children.split("").map((l, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            initial: { y: "100%" },
+            hovered: { y: 0 },
+          }}
+          transition={{ duration: DURATION, ease: "easeInOut", delay: STAGGER * i }}
+          className="inline-block"
+        >
+          {l}
+        </motion.span>
+      ))}
+    </div>
+  </motion.a>
+);
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => {
+      const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
-    { href: "/team", label: "Our Team" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
   ];
 
-  // Define a custom LinkedIn icon component using our animated version
-  const AnimatedLinkedInIcon = () => {
-    return (
-      <div className="scale-75">
-        <SocialMediaIcons />
-      </div>
-    );
-  };
+return (
+   <nav className="fixed top-0 w-full z-50 p-4">
+     <div className="container mx-auto relative flex items-center">
+       {/* UW Icon - MOVED TO THE LEFT */}
+       <Link href="/">
+         <div className="hidden md:flex w-16 h-16 items-center justify-center hover:scale-110 transition-transform"> {/* Applied hidden md:flex */}
+           <Image
+             src="/icons/unitywall.png"
+             alt="UW"
+             width={58}
+             height={58}
+             className="rounded-full"
+           />
+         </div>
+       </Link>
 
-  return (
-    <nav className="fixed top-0 w-full z-50 p-4">
-      <div className="container mx-auto flex justify-center items-center relative">
-        {/* Logo on the left side */}
-        <Link href="/" className="hidden md:block absolute left-4">
-          <Image
-            src="/unitywall logos/Icon Logo Full Background.jpg"
-            alt="Logo"
-            width={70}
-            height={70}
-            className="cursor-pointer rounded-full"
-          />
-        </Link>
-        {/* Centered Capsule with Gradient Border for Desktop */}
-        <div className="hidden md:flex navbar-gradient navbar-border rounded-full px-20 py-3 items-center justify-center w-3/4 max-w-3xl">
-          {/* Nav Links with FlipLink animation */}
-          <div className="flex items-center justify-between w-full">
-            {navLinks.map((link, index) => (
-              <FlipLink
-                key={link.href}
-                href={link.href}
-                isActive={pathname === link.href}
-              >
-                {link.label}
-              </FlipLink>
-            ))}
-          </div>
-        </div>
+       {/* left spacer to push icons right */}
+       <div className="flex-1 hidden md:block" />
 
-        {/* Social Links - Right Side */}
-        <motion.div
-          className="hidden md:flex absolute right-1 items-center"
-          whileHover={{ scale: 1.1, rotate: "10deg" }}
+       {/* CAPSULE NAV */}
+       <div
+         className="
+           hidden md:flex
+           absolute left-1/2 transform -translate-x-1/2
+           items-center
+           bg-gradient-to-r from-lime-200 via-gray-600 to-sky-200
+           p-1 rounded-full
+         "
+       >
+         <div className="bg-gray-800 rounded-full flex items-center px-20 py-2 space-x-32">
+           {navLinks.map((link) => (
+             <FlipLink
+               key={link.href}
+               href={link.href}
+               isActive={pathname === link.href}
+               onClick={() => {}} // Added empty onClick to FlipLink if it's expected
+             >
+               {link.label}
+             </FlipLink>
+           ))}
+         </div>
+       </div>
+
+      <div className="hidden md:flex items-center">
+        <a
+          href="https://linkedin.com/company/unitywall"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform"
         >
-          <a
-            href="https://linkedin.com/company/unitywall"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AnimatedLinkedInIcon />
-          </a>
-        </motion.div>
-
-        {/* Mobile View */}
-        <div className="md:hidden w-full">
-          <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
-            <Link href="/">
-              <Image
-                src="/unitywall logos/Icon Logo Full Background.jpg"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="cursor-pointer rounded-full"
-              />
-            </Link>
-            {!isMenuOpen ? (
-              <button
-                onClick={toggleMenu}
-                aria-label="toggle menu"
-                className="text-white"
-              >
-                <MenuIcon />
-              </button>
-            ) : (
-              <button
-                onClick={toggleMenu}
-                aria-label="close menu"
-                className="text-white"
-              >
-                <CloseIcon />
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Mobile Menu Dropdown with FlipLink animation */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-medium ${
-                    pathname === link.href ? "text-blue-500" : "text-black"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-              {/* Social Links for Mobile */}
-              <div className="flex items-center py-2">
-                <a
-                  href="https://linkedin.com/company/unitywall"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedInIcon sx={{ color: "#0077b5" }} />
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
+          <SocialMediaIcons />
+        </a>
       </div>
+      </div>
+
+{/* Mobile View (unchanged from your "good navbar" version) */}
+<div className="md:hidden w-full">
+  <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
+    <Link href="/">
+      <Image
+        src="/unitywall logos/Icon Logo Full Background.jpg"
+        alt="Logo"
+        width={40}
+        height={40}
+        className="cursor-pointer rounded-full"
+      />
+    </Link>
+    {!isMenuOpen ? (
+      <button
+        onClick={toggleMenu}
+        aria-label="toggle menu"
+        className="text-white"
+      >
+        <MenuIcon />
+      </button>
+    ) : (
+      <button
+        onClick={toggleMenu}
+        aria-label="close menu"
+        className="text-white"
+      >
+        <CloseIcon />
+      </button>
+    )}
+  </div>
+</div>
+
+{/* Mobile Menu Dropdown using divide-y for cell dividers */}
+{isMenuOpen && (
+  <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
+    {/* Apply divide-y and divide-gray-200 to the parent container of menu items */}
+    <div className="container mx-auto px-4 flex flex-col divide-y divide-gray-200">
+      {navLinks.map((link) => (
+        // Each item now only needs padding and text alignment. The border is handled by the parent.
+        <div key={link.href} className="text-right py-3">
+          <Link
+            href={link.href}
+            className={`font-medium text-lg ${
+              pathname === link.href ? "text-blue-500" : "text-black"
+            }`}
+            onClick={() => {
+              setIsMenuOpen(false); // Close menu on click
+            }}
+          >
+            {link.label}
+          </Link>
+        </div>
+      ))}
+
+      {/* Social Links for Mobile - will also get a divider line above it */}
+      <div className="text-right py-3">
+        <a
+          href="https://linkedin.com/company/unitywall"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center"
+          onClick={() => setIsMenuOpen(false)} // Optionally close menu on social link click too
+        >
+          <LinkedInIcon sx={{ color: "#0077b5", fontSize: "1.75rem" }} />
+        </a>
+      </div>
+    </div>
+  </div>
+)}
     </nav>
   );
 }

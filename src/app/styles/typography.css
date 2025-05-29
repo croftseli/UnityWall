@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.box {
+  position: relative;
+  width: 963px;
+  height: 392px;
+}
+
+.box .title {
+  position: absolute;     /* was fixed in export, but we want it inside .box */
+  top: 0;
+  left: 0;
+  width: 963px;
+  height: 392px;
+}
+
+.box .div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 928px;
+  font-family: "Inter-Light", Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: #b9d7e6;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+
+
+.box .text-wrapper {
+-webkit-background-clip: text !important;
+-webkit-text-fill-color: transparent;
+background: linear-gradient(
+  64deg,
+  rgba(139, 172, 223, 1) 0%,
+  rgba(177, 211, 233, 1) 61%,
+  rgba(248, 255, 211, 1) 100%
+);
+position: absolute;
+background-clip: text;
+color: transparent;
+font-family: "Inter-ExtraBold", Helvetica;
+font-size: 160px;
+font-weight: 800;
+left: 0;
+letter-spacing: 0;
+line-height: normal;
+text-fill-color: transparent;
+top: 84;
+width: 963px;
+
+}
+
+.box .line {
+  position: absolute;
+  top: 301px;
+  left: 18px;
+  width: 1px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.box .p {
+  position: absolute;
+  top: 301px;
+  left: 52px;
+  width: 572px;
+  font-family: "Roboto-Light", Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+
+.service-title-matched {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FFFDD0; /* Cream Title Text */
+  font-weight: 700; /* Bold */
+}
+
+.service-body-matched {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #ffffff; /* Light Gray */
+  font-weight: 400; /* Normal */
+  line-height: 1.6; /* Line spacing */
+}
+
+.service-line-matched {
+  background-color: #FFFFFF; /* White */
+  width: 1px; /* Thinner line */
+}
+
+.website-maintenance-title {
+  font-weight: 700;
+  color: #e2f6ff;
+  /* If you want a specific font for the title: */
+  /* font-family: 'Your Title Font', sans-serif; */
+}
+
+.website-maintenance-body {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.6 ;
+}
+
+
+.social-media-title {
+font-weight: 700;
+color: #7dd3fc
+}
+
+
+.cta-title {
+  /* Corresponds to Tailwind's text-3xl lg:text-4xl font-semibold mb-5 */
+  /* From image: Large, bold, white text */
+  font-size: 2.25rem; /* Approximation for text-3xl/4xl */
+  font-weight: 600; /* Corresponds to font-semibold */
+  color: #FFFFFF; /* White text */
+  margin-bottom: 1.25rem; /* Corresponds to mb-5 */
+  line-height: 1.2;
+  text-align: center; /* As seen in the image */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .cta-title {
+    font-size: 2.75rem; /* Slightly larger for lg screens */
+  }
+}
+
+.cta-body-text {
+  /* Corresponds to Tailwind's text-gray-400 mb-8 max-w-lg lg:max-w-xl mx-auto text-base lg:text-lg */
+  /* From image: Smaller, regular weight, light gray text */
+  color: #D1D5DB; /* Light gray, similar to Tailwind's text-gray-300 or 400 */
+  margin-bottom: 2rem; /* Corresponds to mb-8 */
+  font-size: 1rem; /* Corresponds to text-base */
+  line-height: 1.625; /* Common line height for body text */
+  text-align: center; /* As seen in the image */
+  max-width: 36rem; /* Approximation for max-w-lg */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .cta-body-text {
+    font-size: 1.125rem; /* Corresponds to text-lg */
+    max-width: 42rem; /* Approximation for max-w-xl */
+  }
+}
+
+.cta-button {
+  /* Corresponds to Tailwind's px-10 py-4 bg-blue-500 text-white rounded-md uppercase tracking-wider font-semibold transition text-base lg:text-lg hover:bg-blue-600 */
+  /* From image: Gradient background, black text, rounded corners */
+  display: inline-block;
+  padding: 1rem 2.5rem; /* Corresponds to py-4 px-10 */
+  font-size: 1rem; /* Corresponds to text-base */
+  font-weight: 600; /* Corresponds to font-semibold */
+  color: #000000; /* Black text as per image */
+  background-image: linear-gradient(to right, #A7F3D0,  #A7D1F3); /* Light green to light blue gradient */
+  border: none;
+  border-radius: 0; /* Sharp corners for a perfect rectangle */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Corresponds to tracking-wider */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Updated transition */
+}
+
+.cta-button:hover {
+  /* opacity: 0.85; /* REMOVED - to ensure text is not transparent on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+@media (max-width: 768px) { /* lg breakpoint */
+  .cta-button {
+    font-size: 1.125rem; /* Corresponds to text-lg */
+  }
+  .box .div {
+    font-size: calc(40px + 2vw);
+  }
+  
+  .box .text-wrapper {
+    font-size: calc(80px + 4vw);
+  }
+  
+  .box .p {
+    font-size: calc(10px + 0.7vw);
+  }
+}
+
+/* Mobile-specific styles (centering) */
+@media (max-width: 768px) {
+  .box {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .box .title {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .box .div {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    font-size: 40px;
+  }
+  
+  .box .text-wrapper {
+    position: relative;
+    top: auto !important;
+    left: auto;
+    width: 100%;
+    font-size: 70px;
+    margin-top: 20px;
+  }
+  
+  .box .line {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 30px 0;
+  }
+  
+  .box .p {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
+    font-size: 16px;
+    white-space: normal;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .box .p br {
+    display: none;
+  }
+}

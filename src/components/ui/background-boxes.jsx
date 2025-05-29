@@ -10,20 +10,19 @@ export const BoxesCore = ({
   const rows = new Array(100).fill(1);
   const cols = new Array(50).fill(1);
   
-  // colors that fit our scheme better now
+  // Changed to brick colors
   let colors = [
-  "#3B82F6", // blue-500 
-  "#60A5FA", // blue-400
-  "#2563EB", // blue-600 
-  "#93C5FD", // blue-300 
+  "#3B82F6", // blue-500 (Your CTA button color)
+  "#60A5FA", // blue-400 (A lighter, vibrant blue)
+  "#2563EB", // blue-600 (Your CTA button hover color)
+  "#93C5FD", // blue-300 (A softer, lighter blue)
 
-  
   ];
   
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
-  
+
   return (
     <div
       style={{
