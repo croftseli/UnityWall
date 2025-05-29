@@ -76,177 +76,130 @@ export default function Navbar() {
     { href: "/contact", label: "Contact" },
   ];
 
-   return (
-    <nav className="fixed top-0 w-full z-50 p-4">
-      <div className="container mx-auto relative flex items-center">
-        {/* left spacer to push icons right */}
-        <div className="flex-1 hidden md:block" />
+return (
+   <nav className="fixed top-0 w-full z-50 p-4">
+     <div className="container mx-auto relative flex items-center">
+       {/* UW Icon - MOVED TO THE LEFT */}
+       <Link href="/">
+         <div className="hidden md:flex w-16 h-16 items-center justify-center hover:scale-110 transition-transform"> {/* Applied hidden md:flex */}
+           <Image
+             src="/icons/unitywall.png"
+             alt="UW"
+             width={58}
+             height={58}
+             className="rounded-full"
+           />
+         </div>
+       </Link>
 
-        {/* CAPSULE NAV – centered */}
-        <div
-          className="
-            hidden md:flex
-            absolute left-1/2 transform -translate-x-1/2
-            items-center
-            bg-gradient-to-r from-lime-200 via-gray-600 to-sky-200
-            p-1 rounded-full
-          "
+       {/* left spacer to push icons right */}
+       <div className="flex-1 hidden md:block" />
+
+       {/* CAPSULE NAV */}
+       <div
+         className="
+           hidden md:flex
+           absolute left-1/2 transform -translate-x-1/2
+           items-center
+           bg-gradient-to-r from-lime-200 via-gray-600 to-sky-200
+           p-1 rounded-full
+         "
+       >
+         <div className="bg-gray-800 rounded-full flex items-center px-20 py-2 space-x-32">
+           {navLinks.map((link) => (
+             <FlipLink
+               key={link.href}
+               href={link.href}
+               isActive={pathname === link.href}
+               onClick={() => {}} // Added empty onClick to FlipLink if it's expected
+             >
+               {link.label}
+             </FlipLink>
+           ))}
+         </div>
+       </div>
+
+      <div className="hidden md:flex items-center">
+        <a
+          href="https://linkedin.com/company/unitywall"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform"
         >
-          <div className="bg-gray-800 rounded-full flex items-center px-20 py-2 space-x-32">
-            {navLinks.map((link) => (
-              <FlipLink
-                key={link.href}
-                href={link.href}
-                isActive={pathname === link.href}
-                onClick={() => {}}
-              >
-                {link.label}
-              </FlipLink>
-            ))}
-          </div>
-        </div>
-
-{/* ICON BUTTONS*/}
-<div className="hidden md:flex items-center">
-  <Link href="/">
-    <div className=" w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform">
-      <Image
-        src="/icons/unitywall.png"
-        alt="UW"
-        width={58}
-        height={58}
-        className="rounded-full"
-      />
-    </div>
-  </Link>
-  <a
-    href="https://linkedin.com/company/unitywall"
-    target="_blank"
-    rel="noopener noreferrer"
-    className=" w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform"
-  >
-    <SocialMediaIcons />
-  </a>
-</div>
+          <SocialMediaIcons />
+        </a>
+      </div>
       </div>
 
-      {/* MOBILE NAV (unchanged) */}
-      <div className="md:hidden w-full">
-        <div className="bg-gradient-to-r from-lime-200 via-gray-600 to-sky-200 p-1 rounded-full flex items-center justify-between px-4 py-2">
-          <Link href="/">
-            <Image
-              src="/path/to/uw-icon.svg"
-              alt="UW"
-              width={32}
-              height={32}
-              className="rounded-full"
-            />
-          </Link>
-          <button
-            onClick={() => setIsMenuOpen((open) => !open)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="text-white"
+{/* Mobile View (unchanged from your "good navbar" version) */}
+<div className="md:hidden w-full">
+  <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
+    <Link href="/">
+      <Image
+        src="/unitywall logos/Icon Logo Full Background.jpg"
+        alt="Logo"
+        width={40}
+        height={40}
+        className="cursor-pointer rounded-full"
+      />
+    </Link>
+    {!isMenuOpen ? (
+      <button
+        onClick={toggleMenu}
+        aria-label="toggle menu"
+        className="text-white"
+      >
+        <MenuIcon />
+      </button>
+    ) : (
+      <button
+        onClick={toggleMenu}
+        aria-label="close menu"
+        className="text-white"
+      >
+        <CloseIcon />
+      </button>
+    )}
+  </div>
+</div>
+
+{/* Mobile Menu Dropdown using divide-y for cell dividers */}
+{isMenuOpen && (
+  <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
+    {/* Apply divide-y and divide-gray-200 to the parent container of menu items */}
+    <div className="container mx-auto px-4 flex flex-col divide-y divide-gray-200">
+      {navLinks.map((link) => (
+        // Each item now only needs padding and text alignment. The border is handled by the parent.
+        <div key={link.href} className="text-right py-3">
+          <Link
+            href={link.href}
+            className={`font-medium text-lg ${
+              pathname === link.href ? "text-blue-500" : "text-black"
+            }`}
+            onClick={() => {
+              setIsMenuOpen(false); // Close menu on click
+            }}
           >
-            {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
-          </button>
+            {link.label}
+          </Link>
         </div>
+      ))}
 
-        {isMenuOpen && (
-          <div className="absolute top-full left-4 right-4 bg-white mt-2 rounded-b-lg shadow-lg">
-            <div className="flex flex-col px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-medium ${
-                    pathname === link.href ? "text-blue-600" : "text-gray-800"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-                  <motion.div
-              className="hidden md:flex absolute right-1 items-center"
-              whileHover={{ scale: 1.1, rotate: "10deg" }}
-            >
-              <a
-                href="https://linkedin.com/company/unitywall"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SocialMediaIcons/>
-              </a>
-            </motion.div>
-                </div>
-          </div>
-        )}
-
-
-        {/* Mobile View */}
-        <div className="md:hidden w-full">
-          <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
-            <Link href="/">
-              <Image
-                src="/unitywall logos/Icon Logo Full Background.jpg"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="cursor-pointer rounded-full"
-              />
-            </Link>
-            {!isMenuOpen ? (
-              <button
-                onClick={toggleMenu}
-                aria-label="toggle menu"
-                className="text-white"
-              >
-                <MenuIcon />
-              </button>
-            ) : (
-              <button
-                onClick={toggleMenu}
-                aria-label="close menu"
-                className="text-white"
-              >
-                <CloseIcon />
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Mobile Menu Dropdown with FlipLink animation */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-medium ${
-                    pathname === link.href ? "text-blue-500" : "text-black"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-              {/* Social Links for Mobile */}
-              <div className="flex items-center py-2">
-                <a
-                  href="https://linkedin.com/company/unitywall"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedInIcon sx={{ color: "#0077b5" }} />
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-        </div>
+      {/* Social Links for Mobile - will also get a divider line above it */}
+      <div className="text-right py-3">
+        <a
+          href="https://linkedin.com/company/unitywall"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center"
+          onClick={() => setIsMenuOpen(false)} // Optionally close menu on social link click too
+        >
+          <LinkedInIcon sx={{ color: "#0077b5", fontSize: "1.75rem" }} />
+        </a>
+      </div>
+    </div>
+  </div>
+)}
     </nav>
   );
 }
