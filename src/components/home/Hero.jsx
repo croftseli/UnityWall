@@ -46,7 +46,7 @@ export default function Hero() {
   
   const buttonFadeIn = {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { duration: 0.8, delay: 2.2 } } // delay for the button 
+      visible: { opacity: 1, transition: { duration: 1.2, delay: 1.1 } } // delay for the button 
   }
 
   const unitywallText = "UnityWall".split("");
@@ -59,6 +59,20 @@ export default function Hero() {
   };
 
   //Body & CTA Sections (On-Scroll):
+
+ const headingSlideInVariant = {
+    hidden: { opacity: 0, x: -250 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 40,
+            damping: 20
+        }
+    }
+  }
+
   const sectionContainerVariants = {
     hidden: {},
     visible: {
@@ -91,7 +105,7 @@ export default function Hero() {
         {isDesktop && <Boxes className="!top-1/4" />}
         {isMobile && <BoxesCore className="!top-1/3" />}
 
-        <div className="relative z-10 flex items-end justify-center md:justify-start h-screen px-4 md:pl-16 pb-10 md:pb-32 md:pr-0 pointer-events-none">
+        <div className="relative z-10 flex items-center md:items-end justify-center md:justify-start h-screen px-4 md:pl-16 pb-10 md:pb-32 md:pr-0 pointer-events-none">
           <div className="flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-16 w-full max-w-5xl">
             <motion.div
               variants={heroContainerVariants}
@@ -105,8 +119,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.2 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] w-full h-auto max-w-full max-h-full scale-125 md:scale-200 pointer-events-none"
-              />
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] md:-translate-y-1/2 z-[-1] w-full h-auto max-w-full max-h-full scale-125 md:scale-200 pointer-events-none"              />
               <div className="title flex flex-col items-center md:block">
                 <motion.div
                   variants={heroChildVariants}
@@ -172,10 +185,19 @@ export default function Hero() {
           </div>
         </div>
 
+
+
+
+
         <div className="absolute bottom-0 left-0 right-0 h-32 z-[5] bg-gradient-to-t from-gray-700 to-transparent pointer-events-none"></div>
       </div>
 
+
+
+
+
       {/* BODY */}
+
       <div className="bg-gray-700 text-white py-20 px-4 sm:px-8 lg:px-16 xl:px-24 relative overflow-hidden">
         <img
           src="/mainBodyShadow.svg"
@@ -184,13 +206,14 @@ export default function Hero() {
         />
         <motion.h2
           ref={refWhat}
-          variants={sectionChildVariants} 
+          variants={headingSlideInVariant} 
           initial="hidden"
           animate={inViewWhat ? "visible" : "hidden"}
           className="text-5xl md:text-3xl font-bold mb-16 md:mb-20 text-left"
         >
           What do we do?
         </motion.h2>
+
 
         {/* Service Item 1: Website Development */}
         <motion.div 
