@@ -80,7 +80,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 p-4">
       <div className="container mx-auto relative flex items-center">
         <Link href="/">
-          <div className="hidden md:flex w-16 h-16 items-center justify-center hover:scale-110 transition-transform">
+          <div className="hidden lg:flex w-16 h-16 items-center justify-center hover:scale-110 transition-transform">
             {" "}
             <Image
               src="/icons/Unitywall.png"
@@ -91,19 +91,19 @@ export default function Navbar() {
             />
           </div>
         </Link>
-        <div className="flex-1 hidden md:block" />
+        <div className="flex-1 hidden lg:block" />
 
         {/* CAPSULE NAV */}
         <div
           className="
-            hidden md:flex
+            hidden lg:flex
             absolute left-1/2 transform -translate-x-1/2
             items-center
             bg-gradient-to-r from-lime-200 via-gray-600 to-sky-200
             p-1 rounded-full
           "
         >
-          <div className="bg-gray-800 rounded-full flex items-center px-20 py-2 space-x-32">
+          <div className="bg-gray-800 rounded-full flex items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-2 space-x-8 lg:space-x-16 xl:space-x-24">
             {navLinks.map((link) => (
               <FlipLink
                 key={link.href}
@@ -117,7 +117,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center">
           <a
             href="https://linkedin.com/company/unitywall"
             target="_blank"
@@ -130,7 +130,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile View*/}
-      <div className="md:hidden w-full">
+      <div className="lg:hidden w-full">
         <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
           <Link href="/">
             <Image
@@ -163,7 +163,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown*/}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
           <div className="container mx-auto px-4 flex flex-col divide-y divide-gray-200">
             {navLinks.map((link) => (
               <div key={link.href} className="text-right py-3">
@@ -173,7 +173,7 @@ export default function Navbar() {
                     pathname === link.href ? "text-blue-500" : "text-black"
                   }`}
                   onClick={() => {
-                    setIsMenuOpen(false); 
+                    setIsMenuOpen(false);
                   }}
                 >
                   {link.label}
@@ -188,7 +188,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center"
-                onClick={() => setIsMenuOpen(false)} 
+                onClick={() => setIsMenuOpen(false)}
               >
                 <LinkedInIcon sx={{ color: "#0077b5", fontSize: "1.75rem" }} />
               </a>
