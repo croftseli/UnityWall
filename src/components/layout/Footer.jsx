@@ -54,7 +54,7 @@ export default function Footer() {
                   href="/team"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               {/* <li>
