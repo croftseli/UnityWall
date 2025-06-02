@@ -23,26 +23,7 @@ export default function Footer() {
               UnityWall is a dedicated team focused on designing, developing,
               and maintaining modern, high-performance websites.
             </p>
-            {/* <div className="flex space-x-4">
-              <a
-                href="https://instagram.com/unitywall"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-blue-500 transition-colors p-2 rounded-full"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/unitywall"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-blue-500 transition-colors p-2 rounded-full"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon className="w-5 h-5" />
-              </a>
-            </div> */}
+            
           </div>
 
           {/* Quick Links */}
