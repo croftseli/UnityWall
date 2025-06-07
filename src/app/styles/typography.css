@@ -2,28 +2,22 @@
 
 .box {
   position: relative;
-  width: 963px;
-  height: 392px;
+  /* width: 963px;
+  height: 392px; */
 }
 
 .box .title {
-  position: absolute;     /* was fixed in export, but we want it inside .box */
-  top: 0;
-  left: 0;
-  width: 963px;
-  height: 392px;
+  width: auto;
+  height: auto;
+  text-align: left;
 }
 
 .box .div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 928px;
+  width: auto; 
   font-family: "Inter-Light", Helvetica, sans-serif;
-  font-size: 80px;
+  font-size: 80px; 
   font-weight: 300;
   color: #b9d7e6;
-  white-space: nowrap;
   line-height: normal;
 }
 
@@ -36,43 +30,35 @@ background: linear-gradient(
   64deg,
   rgba(139, 172, 223, 1) 0%,
   rgba(177, 211, 233, 1) 61%,
-  rgba(248, 255, 211, 1) 100%
+  rgb(251, 246, 156) 100%
 );
-position: absolute;
 background-clip: text;
 color: transparent;
 font-family: "Inter-ExtraBold", Helvetica;
 font-size: 160px;
 font-weight: 800;
-left: 0;
 letter-spacing: 0;
 line-height: normal;
 text-fill-color: transparent;
-top: 84;
-width: 963px;
-
+/* width: auto; */
+display: inline-block;
+text-align: left;
 }
 
 .box .line {
-  position: absolute;
-  top: 301px;
-  left: 18px;
   width: 1px;
   height: 70px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
 .box .p {
-  position: absolute;
-  top: 301px;
-  left: 52px;
-  width: 572px;
+  width: auto; 
   font-family: "Roboto-Light", Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 300;
   color: #ffffff;
   line-height: normal;
-  white-space: nowrap;
+  text-align: left;
 }
 
 
@@ -152,27 +138,37 @@ color: #7dd3fc
 }
 
 .cta-button {
-  /* Corresponds to Tailwind's px-10 py-4 bg-blue-500 text-white rounded-md uppercase tracking-wider font-semibold transition text-base lg:text-lg hover:bg-blue-600 */
-  /* From image: Gradient background, black text, rounded corners */
   display: inline-block;
-  padding: 1rem 2.5rem; /* Corresponds to py-4 px-10 */
-  font-size: 1rem; /* Corresponds to text-base */
-  font-weight: 600; /* Corresponds to font-semibold */
-  color: #000000; /* Black text as per image */
-  background-image: linear-gradient(to right, #A7F3D0,  #A7D1F3); /* Light green to light blue gradient */
-  border: none;
-  border-radius: 0; /* Sharp corners for a perfect rectangle */
-  text-transform: uppercase;
-  letter-spacing: 0.05em; /* Corresponds to tracking-wider */
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: transparent;
+  border: 5px solid;
+  border-image: linear-gradient(
+    to right,
+    rgb(251, 246, 156),
+    rgba(177, 211, 233, 1),
+    rgba(139, 172, 223, 1)
+  ) 1;
+  color: #ffffff; /* white text */
+  text-transform: none; /* normal casing */
+  letter-spacing: 0.05em;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.3s ease; /* Updated transition */
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .cta-button:hover {
-  /* opacity: 0.85; /* REMOVED - to ensure text is not transparent on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: linear-gradient(
+    to right,
+    rgb(251, 246, 156),
+    rgba(177, 211, 233, 1),
+    rgba(139, 172, 223, 1)
+  ) 1;
 }
+
+
 
 @media (max-width: 768px) { /* lg breakpoint */
   .cta-button {

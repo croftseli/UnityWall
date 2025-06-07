@@ -69,11 +69,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@theme {
-  --color-misha-100: #000000;
-  --color-elijah-100: #FFFF00;
-}
-
 @keyframes rotateY360 {
   0% {
     transform: rotateY(0deg);
