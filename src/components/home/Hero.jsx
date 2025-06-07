@@ -107,13 +107,13 @@ export default function Hero() {
       <div className="relative min-h-screen bg-gray-800 text-white overflow-hidden">
         {isDesktop && <Boxes className="!top-1/4" />}
         {isMobile && <BoxesCore className="!top-1/3" />}
-        <div className="relative z-10 flex flex-col items-center md:items-start justify-center md:justify-end h-screen px-4 md:pl-16 pb-10 md:pb-32 md:pr-0 pointer-events-none">
+        <div className="relative z-10 flex flex-col items-center justify-center h-screen px-4 pb-10 pointer-events-none md:items-start md:justify-end md:pl-16 md:pb-32 md:pr-0">
           <div className="w-full max-w-5xl">
             <motion.div
               variants={heroContainerVariants}
               initial="hidden"
               animate="visible"
-              className="box pointer-events-none relative text-center md:text-left w-full z-10"
+              className="box pointer-events-none relative w-full z-10"
             >
               <motion.img
                 src="/mainTextShadow.png"
@@ -150,7 +150,7 @@ export default function Hero() {
                 />
                 <motion.div
                   variants={heroChildVariants}
-                  className="p whitespace-normal leading-relaxed text-sm md:text-base max-w-full xs:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[560px] mx-auto md:mx-0"
+                  className="p whitespace-normal leading-relaxed text-sm max-w-full mx-auto text-center md:mx-0 md:text-base md:text-left xs:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[560px]"
                 >
                   <span className="hidden md:inline">
                     We are a dedicated web development team focused on

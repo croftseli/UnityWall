@@ -176,10 +176,13 @@ color: #7dd3fc
   }
   .box .div {
     font-size: calc(40px + 2vw);
+    text-align: center;
+    line-height: 0.1;
   }
   
   .box .text-wrapper {
     font-size: calc(80px + 4vw);
+    text-align: center;
   }
   
   .box .p {
@@ -211,6 +214,7 @@ color: #7dd3fc
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   
   .box .div {
