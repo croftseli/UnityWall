@@ -341,8 +341,7 @@ export default function Hero() {
                 className="service-title-matched text-5xl lg:text-6xl font-semibold mb-5 social-media-title"
               >
                 Social Media,
-                <br /> Branding Solutions,
-                <br /> and More.
+                <br /> Branding, and More
               </motion.h3>
               <motion.div
                 variants={sectionChildVariants}
