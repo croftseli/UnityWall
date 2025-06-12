@@ -115,18 +115,19 @@ export default function Contact() {
                 </a>
 
                 {/* Phone Button */}
-                <a
-                  href="tel:+16154243176"
-                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
-                >
-                  <div className="text-blue-400 text-3xl">
+                <div className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition">
+                  <a href="tel:+16154243176" className="text-blue-400 text-3xl">
                     <PhoneAndroid />
-                  </div>
+                  </a>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Phone
                     </h3>
-                    <p className="text-gray-400">+1 (615)-424-3176</p>
+                    <p className="text-gray-400">
+                      <a href="tel:+16154243176" className="hover:underline">
+                        +1 (615)-424-3176
+                      </a>
+                    </p>
                     <p className="text-gray-400 text-sm mt-1">
                       Text or{" "}
                       <a
@@ -140,7 +141,7 @@ export default function Contact() {
                       for quick responses
                     </p>
                   </div>
-                </a>
+                </div>
 
                 {/* LinkedIn Button */}
                 <a
