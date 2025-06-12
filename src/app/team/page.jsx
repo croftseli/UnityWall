@@ -83,6 +83,13 @@ const designersTeam = [
     contact: "mey@unitywall.co",
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
   },
+  {
+    name: "Ashley Dowd",
+    title: "Client Relations & Social Media",
+    image: "/images/team/ashley.jpg",
+    contact: "ashley@unitywall.co",
+    linkedin: "https://www.linkedin.com/in/ashley-dowd-411973303",
+  },
 ];
 
 const TeamPage = () => {
