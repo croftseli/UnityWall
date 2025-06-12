@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { PhoneAndroid } from "@mui/icons-material";
 import { Email } from "@mui/icons-material";
-import { Input } from "@/components/ui/input"; // Updated import to use the new Input component
+import { Input } from "@/components/ui/input";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState(null);
@@ -41,21 +41,32 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-200">
+    <main className="min-h-screen bg-gray-700 text-gray-200">
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 h-70 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gray-700 opacity-20"></div>
+        <div className="absolute inset-0 bg-gray-700 from-gray-900/0 to-gray-900"></div>
 
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
+        <div className="relative z-10 text-center md:text-left max-w-6xl px-4 md:px-6">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent"
+            style={{
+              backgroundImage: `linear-gradient(
+                  64deg,
+                  rgba(139, 172, 223, 1) 0%,
+                  rgba(177, 211, 233, 1) 50%,
+                  rgb(251, 246, 156) 90%
+                )`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Get in <span className="text-blue-400">Touch</span>
+            Get in Touch
           </motion.h1>
+
           <motion.p
             className="text-xl text-gray-300"
             initial={{ opacity: 0 }}
@@ -228,13 +239,22 @@ export default function Contact() {
       <section className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-3xl font-bold text-blue-300 mb-2 text-center"
+            className="text-4xl font-bold mb-2 text-center bg-clip-text text-transparent"
+            style={{
+              backgroundImage: `linear-gradient(
+                64deg,
+                rgba(139, 172, 223, 1) 0%,
+                rgba(177, 211, 233, 1) 50%,
+                rgb(251, 246, 156) 90%
+              )`,
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             Frequently Asked Questions
           </motion.h2>
+
           <motion.p
             className="text-xl text-gray-300 mb-10"
             initial={{ opacity: 0 }}
