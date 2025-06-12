@@ -1,7 +1,6 @@
 "use client";
 
 import TeamSection from "@/components/team/TeamSection";
-import CTA from "@/components/layout/CTA";
 
 // Team members
 const engineersTeam = [
@@ -100,10 +99,6 @@ const TeamPage = () => {
         description="The creative minds behind our visual identity, user experience, and social media presence."
         members={designersTeam}
       />
-
-      <div className="mt-24">
-        <CTA />
-      </div>
     </div>
   );
 };
