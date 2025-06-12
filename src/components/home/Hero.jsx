@@ -18,6 +18,8 @@ export default function Hero() {
     triggerOnce: true,
     threshold: 0.3,
   };
+
+
   const { ref: refWhat, inView: inViewWhat } = useInView(inViewOptions);
   const { ref: ref1, inView: inView1 } = useInView(inViewOptions);
   const { ref: ref2, inView: inView2 } = useInView(inViewOptions);
@@ -362,30 +364,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          ref={refCta}
-          variants={sectionContainerVariants}
-          initial="hidden"
-          animate={inViewCta ? "visible" : "hidden"}
-          className="text-center pb-10 pt-8"
-        >
-          <motion.h3 variants={sectionChildVariants} className="cta-title">
-            Ready to Start Your Project?
-          </motion.h3>
-          <motion.p variants={sectionChildVariants} className="cta-body-text">
-            Let's discuss how we can help bring your vision to life. Contact us
-            today to get started.
-          </motion.p>
-          <motion.div
-            variants={sectionChildVariants}
-            className="pointer-events-auto"
-          >
-            <Link href="/contact" passHref>
-              <button className="cta-button">Contact Us</button>
-            </Link>
-          </motion.div>
-        </motion.div>
+        {/* CTA Section WAS MOVED TO THE FOOTER*/}
       </div>
     </>
   );

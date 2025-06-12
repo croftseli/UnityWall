@@ -21,8 +21,6 @@
   line-height: normal;
 }
 
-
-
 .box .text-wrapper {
 -webkit-background-clip: text !important;
 -webkit-text-fill-color: transparent;
@@ -255,4 +253,46 @@ color: rgba(166, 202, 244, 1)
   .box .p br {
     display: none;
   }
+
+  
+  .label .let-s-discuss-how-we {
+    color: #ffffff;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 784px;
+  }
+
+.label .text-rainbow {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    37deg,
+    rgba(139, 172, 223, 1) 4%,
+    rgba(166, 202, 244, 1) 47%,
+    rgba(243, 254, 214, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 80px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: fixed;
+  text-align: center;
+  text-fill-color: transparent;
+  top: 0;
+  width: 1099px;
+}
+
+
+
 }

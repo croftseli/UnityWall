@@ -14,6 +14,7 @@ const clients = [
     logo: "/images/mochiNutLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://mochinut-sandy.vercel.app",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
     id: 2,
@@ -23,147 +24,122 @@ const clients = [
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://centrostudibahai.it",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
     id: 3,
     title: "Client website in the works...",
     description:
       "This is a non-profit project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
-    logo: "",
+    logo: "/images/placeholder-logo.jpg", // Add your placeholder image
     technologies: ["Coming Soon"],
-  },
-  {
-    id: 4,
-    title: "Client website in the works...",
-    description:
-      "This is a project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
-    logo: "",
-    technologies: ["Coming Soon"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
 ];
 
-export default function Clients() {
+// Project Card Component
+const ProjectCard = ({ project, index }) => {
+  const isEven = index % 2 === 0;
+
+  const gradientDirectionClass = isEven ? "bg-gradient-to-r" : "bg-gradient-to-l";
+  const projectBackgroundClasses = `${gradientDirectionClass} ${project.bgGradient}`;
+
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-200">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900"></div>
+    <motion.div
+      key={project.id}
+      className={`relative py-16 overflow-hidden ${projectBackgroundClasses}`}
+      // Removed y-axis animation, added x-axis animation for directional fade-in
+      initial={{ opacity: 0, x: isEven ? -50 : 50 }} // Fade in from left for even, right for odd
+      whileInView={{ opacity: 1, x: 0 }} // Slide to original position
+      viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of element is in view
+      transition={{ duration: 1.0, delay: 0.5 + index * 0.3 }} // Slower and later animations
+    >
+      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Logo Section */}
+          <div className="w-full md:w-1/3 flex justify-center md:justify-end">
+            <div className="w-48 h-48 rounded-full overflow-hidden bg-white shadow-xl">
+              <Image
+                src={project.logo}
+                alt={`${project.title} logo`}
+                width={192}
+                height={192}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
 
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl">
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our <span className="text-blue-400">Clients</span>
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Take a look at some of our current and past clients! Explore how we
-            have helped businesses and organizations establish their digital
-            presence (note: for privacy reasons, not all clients are listed).
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Clients Section */}
-      <section className="py-12 px-4 md:px-8">
-        {" "}
-        {/* Reduced vertical padding */}
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-20">
-            {clients.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="bg-gray-800 rounded-xl overflow-hidden shadow-xl"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+          {/* Content Section */}
+          <div className="w-full md:w-2/3 text-white text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {project.title}
+            </h2>
+            <p className="text-base md:text-lg mb-6 leading-relaxed max-w-2xl text-gray-200">
+              {project.description}
+            </p>
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 bg-white text-gray-900 font-semibold rounded-md hover:bg-gray-100 transition-colors duration-300"
               >
-                <div className="p-6 md:p-8">
-                  {" "}
-                  {/* Reduced padding inside the card */}
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="w-full md:w-1/3 flex justify-center">
-                      <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden">
-                        <Image
-                          src={project.logo}
-                          alt={`${project.title} logo`}
-                          width={150}
-                          height={150}
-                          className="object-contain rounded-full"
-                        />
-                      </div>
-                    </div>
-                    <div className="w-full md:w-2/3">
-                      <h3 className="text-3xl font-bold text-blue-300 mb-4">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-400 text-lg mb-6">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {project.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 bg-gray-700 text-blue-300 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          className="inline-block px-8 py-4 mt-2 mb-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-300"
-                        >
-                          View Project
-                        </a>
-                      ) : (
-                        <button
-                          disabled
-                          className="inline-block px-8 py-4 mt-2 mb-2 bg-gray-500 text-gray-300 font-medium rounded-lg cursor-not-allowed opacity-70"
-                        >
-                          Coming Soon
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* More Coming Soon Section */}
-            <motion.div
-              className="bg-gray-800 rounded-xl overflow-hidden shadow-xl p-12 text-center"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h3 className="text-3xl font-bold text-blue-300 mb-6">
-                More Coming Soon
-              </h3>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                We're constantly working on new and exciting projects. Check
-                back soon to see our growing portfolio of web development work.
-              </p>
-              <div className="mt-8 flex justify-center">
-                <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
-              </div>
-            </motion.div>
+                View Project
+              </a>
+            ) : (
+              <button
+                disabled
+                className="inline-block px-6 py-3 bg-gray-600 text-gray-300 font-semibold rounded-md cursor-not-allowed opacity-70"
+              >
+                View Project
+              </button>
+            )}
           </div>
         </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default function Clients() {
+  return (
+    // Main content area, pushed down by the absolute hero section for top padding
+    <main className="min-h-screen bg-gray-700 text-gray-200 pt-72">
+      {/* Hero Section - Fixed at the top, acting as a header */}
+      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b to-gray-700 text-white text-center flex flex-col justify-end pb-12">
+          <motion.p
+          className="text-rainbow text-5xl md:text-6xl font-extrabold mb-4 relative z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }} 
+         >  Our Projects
+       
+        </motion.p>
+        <motion.p
+          className="text-lg max-w-2xl mx-auto px-4 text-gray-300 relative z-10 pb-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Explore our featured projects and see how we've helped businesses
+          establish their digital presence.
+        </motion.p>
+      </div>
+
+      {/* Clients Section - Contains the ProjectCard components with spacing */}
+      <section className="pb-12"> {/* Added padding-bottom for space before CTA */}
+        <div className="w-full flex flex-col gap-y-8"> {/* Added gap-y for space between project cards */}
+          {clients.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
       </section>
 
-      {/* CTA Section */}
-      <CTA />
+
     </main>
   );
 }

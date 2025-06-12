@@ -21,8 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
+<body className="!bg-gray-700" style={{backgroundColor: 'rgb(55, 65, 81)'}}>        <Navbar />
         <main className="flex-grow">{children}</main>
         <Analytics />
         <SpeedInsights />

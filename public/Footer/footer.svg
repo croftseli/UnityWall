@@ -1,0 +1,17 @@
+<svg width="1928" height="545" viewBox="0 0 1928 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_220_598)">
+<g clip-path="url(#paint0_angular_220_598_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0.353554 0.4835 -0.154431 0.0966004 1271.71 317)"><foreignObject x="-6347.31" y="-6347.31" width="12694.6" height="12694.6"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(166, 202, 244, 1) 0deg,rgba(87, 115, 147, 1) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M1924 537H7.18652V76H4L722.771 0L1923.48 76H1924V537Z" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.65098041296005249,&#34;g&#34;:0.79215687513351440,&#34;b&#34;:0.95686274766921997,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.34117648005485535,&#34;g&#34;:0.45098039507865906,&#34;b&#34;:0.57647061347961426,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.65098041296005249,&#34;g&#34;:0.79215687513351440,&#34;b&#34;:0.95686274766921997,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.34117648005485535,&#34;g&#34;:0.45098039507865906,&#34;b&#34;:0.57647061347961426,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:707.107910156250,&#34;m01&#34;:-308.86282348632812,&#34;m02&#34;:1072.589843750,&#34;m10&#34;:967.0,&#34;m11&#34;:193.20085144042969,&#34;m12&#34;:-263.10040283203125},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+</g>
+<defs>
+<filter id="filter0_d_220_598" x="0" y="0" width="1928" height="545" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_220_598"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_220_598" result="shape"/>
+</filter>
+<clipPath id="paint0_angular_220_598_clip_path"><path d="M1924 537H7.18652V76H4L722.771 0L1923.48 76H1924V537Z"/></clipPath></defs>
+</svg>
