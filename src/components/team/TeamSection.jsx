@@ -35,7 +35,7 @@ const TeamSection = ({ title, description, members }) => {
         </p>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 justify-center">
         <div className="flex flex-wrap justify-center gap-x-20 gap-y-10">
           {members.map((member, index) => {
             const cardRef = useRef(null);
