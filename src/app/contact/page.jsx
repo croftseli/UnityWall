@@ -4,6 +4,7 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { PhoneAndroid } from "@mui/icons-material";
@@ -203,9 +204,15 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <button
+                  <motion.button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex justify-center items-center"
+                    className="cta-button-full w-full"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 10px 40px rgba(59, 130, 246, 0.5)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     disabled={formStatus === "sending"}
                   >
                     {formStatus === "sending" ? (
@@ -215,7 +222,7 @@ export default function Contact() {
                     ) : (
                       <span>Send Message</span>
                     )}
-                  </button>
+                  </motion.button>
                 </div>
 
                 {formStatus === "success" && (

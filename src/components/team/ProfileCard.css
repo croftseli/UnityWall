@@ -49,7 +49,6 @@
   background-image: var(--behind-gradient);
 }
 
-/* Apply hover effects only on devices that support hover and have a fine pointer */
 @media (hover: hover) and (pointer: fine) {
   .pc-card-wrapper:hover,
   .pc-card-wrapper.active {
@@ -81,7 +80,6 @@
   overflow: hidden;
 }
 
-/* Apply hover effects only on devices that support hover and have a fine pointer */
 @media (hover: hover) and (pointer: fine) {
   .pc-card:hover,
   .pc-card.active {
@@ -145,7 +143,6 @@
   opacity: 0;
 }
 
-/* Apply hover effects only on devices that support hover and have a fine pointer */
 @media (hover: hover) and (pointer: fine) {
   .pc-card:hover .pc-shine,
   .pc-card.active .pc-shine {
@@ -285,7 +282,7 @@
   backdrop-filter: blur(10px);
 }
 
-/* Apply hover effects only on devices that support hover and have a fine pointer */
+
 @media (hover: hover) and (pointer: fine) {
   .pc-contact-btn:hover {
     border-color: rgba(255, 255, 255, 0.4);
