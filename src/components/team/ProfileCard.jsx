@@ -29,7 +29,7 @@ const ProfileCardComponent = ({
   avatarUrl = "",
   iconUrl = "",
   grainUrl = "",
-  behindGradient = "</>",
+  behindGradient = "",
   innerGradient,
   showBehindGradient = true,
   className = "",
