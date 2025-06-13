@@ -303,7 +303,7 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-blue-300 mb-3">
+                  <h3 className="text-xl font-semibold text-gray-300 mb-3">
                     {faq.question}
                   </h3>
                   <p className="text-gray-400">{faq.answer}</p>
