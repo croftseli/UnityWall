@@ -49,15 +49,17 @@
   background-image: var(--behind-gradient);
 }
 
-.pc-card-wrapper:hover,
-.pc-card-wrapper.active {
-  --card-opacity: 1;
-}
+@media (hover: hover) and (pointer: fine) {
+  .pc-card-wrapper:hover,
+  .pc-card-wrapper.active {
+    --card-opacity: 1;
+  }
 
-.pc-card-wrapper:hover::before,
-.pc-card-wrapper.active::before {
-  filter: contrast(1) saturate(1.5) blur(25px) opacity(0.8);
-  transform: scale(0.9) translate3d(0, 0, 0.1px);
+  .pc-card-wrapper:hover::before,
+  .pc-card-wrapper.active::before {
+    filter: contrast(1) saturate(1.5) blur(25px) opacity(0.8);
+    transform: scale(0.9) translate3d(0, 0, 0.1px);
+  }
 }
 
 .pc-card {
@@ -78,12 +80,13 @@
   overflow: hidden;
 }
 
-.pc-card:hover,
-.pc-card.active {
-  transition: transform 0.4s ease;
-  transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+@media (hover: hover) and (pointer: fine) {
+  .pc-card:hover,
+  .pc-card.active {
+    transition: transform 0.4s ease;
+    transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+  }
 }
-
 .pc-card * {
   display: grid;
   grid-area: 1/-1;
@@ -139,17 +142,19 @@
   opacity: 0;
 }
 
-.pc-card:hover .pc-shine,
-.pc-card.active .pc-shine {
-  filter: brightness(0.8) contrast(1.2) saturate(0.4);
-  animation: none;
-}
+@media (hover: hover) and (pointer: fine) {
+  .pc-card:hover .pc-shine,
+  .pc-card.active .pc-shine {
+    filter: brightness(0.8) contrast(1.2) saturate(0.4);
+    animation: none;
+  }
 
-.pc-card:hover .pc-shine::before,
-.pc-card.active .pc-shine::before,
-.pc-card:hover .pc-shine::after,
-.pc-card.active .pc-shine::after {
-  opacity: 1;
+  .pc-card:hover .pc-shine::before,
+  .pc-card.active .pc-shine::before,
+  .pc-card:hover .pc-shine::after,
+  .pc-card.active .pc-shine::after {
+    opacity: 1;
+  }
 }
 
 .pc-shine::before {
@@ -276,10 +281,12 @@
   backdrop-filter: blur(10px);
 }
 
-.pc-contact-btn:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
-  transition: all 0.2s ease;
+@media (hover: hover) and (pointer: fine) {
+  .pc-contact-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+  }
 }
 
 .pc-content {
