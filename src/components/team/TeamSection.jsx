@@ -1,13 +1,19 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ProfileCard from "./ProfileCard";
 
 const TeamSection = ({ title, description, members }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize(); // set on first render
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="mb-20">
       <motion.div
@@ -35,8 +41,13 @@ const TeamSection = ({ title, description, members }) => {
         </p>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 justify-center">
-        <div className="flex flex-wrap justify-center gap-x-20 gap-y-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div
+          className="grid gap-10 justify-center"
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          }}
+        >
           {members.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.01 });
@@ -45,7 +56,7 @@ const TeamSection = ({ title, description, members }) => {
               <motion.div
                 key={index}
                 ref={cardRef}
-                className="w-full sm:w-[300px] md:w-[320px] lg:w-[340px]"
+                className="w-full max-w-[340px] mx-auto"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={
                   isInView
@@ -65,7 +76,7 @@ const TeamSection = ({ title, description, members }) => {
                   contactText={member.contactText || "Contact Me"}
                   avatarUrl={member.image}
                   showUserInfo={true}
-                  enableTilt={true}
+                  enableTilt={!isMobile}
                   onContactClick={() => window.open(member.linkedin, "_blank")}
                 />
               </motion.div>

@@ -8,22 +8,22 @@ import CTA from "@/components/layout/CTA";
 const clients = [
   {
     id: 1,
-    title: "Mochinut Spring Hill",
-    description:
-      "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project aims to create an engaging online presence that showcases their colorful, creative menu offerings in a fun and interactive manner.",
-    logo: "/images/mochiNutLogo.jpg",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://mochinut-sandy.vercel.app",
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
-  },
-  {
-    id: 2,
     title: "Centro Studi Baha'i - Hotel la Panoramica",
     description:
       "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://centrostudibahai.it",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
+  },
+  {
+    id: 2,
+    title: "Mochinut Spring Hill",
+    description:
+      "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations. The project aims to create an engaging online presence that showcases their colorful, creative menu offerings in a fun and interactive manner.",
+    logo: "/images/mochiNutLogo.jpg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://mochinut-sandy.vercel.app",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
@@ -41,7 +41,9 @@ const clients = [
 const ProjectCard = ({ project, index }) => {
   const isEven = index % 2 === 0;
 
-  const gradientDirectionClass = isEven ? "bg-gradient-to-r" : "bg-gradient-to-l";
+  const gradientDirectionClass = isEven
+    ? "bg-gradient-to-r"
+    : "bg-gradient-to-l";
   const projectBackgroundClasses = `${gradientDirectionClass} ${project.bgGradient}`;
 
   return (
@@ -107,13 +109,14 @@ export default function Clients() {
     <main className="min-h-screen bg-gray-700 text-gray-200 pt-72">
       {/* Hero Section - Fixed at the top, acting as a header */}
       <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b to-gray-700 text-white text-center flex flex-col justify-end pb-12">
-          <motion.p
+        <motion.p
           className="text-rainbow text-5xl md:text-6xl font-extrabold mb-4 relative z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }} 
-         >  Our Projects
-       
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          {" "}
+          Our Projects
         </motion.p>
         <motion.p
           className="text-lg max-w-2xl mx-auto px-4 text-gray-300 relative z-10 pb-5"
@@ -127,19 +130,17 @@ export default function Clients() {
       </div>
 
       {/* Clients Section - Contains the ProjectCard components with spacing */}
-      <section className="pb-12"> {/* Added padding-bottom for space before CTA */}
-        <div className="w-full flex flex-col gap-y-8"> {/* Added gap-y for space between project cards */}
+      <section className="pb-12">
+        {" "}
+        {/* Added padding-bottom for space before CTA */}
+        <div className="w-full flex flex-col gap-y-8">
+          {" "}
+          {/* Added gap-y for space between project cards */}
           {clients.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-            />
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </section>
-
-
     </main>
   );
 }
