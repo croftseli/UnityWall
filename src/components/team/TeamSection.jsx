@@ -42,12 +42,7 @@ const TeamSection = ({ title, description, members }) => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div
-          className="grid gap-10 justify-center"
-          style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          }}
-        >
+        <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-row lg:flex-wrap gap-10 justify-center items-center">
           {members.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.01 });
@@ -56,7 +51,7 @@ const TeamSection = ({ title, description, members }) => {
               <motion.div
                 key={index}
                 ref={cardRef}
-                className="w-full max-w-[340px] mx-auto"
+                className="w-fit max-w-[370px]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={
                   isInView
