@@ -35,6 +35,13 @@
   touch-action: none;
 }
 
+/* Allow scrolling on mobile */
+@media (max-width: 768px) {
+  .pc-card-wrapper {
+    touch-action: auto; /* Restore default touch behavior (scrolling) */
+  }
+}
+
 .pc-card-wrapper::before {
   content: '';
   position: absolute;
@@ -65,6 +72,7 @@
 .pc-card {
   height: 80svh;
   max-height: 540px;
+  width: 370px;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -495,5 +503,25 @@
     padding: 4px 8px;
     font-size: 9px;
     border-radius: 50px;
+  }
+}
+
+.flex-center-fix {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .flex-center-fix {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .flex-center-fix {
+    flex-direction: row;
+    max-width: 1190px; /* 370px * 3 cards + 2 * 40px gap */
   }
 }

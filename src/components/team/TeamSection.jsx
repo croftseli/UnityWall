@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import ProfileCard from "./ProfileCard";
 
+import "./ProfileCard.css";
+
 const TeamSection = ({ title, description, members }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -42,7 +44,7 @@ const TeamSection = ({ title, description, members }) => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-row lg:flex-wrap gap-10 justify-center items-center">
+        <div className="flex-center-fix flex-col sm:flex-row sm:flex-wrap lg:flex-row lg:flex-wrap gap-10 justify-center items-center">
           {members.map((member, index) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, amount: 0.01 });

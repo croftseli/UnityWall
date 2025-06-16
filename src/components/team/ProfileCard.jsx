@@ -117,7 +117,7 @@ const ProfileCardComponent = ({
     };
   }, [enableTilt]);
 
-  const handlePointerMove = useCallback(
+  const handleMouseMove = useCallback(
     (event) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
@@ -135,7 +135,7 @@ const ProfileCardComponent = ({
     [animationHandlers]
   );
 
-  const handlePointerEnter = useCallback(() => {
+  const handleMouseEnter = useCallback(() => {
     const card = cardRef.current;
     const wrap = wrapRef.current;
 
@@ -146,7 +146,7 @@ const ProfileCardComponent = ({
     card.classList.add("active");
   }, [animationHandlers]);
 
-  const handlePointerLeave = useCallback(
+  const handleMouseLeave = useCallback(
     (event) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
@@ -174,13 +174,9 @@ const ProfileCardComponent = ({
 
     if (!card || !wrap) return;
 
-    const pointerMoveHandler = handlePointerMove;
-    const pointerEnterHandler = handlePointerEnter;
-    const pointerLeaveHandler = handlePointerLeave;
-
-    card.addEventListener("pointerenter", pointerEnterHandler);
-    card.addEventListener("pointermove", pointerMoveHandler);
-    card.addEventListener("pointerleave", pointerLeaveHandler);
+    card.addEventListener("mouseenter", handleMouseEnter);
+    card.addEventListener("mousemove", handleMouseMove);
+    card.addEventListener("mouseleave", handleMouseLeave);
 
     const initialX = wrap.clientWidth - ANIMATION_CONFIG.INITIAL_X_OFFSET;
     const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
@@ -195,17 +191,17 @@ const ProfileCardComponent = ({
     );
 
     return () => {
-      card.removeEventListener("pointerenter", pointerEnterHandler);
-      card.removeEventListener("pointermove", pointerMoveHandler);
-      card.removeEventListener("pointerleave", pointerLeaveHandler);
+      card.removeEventListener("mouseenter", handleMouseEnter);
+      card.removeEventListener("mousemove", handleMouseMove);
+      card.removeEventListener("mouseleave", handleMouseLeave);
       animationHandlers.cancelAnimation();
     };
   }, [
     enableTilt,
     animationHandlers,
-    handlePointerMove,
-    handlePointerEnter,
-    handlePointerLeave,
+    handleMouseMove,
+    handleMouseEnter,
+    handleMouseLeave,
   ]);
 
   const cardStyle = useMemo(
@@ -248,18 +244,6 @@ const ProfileCardComponent = ({
             {showUserInfo && (
               <div className="pc-user-info">
                 <div className="pc-user-details">
-                  {/* <div className="pc-mini-avatar">
-                    <img
-                      src={miniAvatarUrl || avatarUrl}
-                      alt={`${name || "User"} mini avatar`}
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target;
-                        target.style.opacity = "0.5";
-                        target.src = avatarUrl;
-                      }}
-                    />
-                  </div> */}
                   <div className="pc-user-text">
                     <div className="pc-handle">@{handle}</div>
                     <div className="pc-status">{status}</div>
