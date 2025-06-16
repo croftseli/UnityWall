@@ -35,7 +35,6 @@
   touch-action: none;
 }
 
-/* Allow scrolling on mobile */
 @media (max-width: 768px) {
   .pc-card-wrapper {
     touch-action: auto; /* Restore default touch behavior (scrolling) */
@@ -290,7 +289,6 @@
   backdrop-filter: blur(10px);
 }
 
-
 @media (hover: hover) and (pointer: fine) {
   .pc-contact-btn:hover {
     border-color: rgba(255, 255, 255, 0.4);
@@ -321,7 +319,6 @@
   font-weight: 600;
   margin: 0;
   font-size: min(4svh, 2.5em);
-  margin: 0;
   background-image: linear-gradient(to bottom, #fff, #a2a2ef);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
@@ -365,47 +362,43 @@
 }
 
 @media (max-width: 768px) {
+  .pc-card-wrapper {
+    touch-action: auto;
+  }
   .pc-card {
-    height: 70svh;
+    width: 90vw; /* Fit within viewport */
+    max-width: 340px; /* Prevent excessive width */
+    height: auto; /* Let aspect-ratio control height */
     max-height: 450px;
   }
-
   .pc-details {
     top: 2em;
   }
-
   .pc-details h3 {
     font-size: min(4svh, 2.5em);
   }
-
   .pc-details p {
     font-size: 14px;
   }
-
   .pc-user-info {
     bottom: 15px;
     left: 15px;
     right: 15px;
     padding: 10px 12px;
   }
-
   .pc-mini-avatar {
     width: 28px;
     height: 28px;
   }
-
   .pc-user-details {
     gap: 10px;
   }
-
   .pc-handle {
     font-size: 13px;
   }
-
   .pc-status {
     font-size: 10px;
   }
-
   .pc-contact-btn {
     padding: 6px 12px;
     font-size: 11px;
@@ -414,23 +407,21 @@
 
 @media (max-width: 480px) {
   .pc-card {
-    height: 60svh;
+    width: 90vw;
+    max-width: 300px;
+    height: auto;
     max-height: 380px;
   }
-
   .pc-details {
     top: 1.5em;
   }
-
   .pc-details h3 {
     font-size: min(3.5svh, 2em);
   }
-
   .pc-details p {
     font-size: 12px;
     top: -8px;
   }
-
   .pc-user-info {
     bottom: 12px;
     left: 12px;
@@ -438,24 +429,19 @@
     padding: 8px 10px;
     border-radius: 50px;
   }
-
   .pc-mini-avatar {
     width: 24px;
     height: 24px;
   }
-
   .pc-user-details {
     gap: 8px;
   }
-
   .pc-handle {
     font-size: 12px;
   }
-
   .pc-status {
     font-size: 9px;
   }
-
   .pc-contact-btn {
     padding: 5px 10px;
     font-size: 10px;
@@ -465,40 +451,34 @@
 
 @media (max-width: 320px) {
   .pc-card {
-    height: 55svh;
+    width: 90vw;
+    max-width: 280px;
+    height: auto;
     max-height: 320px;
   }
-
   .pc-details h3 {
     font-size: min(3svh, 1.5em);
   }
-
   .pc-details p {
     font-size: 11px;
   }
-
   .pc-user-info {
     padding: 6px 8px;
     border-radius: 50px;
   }
-
   .pc-mini-avatar {
     width: 20px;
     height: 20px;
   }
-
   .pc-user-details {
     gap: 6px;
   }
-
   .pc-handle {
     font-size: 11px;
   }
-
   .pc-status {
     font-size: 8px;
   }
-
   .pc-contact-btn {
     padding: 4px 8px;
     font-size: 9px;
