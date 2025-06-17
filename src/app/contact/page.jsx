@@ -158,8 +158,15 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Connect with Us
                     </h3>
-                    <p className="text-gray-400 break-all">
-                      linkedin.com/company/unitywall
+                    <p className="text-gray-400">
+                      <a
+                        href="https://linkedin.com/company/unitywall"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-blue-400"
+                      >
+                        UnityWall on LinkedIn
+                      </a>
                     </p>
                     <p className="text-gray-400 text-sm mt-1">
                       Follow for updates and opportunities
