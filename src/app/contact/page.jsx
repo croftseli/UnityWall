@@ -158,7 +158,7 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Connect with Us
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-gray-400 break-all">
                       linkedin.com/company/unitywall
                     </p>
                     <p className="text-gray-400 text-sm mt-1">
