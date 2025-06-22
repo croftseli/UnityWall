@@ -91,7 +91,7 @@ export default function Contact() {
           >
             {/* Contact Information */}
             <div className="bg-gray-800 rounded-xl p-8 shadow-xl">
-              <h2 className="text-2xl font-bold text-blue-300 mb-6">
+              <h2 className="text-2xl font-bold text-gray-300 mb-6">
                 Contact Information
               </h2>
 
@@ -261,7 +261,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="bg-gray-800 rounded-xl p-8 shadow-xl">
-              <h2 className="text-2xl font-bold text-blue-300 mb-6">
+              <h2 className="text-2xl font-bold text-gray-300 mb-6">
                 Send Us a Message
               </h2>
 
