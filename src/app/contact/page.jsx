@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-700 text-gray-200">
+    <main className="min-h-screen bg-gray-700 text-gray-300">
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 h-70 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gray-700 opacity-20"></div>
@@ -108,10 +108,10 @@ export default function Contact() {
                     <Email />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-300">
                       Email
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-gray-300">
                       <a
                         href="mailto:support@unitywall.co"
                         target="_blank"
@@ -121,7 +121,7 @@ export default function Contact() {
                         support@unitywall.co
                       </a>
                     </p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-300 text-sm mt-1">
                       We usually respond within 24 hours
                     </p>
                   </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Phone
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-gray-300">
                       <a
                         href="tel:+16154243176"
                         target="_blank"
@@ -175,7 +175,7 @@ export default function Contact() {
                         +1 (615)-424-3176
                       </a>
                     </p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-300 text-sm mt-1">
                       Text or <span className="text-green-400">WhatsApp</span>{" "}
                       for quick responses
                     </p>
@@ -213,14 +213,14 @@ export default function Contact() {
                     borderRadius: "1rem",
                   }}
                 >
-                  <div className="text-blue-400 text-3xl">
+                  <div className="text-blue-300 text-3xl">
                     <LinkedInIcon />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-300">
                       Connect with Us
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-gray-300">
                       <a
                         href="https://linkedin.com/company/unitywall"
                         target="_blank"
@@ -230,7 +230,7 @@ export default function Contact() {
                         UnityWall on LinkedIn
                       </a>
                     </p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-300 text-sm mt-1">
                       Follow for updates and opportunities
                     </p>
                   </div>
@@ -403,7 +403,7 @@ export default function Contact() {
                   <h3 className="text-xl font-semibold text-gray-300 mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-400">{faq.answer}</p>
+                  <p className="text-gray-300">{faq.answer}</p>
                 </div>
               </motion.div>
             ))}
