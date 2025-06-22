@@ -34,7 +34,11 @@ const FlipLink = ({ children, href, isActive, onClick }) => (
             initial: { y: 0 },
             hovered: { y: "-100%" },
           }}
-          transition={{ duration: DURATION, ease: "easeInOut", delay: STAGGER * i }}
+          transition={{
+            duration: DURATION,
+            ease: "easeInOut",
+            delay: STAGGER * i,
+          }}
           className="inline-block"
         >
           {l}
@@ -50,7 +54,11 @@ const FlipLink = ({ children, href, isActive, onClick }) => (
             initial: { y: "100%" },
             hovered: { y: 0 },
           }}
-          transition={{ duration: DURATION, ease: "easeInOut", delay: STAGGER * i }}
+          transition={{
+            duration: DURATION,
+            ease: "easeInOut",
+            delay: STAGGER * i,
+          }}
           className="inline-block"
         >
           {l}
@@ -128,7 +136,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile View*/}
+      {/* Mobile View */}
       <div className="lg:hidden w-full">
         <div className="navbar-gradient navbar-border rounded-full px-5 py-3 flex items-center justify-between">
           <Link href="/">
@@ -160,38 +168,62 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown*/}
+      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-b-lg shadow-lg">
-          <div className="container mx-auto px-4 flex flex-col divide-y divide-gray-200">
+        <div className="lg:hidden fixed inset-0 bg-[rgb(165,200,240)] flex flex-col items-center justify-between py-8 z-50">
+          <div className="absolute top-4 left-4">
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              <Image
+                src="/icons/Unitywall.png"
+                alt="UW"
+                width={48}
+                height={48}
+                className="rounded-full"
+              />
+            </Link>
+          </div>
+          <div className="absolute top-4 right-4">
+            <button
+              onClick={toggleMenu}
+              aria-label="close menu"
+              className="text-white"
+            >
+              <CloseIcon sx={{ fontSize: "2rem" }} />
+            </button>
+          </div>
+          <div className="flex flex-col items-center space-y-6 mt-16">
             {navLinks.map((link) => (
-              <div key={link.href} className="text-right py-3">
-                <Link
-                  href={link.href}
-                  className={`font-medium text-lg ${
-                    pathname === link.href ? "text-blue-500" : "text-black"
-                  }`}
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  {link.label}
-                </Link>
-              </div>
-            ))}
-
-            {/* Social Links for Mobile - will also get a divider line above it */}
-            <div className="text-right py-3">
-              <a
-                href="https://linkedin.com/company/unitywall"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-white text-2xl ${
+                  pathname === link.href ? "font-bold" : "font-normal"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <LinkedInIcon sx={{ color: "#0077b5", fontSize: "1.75rem" }} />
-              </a>
-            </div>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center space-x-4 mb-8">
+            <a
+              href="https://linkedin.com/company/unitywall"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-lg flex items-center gap-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <LinkedInIcon sx={{ fontSize: "1.75rem" }} />
+              LinkedIn
+            </a>
+            <span className="h-6 w-px bg-white"></span>
+            <Link
+              href="/contact#faqs"
+              className="text-white text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQs
+            </Link>
           </div>
         </div>
       )}

@@ -110,12 +110,19 @@ export default function Clients() {
       {/* Hero Section - Fixed at the top, acting as a header */}
       <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b to-gray-700 text-white text-center flex flex-col justify-end pb-12">
         <motion.p
-          className="text-rainbow text-5xl md:text-6xl font-extrabold mb-4 relative z-10"
+          className="text-5xl md:text-6xl font-extrabold mb-4 relative z-10 text-center bg-clip-text text-transparent"
+          style={{
+            backgroundImage: `linear-gradient(
+      64deg,
+      rgba(139, 172, 223, 1) 0%,
+      rgba(177, 211, 233, 1) 50%,
+      rgb(251, 246, 156) 90%
+    )`,
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {" "}
           Our Projects
         </motion.p>
         <motion.p

@@ -99,7 +99,10 @@ export default function Contact() {
                 {/* Email Button */}
                 <a
                   href="mailto:support@unitywall.co"
-                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
+                  className="flex items-center space-x-4 border border-transparent rounded-lg p-4 hover:bg-blue-900 transition relative"
+                  style={{
+                    borderRadius: "1rem",
+                  }}
                 >
                   <div className="text-blue-400 text-3xl">
                     <Email />
@@ -108,48 +111,107 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-200">
                       Email
                     </h3>
-                    <p className="text-gray-400">support@unitywall.co</p>
+                    <p className="text-gray-400">
+                      <a
+                        href="mailto:support@unitywall.co"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-blue-400"
+                      >
+                        support@unitywall.co
+                      </a>
+                    </p>
                     <p className="text-gray-400 text-sm mt-1">
                       We usually respond within 24 hours
                     </p>
                   </div>
+                  <style jsx>{`
+                    a::before {
+                      content: "";
+                      position: absolute;
+                      inset: 0;
+                      border-radius: 1rem;
+                      border: 2px solid transparent;
+                      background: linear-gradient(
+                          64deg,
+                          rgba(139, 172, 223, 1) 0%,
+                          rgba(177, 211, 233, 1) 50%,
+                          rgb(251, 246, 156) 90%
+                        )
+                        border-box;
+                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                        linear-gradient(#fff 0 0);
+                      -webkit-mask-composite: destination-out;
+                      mask-composite: exclude;
+                      pointer-events: none;
+                    }
+                  `}</style>
                 </a>
 
                 {/* Phone Button */}
-                <div className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition">
-                  <a href="tel:+16154243176" className="text-blue-400 text-3xl">
+                <a
+                  href="https://wa.me/16154243176"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 border border-transparent rounded-lg p-4 hover:bg-blue-900 transition relative"
+                  style={{
+                    borderRadius: "1rem",
+                  }}
+                >
+                  <div className="text-blue-400 text-3xl">
                     <PhoneAndroid />
-                  </a>
+                  </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-200">
                       Phone
                     </h3>
                     <p className="text-gray-400">
-                      <a href="tel:+16154243176" className="hover:underline">
+                      <a
+                        href="tel:+16154243176"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-blue-400"
+                      >
                         +1 (615)-424-3176
                       </a>
                     </p>
                     <p className="text-gray-400 text-sm mt-1">
-                      Text or{" "}
-                      <a
-                        href="https://wa.me/16154243176"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-green-400 hover:underline"
-                      >
-                        WhatsApp
-                      </a>{" "}
+                      Text or <span className="text-green-400">WhatsApp</span>{" "}
                       for quick responses
                     </p>
                   </div>
-                </div>
+                  <style jsx>{`
+                    a::before {
+                      content: "";
+                      position: absolute;
+                      inset: 0;
+                      border-radius: 1rem;
+                      border: 2px solid transparent;
+                      background: linear-gradient(
+                          64deg,
+                          rgba(139, 172, 223, 1) 0%,
+                          rgba(177, 211, 233, 1) 50%,
+                          rgb(251, 246, 156) 90%
+                        )
+                        border-box;
+                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                        linear-gradient(#fff 0 0);
+                      -webkit-mask-composite: destination-out;
+                      mask-composite: exclude;
+                      pointer-events: none;
+                    }
+                  `}</style>
+                </a>
 
                 {/* LinkedIn Button */}
                 <a
                   href="https://linkedin.com/company/unitywall"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 border border-blue-400 rounded-lg p-4 hover:bg-blue-900 transition"
+                  className="flex items-center space-x-4 border border-transparent rounded-lg p-4 hover:bg-blue-900 transition relative"
+                  style={{
+                    borderRadius: "1rem",
+                  }}
                 >
                   <div className="text-blue-400 text-3xl">
                     <LinkedInIcon />
@@ -172,6 +234,27 @@ export default function Contact() {
                       Follow for updates and opportunities
                     </p>
                   </div>
+                  <style jsx>{`
+                    a::before {
+                      content: "";
+                      position: absolute;
+                      inset: 0;
+                      border-radius: 1rem;
+                      border: 2px solid transparent;
+                      background: linear-gradient(
+                          64deg,
+                          rgba(139, 172, 223, 1) 0%,
+                          rgba(177, 211, 233, 1) 50%,
+                          rgb(251, 246, 156) 90%
+                        )
+                        border-box;
+                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                        linear-gradient(#fff 0 0);
+                      -webkit-mask-composite: destination-out;
+                      mask-composite: exclude;
+                      pointer-events: none;
+                    }
+                  `}</style>
                 </a>
               </div>
             </div>
@@ -251,7 +334,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-800">
+      <section id="faqs" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             className="text-4xl font-bold mb-2 text-center bg-clip-text text-transparent"
