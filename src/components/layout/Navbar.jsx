@@ -191,7 +191,7 @@ export default function Navbar() {
               <CloseIcon sx={{ fontSize: "2rem" }} />
             </button>
           </div>
-          <div className="flex flex-col items-center space-y-6 mt-16">
+          <div className="flex flex-col items-center justify-center flex-1 space-y-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
