@@ -31,7 +31,7 @@ const clients = [
     title: "Client website in the works...",
     description:
       "This is a non-profit project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
-    logo: "/images/placeholder-logo.jpg", // Add your placeholder image
+    logo: "/images/ComingSoon.png", // Add your placeholder image
     technologies: ["Coming Soon"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
@@ -40,7 +40,7 @@ const clients = [
     title: "Cossa Embroidery - Coming soon",
     description:
       "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
-    logo: "/images/placeholder-logo.jpg", // Add your placeholder image
+    logo: "/images/ComingSoon.png", // Add your placeholder image
     technologies: ["Coming Soon"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
