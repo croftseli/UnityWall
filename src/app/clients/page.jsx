@@ -7,6 +7,15 @@ import CTA from "@/components/layout/CTA";
 // Clients data
 const clients = [
   {
+    id: 4,
+    title: "Cossa Embroidery - Coming soon",
+    description:
+      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
+    logo: "/images/cossaEmbroideryLogo.jpg",
+    technologies: ["Coming Soon"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
+  },
+  {
     id: 1,
     title: "Centro Studi Baha'i - Hotel la Panoramica",
     description:
@@ -14,7 +23,7 @@ const clients = [
     logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://centrostudibahai.it",
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
     id: 2,
@@ -24,25 +33,15 @@ const clients = [
     logo: "/images/mochiNutLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://mochinut-sandy.vercel.app",
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
     id: 3,
     title: "Client website in the works...",
     description:
       "This is a non-profit project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
-    logo: "/images/ComingSoon.png", // Add your placeholder image
+    logo: "/images/ComingSoon.png",
     technologies: ["Coming Soon"],
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
-  },
-  {
-    id: 4,
-    title: "Cossa Embroidery - Coming soon",
-    description:
-      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
-    logo: "/images/ComingSoon.png", // Add your placeholder image
-    technologies: ["Coming Soon"],
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
 ];
 
@@ -102,7 +101,7 @@ const ProjectCard = ({ project, index }) => {
                 disabled
                 className="inline-block px-6 py-3 bg-gray-600 text-gray-300 font-semibold rounded-md cursor-not-allowed opacity-70"
               >
-                View Project
+                Comming Soon
               </button>
             )}
           </div>
