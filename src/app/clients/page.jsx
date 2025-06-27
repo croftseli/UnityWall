@@ -101,7 +101,7 @@ const ProjectCard = ({ project, index }) => {
                 disabled
                 className="inline-block px-6 py-3 bg-gray-600 text-gray-300 font-semibold rounded-md cursor-not-allowed opacity-70"
               >
-                Comming Soon
+                Coming Soon
               </button>
             )}
           </div>
