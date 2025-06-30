@@ -17,7 +17,7 @@ const clients = [
   },
   {
     id: 1,
-    title: "Centro Studi Baha'i - Hotel la Panoramica",
+    title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
     description:
       "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
     logo: "/images/hotelLaPanoramicaLogo.jpg",
@@ -27,21 +27,31 @@ const clients = [
   },
   {
     id: 2,
+    title: "Cossa Embroidery - Franklin, TN",
+    description:
+      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
+    logo: "/images/lone C.jpeg", 
+    technologies: ["Coming Soon"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
+  },
+  {
+    id: 3,
+    title: "Permanent Makeup by Lauren - Michigan",
+    description:
+      "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project focuses on creating an elegant and user-friendly experience to showcase services and attract clients.",
+    logo: "/images/ComingSoon.png", // Add your placeholder image
+    technologies: ["Coming Soon"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
+  },
+
+  {
+    id: 4,
     title: "Mochinut Spring Hill",
     description:
       "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations",
     logo: "/images/mochiNutLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://mochinut-sandy.vercel.app",
-  },
-  {
-    id: 3,
-    title: "Client website in the works...",
-    description:
-      "This is a non-profit project that is currently in the works. More information and details about this project will be available soon. Stay tuned for updates!",
-    logo: "/images/ComingSoon.png",
-    technologies: ["Coming Soon"],
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
 ];
 
