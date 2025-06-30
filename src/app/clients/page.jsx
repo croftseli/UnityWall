@@ -6,15 +6,7 @@ import CTA from "@/components/layout/CTA";
 
 // Clients data
 const clients = [
-  {
-    id: 4,
-    title: "Cossa Embroidery - Coming soon",
-    description:
-      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
-    logo: "/images/cossaEmbroideryLogo.jpg",
-    technologies: ["Coming Soon"],
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
-  },
+  
   {
     id: 1,
     title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
