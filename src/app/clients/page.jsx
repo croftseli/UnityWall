@@ -20,7 +20,7 @@ const clients = [
     id: 2,
     title: "Cossa Embroidery - Franklin, TN",
     description:
-      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
+      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of Cossa.",
     logo: "/images/lone C.jpeg", 
     technologies: ["Coming Soon"],
     link: "https://cossaembroidery.com",
@@ -30,7 +30,7 @@ const clients = [
     id: 3,
     title: "Permanent Makeup by Lauren - Michigan",
     description:
-      "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project focuses on creating an elegant and user-friendly experience to showcase services and attract clients.",
+      "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
     logo: "/images/ComingSoon.png", // Add your placeholder image
     technologies: ["Coming Soon"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
