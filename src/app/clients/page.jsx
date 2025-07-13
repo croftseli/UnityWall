@@ -9,12 +9,11 @@ const clients = [
   
   {
     id: 1,
-    title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
+    title: "Safayra Saffron",
     description:
-      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
-    logo: "/images/hotelLaPanoramicaLogo.jpg",
+      "Based in Europe, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This website will showcase the brand's commitment to quality and provides an elegant experience for customers.",
+    logo: "/images/Safayralogo.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://centrostudibahai.it",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
@@ -24,6 +23,7 @@ const clients = [
       "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of a small, locally owned business. Stay tuned for updates!",
     logo: "/images/lone C.jpeg", 
     technologies: ["Coming Soon"],
+    link: "https://cossaembroidery.com",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
@@ -38,12 +38,13 @@ const clients = [
 
   {
     id: 4,
-    title: "Mochinut Spring Hill",
+    title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
     description:
-      "A vibrant website for Mochinut Spring Hill, a specialty dessert shop known for their unique mochi donuts and innovative flavor combinations",
-    logo: "/images/mochiNutLogo.jpg",
+      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
+    logo: "/images/hotelLaPanoramicaLogo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://mochinut-sandy.vercel.app",
+    link: "https://centrostudibahai.it",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
 ];
 
