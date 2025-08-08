@@ -9,26 +9,36 @@ const clients = [
   
   {
     id: 1,
-    title: "Safayra Saffron",
+    title: "Collaborative Developments LLC",
     description:
-      "Based in Europe, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This website will showcase the brand's commitment to quality and provides an elegant experience for customers.",
-    logo: "/images/Safayralogo.jpeg",
+      "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
+    logo: "/images/CollaborativedevLLC.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
     id: 2,
-    title: "Cossa Embroidery - Franklin, TN",
+    title: "Safayra Saffron",
     description:
-      "Embroidery service based in Franklin, TN. Small, single-owner business. This project aims to be the online face of Cossa.",
+      "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This work-in-progress will showcase the brand's commitment to quality and provides an elegant experience for customers.",
+    logo: "/images/Safayralogo.jpeg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://safayra.co",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
+  },
+  {
+    id: 3,
+    title: "Cossa Embroidery",
+    description:
+      "Embroidery service based in Franklin, TN. This project is the online face of Cossa, showcasing their portfolio, and providing a platform for customers to learn more about their offerings.",
     logo: "/images/lone C.jpeg", 
     technologies: ["Coming Soon"],
     link: "https://cossaembroidery.com",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
-    id: 3,
-    title: "Permanent Makeup by Lauren - Michigan",
+    id: 4,
+    title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
     logo: "/images/ComingSoon.png", // Add your placeholder image
@@ -37,7 +47,7 @@ const clients = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
     description:
       "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
