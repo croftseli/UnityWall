@@ -6,7 +6,6 @@ import CTA from "@/components/layout/CTA";
 
 // Clients data
 const clients = [
-  
   {
     id: 1,
     title: "Collaborative Developments LLC",
@@ -31,7 +30,7 @@ const clients = [
     title: "Cossa Embroidery",
     description:
       "Embroidery service based in Franklin, TN. This project is the online face of Cossa, showcasing their portfolio, and providing a platform for customers to learn more about their offerings.",
-    logo: "/images/lone C.jpeg", 
+    logo: "/images/lone C.jpeg",
     technologies: ["Coming Soon"],
     link: "https://cossaembroidery.com",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
@@ -41,7 +40,7 @@ const clients = [
     title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
-    logo: "/images/ComingSoon.png", // Add your placeholder image
+    logo: "/images/unitywall-coming-soon.jpg",
     technologies: ["Coming Soon"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
