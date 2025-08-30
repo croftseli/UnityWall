@@ -13,6 +13,7 @@ const clients = [
       "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
     logo: "/images/CollaborativedevLLC.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://collaborative-developments-bftj.vercel.app",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
