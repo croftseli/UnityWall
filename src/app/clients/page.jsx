@@ -10,7 +10,7 @@ const clients = [
     id: 1,
     title: "Copper to Gold",
     description:
-      "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal trasformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts. Coming soon!",
+      "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts. Coming soon!",
     logo: "/images/teamNoBg/COPPERTOGOLD3.png",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
