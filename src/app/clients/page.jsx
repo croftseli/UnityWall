@@ -29,7 +29,7 @@ const clients = [
     id: 3,
     title: "Safayra Saffron",
     description:
-      "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This work-in-progress will showcase the brand's commitment to quality and provides an elegant experience for customers.",
+      "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This site showcases the brand's commitment to quality and provides an elegant experience for customers.",
     logo: "/images/safayra-logo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://safayra.co",
