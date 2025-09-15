@@ -19,7 +19,6 @@ export default function Hero() {
     threshold: 0.3,
   };
 
-
   const { ref: refWhat, inView: inViewWhat } = useInView(inViewOptions);
   const { ref: ref1, inView: inView1 } = useInView(inViewOptions);
   const { ref: ref2, inView: inView2 } = useInView(inViewOptions);
@@ -231,7 +230,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
                 <Image
-                  src="/hero1.jpg"
+                  src="/hero1.webp"
                   alt="Website Development Service Image"
                   fill
                   className="rounded-full object-cover"
@@ -279,7 +278,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-90 md:h-90 rounded-full overflow-hidden shadow-lg">
                 <Image
-                  src="/hero2.jpg"
+                  src="/hero2.webp"
                   alt="Website Maintenance Service Image"
                   fill
                   className="rounded-full object-cover"
@@ -328,7 +327,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg border-2 border-gray-600">
                 <Image
-                  src="/hero3.jpg"
+                  src="/hero3.webp"
                   alt="Social Media and Branding Service Image"
                   fill
                   className="rounded-full object-cover"
