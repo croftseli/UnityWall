@@ -353,7 +353,7 @@ export default function Hero() {
                   Transform your social media presence with advice from our
                   experienced
                   <br />
-                  social team. Powerful Social media more sales! Need to manage
+                  social team. Powerful social media equals more sales! Need us to manage
                   your
                   <br />
                   platform too? Look no further!
