@@ -13,19 +13,13 @@ export default function Hero() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const isMobile = useMediaQuery("(max-width: 767px)");
 
-  // Hooks for scroll-triggered animations
-  const inViewOptions = {
-    triggerOnce: true,
-    threshold: 0.3,
-  };
+  const inViewOptions = { triggerOnce: true, threshold: 0.3 };
 
   const { ref: refWhat, inView: inViewWhat } = useInView(inViewOptions);
   const { ref: ref1, inView: inView1 } = useInView(inViewOptions);
   const { ref: ref2, inView: inView2 } = useInView(inViewOptions);
   const { ref: ref3, inView: inView3 } = useInView(inViewOptions);
-  const { ref: refCta, inView: inViewCta } = useInView(inViewOptions);
 
-  // --- Animation Variants ---
   const heroContainerVariants = {
     visible: {
       transition: {
@@ -46,19 +40,18 @@ export default function Hero() {
 
   const buttonFadeIn = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1.2, delay: 1.1 } }, // delay for the button
+    visible: { opacity: 1, transition: { duration: 1.2, delay: 1.1 } },
   };
 
   const unitywallText = "UnityWall".split("");
+
   const letterContainerVariants = {
-    visible: { transition: { staggerChildren: 0.09 } }, // letter cascade timing
+    visible: { transition: { staggerChildren: 0.09 } },
   };
   const letterVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
-  //Body & CTA Sections (On-Scroll):
 
   const headingSlideInVariant = {
     hidden: { opacity: 0, x: -250 },
@@ -81,6 +74,7 @@ export default function Hero() {
       },
     },
   };
+
   const imagePopInVariant = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -93,6 +87,7 @@ export default function Hero() {
       },
     },
   };
+
   const sectionChildVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -125,7 +120,6 @@ export default function Hero() {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] md:-translate-y-1/2 z-[-1] w-full h-auto max-w-full max-h-full scale-125 md:scale-200 pointer-events-none"
               />
               <div className="title flex flex-col items-center md:items-start">
-                {" "}
                 <motion.div
                   variants={heroChildVariants}
                   className="div text-xl md:text-2xl lg:text-3xl"
@@ -144,7 +138,6 @@ export default function Hero() {
                 </motion.div>
               </div>
               <div className="md:flex md:items-center md:space-x-8 mt-6 md:mt-6">
-                {" "}
                 <motion.div
                   variants={heroChildVariants}
                   className="line hidden md:block"
@@ -153,20 +146,14 @@ export default function Hero() {
                   variants={heroChildVariants}
                   className="p whitespace-normal leading-relaxed text-sm max-w-full mx-auto text-center md:mx-0 md:text-base md:text-left xs:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[560px]"
                 >
-                  <span className="hidden md:inline">
-                    We are a dedicated web development team focused on
-                    <br />
-                    designing, developing, and maintaining modern, high-
-                    <br />
-                    performance websites.
+                  
+                                    <span className="leading-relaxed text-base lg:text-lg website-maintenance-body">
+                    Your vision deserves a digital home that works as hard as you do.  <br /> At UnityWall,
+                    we believe every creator and small business deserves a website that builds trust,
+                    runs fast, and reflects purpose.
                   </span>
-                  <span className="md:hidden">
-                    We are a dedicated web development team focused on
-                    designing, developing, and maintaining modern,
-                    high-performance websites.
-                  </span>
+                
                 </motion.div>
-                {/* Desktop "View Clients" button */}
                 <motion.div
                   variants={buttonFadeIn}
                   initial="hidden"
@@ -174,19 +161,18 @@ export default function Hero() {
                   className="hidden md:block pointer-events-auto md:ml-auto"
                 >
                   <Link href="/clients" passHref>
-                    <button className="cta-button hover:scale-105 transition-transform">
-                      View Clients
+                    <button className="cta-button hover:scale-105 translate-x-16 transition-transform">
+                      Let&apos;s Build Together
                     </button>
                   </Link>
                 </motion.div>
               </div>
 
-              {/* Mobile "View Clients" button */}
               <motion.div variants={buttonFadeIn}>
                 <div className="mt-8 mb-6 md:hidden pointer-events-auto">
                   <Link href="/clients" passHref>
                     <button className="cta-button transform scale-90 md:scale-100 hover:scale-95 transition-transform">
-                      View Clients
+                      Let&apos;s Build Together
                     </button>
                   </Link>
                 </div>
@@ -199,171 +185,163 @@ export default function Hero() {
 
       {/* BODY */}
 
-      <div className="bg-gray-700 text-white py-20 px-4 sm:px-8 lg:px-16 xl:px-24 relative overflow-hidden">
+      <div className="relative bg-gray-700 text-white py-20 px-4 sm:px-8 lg:px-16 xl:px-24 overflow-hidden">
+ 
+
+        {/* Original Shadow Effect */}
         <img
           src="/mainBodyShadow.svg"
           alt="Background shadow effect"
-          className="absolute inset-0 w-full h-full z-[0] pointer-events-none object-fill opacity-50 transform scale-125"
+          className="absolute inset-0 w-full h-full z-[1] pointer-events-none object-fill opacity-50 transform scale-125"
         />
-        <motion.h2
-          ref={refWhat}
-          variants={headingSlideInVariant}
-          initial="hidden"
-          animate={inViewWhat ? "visible" : "hidden"}
-          className="text-5xl md:text-3xl font-bold mb-16 md:mb-20 text-left"
-        >
-          What do we do?
-        </motion.h2>
 
-        {/* Service Item 1: Website Development */}
-        <motion.div
-          ref={ref1}
-          variants={sectionContainerVariants}
-          initial="hidden"
-          animate={inView1 ? "visible" : "hidden"}
-        >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
-            <motion.div
-              variants={imagePopInVariant}
-              className="md:w-auto flex justify-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
-                <Image
-                  src="/hero1.webp"
-                  alt="Website Development Service Image"
-                  fill
-                  className="rounded-full object-cover"
-                  priority
-                />
-              </div>
-            </motion.div>
-            <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
-              <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
-              <motion.h3
-                variants={sectionChildVariants}
-                className="service-title-matched text-5xl lg:text-6xl mb-5"
-              >
-                Website <br /> Development
-              </motion.h3>
+        {/* Content - ensure it's above the background */}
+        <div className="relative z-10">
+
+          {/* Service Item 1: Why We Exist */}
+          <motion.div
+            ref={ref1}
+            variants={sectionContainerVariants}
+            initial="hidden"
+            animate={inView1 ? "visible" : "hidden"}
+          >
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
               <motion.div
-                variants={sectionChildVariants}
-                className="flex items-start gap-10"
+                variants={imagePopInVariant}
+                className="md:w-auto flex justify-center relative overflow-hidden"
               >
-                <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                  We create custom, responsive websites tailored to your
-                  specific needs <br />
-                  and brand identity. Our development process focuses on
-                  performance, <br />
-                  accessibility, and user experience.
-                </p>
+                <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
+                  <Image
+                    src="/hero1.webp"
+                    alt="Website Development Service Image"
+                    fill
+                    className="rounded-full object-cover"
+                    priority
+                  />
+                </div>
               </motion.div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Service Item 2: Website Maintenance */}
-        <motion.div
-          ref={ref2}
-          variants={sectionContainerVariants}
-          initial="hidden"
-          animate={inView2 ? "visible" : "hidden"}
-        >
-          <div className="flex flex-col md:flex-row-reverse items-center justify-end gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative">
-            <motion.div
-              variants={imagePopInVariant}
-              className="md:w-auto flex justify-center relative md:translate-x-10 lg:translate-x-16 xl:translate-x-38 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-90 md:h-90 rounded-full overflow-hidden shadow-lg">
-                <Image
-                  src="/hero2.webp"
-                  alt="Website Maintenance Service Image"
-                  fill
-                  className="rounded-full object-cover"
-                  priority
-                />
+              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
+                <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
+                <motion.h3
+                  variants={sectionChildVariants}
+                  className="service-title-matched text-5xl lg:text-6xl mb-5"
+                >
+                  Why We Exist
+                </motion.h3>
+                <motion.div
+                  variants={sectionChildVariants}
+                  className="flex items-start gap-10"
+                >
+                  <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
+                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
+                    The internet should amplify good ideas — not bury them under slow, clunky, <br />
+                    or outdated websites. We founded UnityWall because too many visionary <br />
+                    people were being held back by technology that didn&apos;t match their passion. <br />
+                    Our mission is to make high-quality, reliable digital presence accessible to <br />
+                    every business with heart and ambition.
+                  </p>
+                </motion.div>
               </div>
-            </motion.div>
-            <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative text-right">
-              <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
-              <motion.h3
-                variants={sectionChildVariants}
-                className="text-5xl lg:text-6xl mb-5 website-maintenance-title"
-              >
-                Website
-                <br /> Maintenance
-              </motion.h3>
-              <motion.div
-                variants={sectionChildVariants}
-                className="flex flex-row-reverse items-start gap-10"
-              >
-                <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                  Keep your site running smoothly with our comprehensive
-                  maintenance
-                  <br /> services including security updates, performance
-                  optimization, content
-                  <br /> updates, and technical support.
-                </p>
-              </motion.div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Service Item 3: Social Media, Branding */}
-        <motion.div
-          ref={ref3}
-          variants={sectionContainerVariants}
-          initial="hidden"
-          animate={inView3 ? "visible" : "hidden"}
-        >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
-            <motion.div
-              variants={imagePopInVariant}
-              className="md:w-auto flex justify-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg border-2 border-gray-600">
-                <Image
-                  src="/hero3.webp"
-                  alt="Social Media and Branding Service Image"
-                  fill
-                  className="rounded-full object-cover"
-                  priority
-                />
+          {/* Service Item 2: How We Work */}
+          <motion.div
+            ref={ref2}
+            variants={sectionContainerVariants}
+            initial="hidden"
+            animate={inView2 ? "visible" : "hidden"}
+          >
+            <div className="flex flex-col md:flex-row-reverse items-center justify-end gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative">
+              <motion.div
+                variants={imagePopInVariant}
+                className="md:w-auto flex justify-center relative md:translate-x-10 lg:translate-x-16 xl:translate-x-38 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-90 md:h-90 rounded-full overflow-hidden shadow-lg">
+                  <Image
+                    src="/hero2.webp"
+                    alt="Website Maintenance Service Image"
+                    fill
+                    className="rounded-full object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
+              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative text-right">
+                <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
+                <motion.h3
+                  variants={sectionChildVariants}
+                  className="text-5xl lg:text-6xl mb-5 website-maintenance-title"
+                >
+                  How We Work
+                </motion.h3>
+                <motion.div
+                  variants={sectionChildVariants}
+                  className="flex flex-row-reverse items-start gap-10"
+                >
+                  <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
+                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
+                    Performance-First: Your site loads fast, runs smooth, and scales effortlessly.
+                    <br />
+                    Human-Centered Design: Every interaction feels intuitive, welcoming, and clear.
+                    <br />
+                    Ongoing Partnership: We maintain, secure, and evolve your platform — so you never fall behind.
+                  </p>
+                </motion.div>
               </div>
-            </motion.div>
-            <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
-              <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
-              <motion.h3
-                variants={sectionChildVariants}
-                className="service-title-matched text-5xl lg:text-6xl font-semibold mb-5 social-media-title"
-              >
-                Social Media,
-                <br /> Branding, and More
-              </motion.h3>
-              <motion.div
-                variants={sectionChildVariants}
-                className="flex items-start gap-10"
-              >
-                <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                  Transform your social media presence with advice from our
-                  experienced
-                  <br />
-                  social team. Powerful social media equals more sales! Need us to manage
-                  your
-                  <br />
-                  platform too? Look no further!
-                </p>
-              </motion.div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* CTA Section WAS MOVED TO THE FOOTER*/}
+          {/* Service Item 3: What We Do */}
+          <motion.div
+            ref={ref3}
+            variants={sectionContainerVariants}
+            initial="hidden"
+            animate={inView3 ? "visible" : "hidden"}
+          >
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
+              <motion.div
+                variants={imagePopInVariant}
+                className="md:w-auto flex justify-center relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg border-2 border-gray-600">
+                  <Image
+                    src="/hero3.webp"
+                    alt="Social Media and Branding Service Image"
+                    fill
+                    className="rounded-full object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
+              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
+                <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
+                <motion.h3
+                  variants={sectionChildVariants}
+                  className="service-title-matched text-5xl lg:text-6xl font-semibold mb-5 social-media-title"
+                >
+                  What We Do
+                </motion.h3>
+                <motion.div
+                  variants={sectionChildVariants}
+                  className="flex items-start gap-10"
+                >
+                  <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
+                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
+                    <span className="font-bold text-lg lg:text-xl">Website Development:</span> We craft custom, responsive websites that embody your brand.
+                    <br />
+                    <span className="font-bold text-lg lg:text-xl">Website Maintenance:</span> We keep your site worry-free through security updates and optimization.
+                    <br />
+                    <span className="font-bold text-lg lg:text-xl">Branding & Social Media:</span> We build cohesive digital ecosystems — uniting your brand into one story.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </>
   );
