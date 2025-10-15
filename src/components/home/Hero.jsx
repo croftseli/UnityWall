@@ -195,7 +195,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full z-[1] pointer-events-none object-fill opacity-50 transform scale-125"
         />
 
-        {/* Content - ensure it's above the background */}
+        {/* Content */}
         <div className="relative z-10">
 
           {/* Service Item 1: Why We Exist */}
@@ -205,13 +205,13 @@ export default function Hero() {
             initial="hidden"
             animate={inView1 ? "visible" : "hidden"}
           >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-2 md:translate-x-4">
               <motion.div
                 variants={imagePopInVariant}
-                className="md:w-auto flex justify-center relative overflow-hidden"
+                className="md:w-auto flex justify-center md:justify-start relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg mx-auto md:mx-0">
                   <Image
                     src="/hero1.webp"
                     alt="Website Development Service Image"
@@ -221,7 +221,7 @@ export default function Hero() {
                   />
                 </div>
               </motion.div>
-              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
+              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-10">
                 <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
                 <motion.h3
                   variants={sectionChildVariants}
@@ -256,10 +256,10 @@ export default function Hero() {
             <div className="flex flex-col md:flex-row-reverse items-center justify-end gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative">
               <motion.div
                 variants={imagePopInVariant}
-                className="md:w-auto flex justify-center relative md:translate-x-10 lg:translate-x-16 xl:translate-x-38 overflow-hidden"
+                className="md:w-auto flex justify-center md:justify-end relative md:translate-x-10 lg:translate-x-16 xl:translate-x-38 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-90 md:h-90 rounded-full overflow-hidden shadow-lg">
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-90 md:h-90 rounded-full overflow-hidden shadow-lg mx-auto md:mx-0">
                   <Image
                     src="/hero2.webp"
                     alt="Website Maintenance Service Image"
@@ -301,13 +301,13 @@ export default function Hero() {
             initial="hidden"
             animate={inView3 ? "visible" : "hidden"}
           >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 mb-20 md:mb-24 relative translate-x-2 md:translate-x-4">
               <motion.div
                 variants={imagePopInVariant}
-                className="md:w-auto flex justify-center relative overflow-hidden"
+                className="md:w-auto flex justify-center md:justify-start relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gray-700/10 blur-3xl rounded-full -z-10 transform -translate-x-3 -translate-y-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]"></div>
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg border-2 border-gray-600">
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg border-2 border-gray-600 mx-auto md:mx-0">
                   <Image
                     src="/hero3.webp"
                     alt="Social Media and Branding Service Image"
@@ -317,7 +317,7 @@ export default function Hero() {
                   />
                 </div>
               </motion.div>
-              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-16">
+              <div className="md:w-2/5 lg:w-[45%] xl:w-2/5 relative md:ml-16 md:translate-x-10">
                 <div className="absolute -left-6 -top-6 bg-gray-700/5 blur-2xl rounded-lg -z-10 w-[calc(100%+3rem)] h-[calc(100%+3rem)]"></div>
                 <motion.h3
                   variants={sectionChildVariants}
