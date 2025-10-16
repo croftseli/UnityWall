@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
-import "./ProfileCard.css";
 
 const DEFAULT_BEHIND_GRADIENT =
   "radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(266,100%,90%,var(--card-opacity)) 4%,hsla(266,50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(266,25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(266,0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#00ffaac4 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#00c1ffff 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#c137ffff 0%,#07c6ffff 40%,#07c6ffff 60%,#c137ffff 100%)";
@@ -8,16 +7,17 @@ const DEFAULT_INNER_GRADIENT =
   "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)";
 
 const ANIMATION_CONFIG = {
-  SMOOTH_DURATION: 600,
-  INITIAL_DURATION: 1500,
+  SMOOTH_DURATION: 400,
+  INITIAL_DURATION: 1000,
   INITIAL_X_OFFSET: 70,
   INITIAL_Y_OFFSET: 60,
+  THROTTLE_MS: 32, // Reduced to 30fps for performance
 };
 
 const clamp = (value, min = 0, max = 100) =>
   Math.min(Math.max(value, min), max);
 
-const round = (value, precision = 3) => parseFloat(value.toFixed(precision));
+const round = (value) => Math.round(value * 100) / 100;
 
 const adjust = (value, fromMin, fromMax, toMin, toMax) =>
   round(toMin + ((toMax - toMin) * (value - fromMin)) / (fromMax - fromMin));
@@ -45,11 +45,14 @@ const ProfileCardComponent = ({
 }) => {
   const wrapRef = useRef(null);
   const cardRef = useRef(null);
+  const rafRef = useRef(null);
+  const lastEventRef = useRef(null);
+  const isActiveRef = useRef(false);
 
   const animationHandlers = useMemo(() => {
     if (!enableTilt) return null;
 
-    let rafId = null;
+    let animRafId = null;
 
     const updateCardTransform = (offsetX, offsetY, card, wrap) => {
       const width = card.clientWidth;
@@ -61,25 +64,15 @@ const ProfileCardComponent = ({
       const centerX = percentX - 50;
       const centerY = percentY - 50;
 
-      const properties = {
-        "--pointer-x": `${percentX}%`,
-        "--pointer-y": `${percentY}%`,
-        "--background-x": `${adjust(percentX, 0, 100, 35, 65)}%`,
-        "--background-y": `${adjust(percentY, 0, 100, 35, 65)}%`,
-        "--pointer-from-center": `${clamp(
-          Math.hypot(percentY - 50, percentX - 50) / 50,
-          0,
-          1
-        )}`,
-        "--pointer-from-top": `${percentY / 100}`,
-        "--pointer-from-left": `${percentX / 100}`,
-        "--rotate-x": `${round(-(centerX / 5))}deg`,
-        "--rotate-y": `${round(centerY / 4)}deg`,
-      };
-
-      Object.entries(properties).forEach(([property, value]) => {
-        wrap.style.setProperty(property, value);
-      });
+      const rotateX = round(-(centerX / 5));
+      const rotateY = round(centerY / 4);
+      
+      // Single transform update
+      card.style.transform = `translate3d(0, 0, 0.1px) rotateX(${rotateY}deg) rotateY(${rotateX}deg)`;
+      
+      // Minimal CSS var updates - only what's absolutely needed
+      wrap.style.setProperty('--pointer-x', `${Math.round(percentX)}%`);
+      wrap.style.setProperty('--pointer-y', `${Math.round(percentY)}%`);
     };
 
     const createSmoothAnimation = (duration, startX, startY, card, wrap) => {
@@ -89,7 +82,7 @@ const ProfileCardComponent = ({
 
       const animationLoop = (currentTime) => {
         const elapsed = currentTime - startTime;
-        const progress = clamp(elapsed / duration);
+        const progress = Math.min(elapsed / duration, 1);
         const easedProgress = easeInOutCubic(progress);
 
         const currentX = adjust(easedProgress, 0, 1, startX, targetX);
@@ -98,41 +91,56 @@ const ProfileCardComponent = ({
         updateCardTransform(currentX, currentY, card, wrap);
 
         if (progress < 1) {
-          rafId = requestAnimationFrame(animationLoop);
+          animRafId = requestAnimationFrame(animationLoop);
         }
       };
 
-      rafId = requestAnimationFrame(animationLoop);
+      animRafId = requestAnimationFrame(animationLoop);
     };
 
     return {
       updateCardTransform,
       createSmoothAnimation,
       cancelAnimation: () => {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-          rafId = null;
+        if (animRafId) {
+          cancelAnimationFrame(animRafId);
+          animRafId = null;
         }
       },
     };
   }, [enableTilt]);
 
+  // Heavy throttled mouse move - uses RAF for smooth updates
+  const scheduleUpdate = useCallback(() => {
+    if (!rafRef.current && lastEventRef.current && isActiveRef.current) {
+      rafRef.current = requestAnimationFrame(() => {
+        const card = cardRef.current;
+        const wrap = wrapRef.current;
+        const event = lastEventRef.current;
+
+        if (card && wrap && animationHandlers && event) {
+          const rect = card.getBoundingClientRect();
+          animationHandlers.updateCardTransform(
+            event.clientX - rect.left,
+            event.clientY - rect.top,
+            card,
+            wrap
+          );
+        }
+
+        rafRef.current = null;
+        lastEventRef.current = null;
+      });
+    }
+  }, [animationHandlers]);
+
   const handleMouseMove = useCallback(
     (event) => {
-      const card = cardRef.current;
-      const wrap = wrapRef.current;
-
-      if (!card || !wrap || !animationHandlers) return;
-
-      const rect = card.getBoundingClientRect();
-      animationHandlers.updateCardTransform(
-        event.clientX - rect.left,
-        event.clientY - rect.top,
-        card,
-        wrap
-      );
+      if (!isActiveRef.current) return;
+      lastEventRef.current = event;
+      scheduleUpdate();
     },
-    [animationHandlers]
+    [scheduleUpdate]
   );
 
   const handleMouseEnter = useCallback(() => {
@@ -141,6 +149,7 @@ const ProfileCardComponent = ({
 
     if (!card || !wrap || !animationHandlers) return;
 
+    isActiveRef.current = true;
     animationHandlers.cancelAnimation();
     wrap.classList.add("active");
     card.classList.add("active");
@@ -152,6 +161,14 @@ const ProfileCardComponent = ({
       const wrap = wrapRef.current;
 
       if (!card || !wrap || !animationHandlers) return;
+
+      isActiveRef.current = false;
+      lastEventRef.current = null;
+      
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
 
       animationHandlers.createSmoothAnimation(
         ANIMATION_CONFIG.SMOOTH_DURATION,
@@ -174,9 +191,9 @@ const ProfileCardComponent = ({
 
     if (!card || !wrap) return;
 
-    card.addEventListener("mouseenter", handleMouseEnter);
-    card.addEventListener("mousemove", handleMouseMove);
-    card.addEventListener("mouseleave", handleMouseLeave);
+    card.addEventListener("mouseenter", handleMouseEnter, { passive: true });
+    card.addEventListener("mousemove", handleMouseMove, { passive: true });
+    card.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     const initialX = wrap.clientWidth - ANIMATION_CONFIG.INITIAL_X_OFFSET;
     const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
@@ -195,6 +212,9 @@ const ProfileCardComponent = ({
       card.removeEventListener("mousemove", handleMouseMove);
       card.removeEventListener("mouseleave", handleMouseLeave);
       animationHandlers.cancelAnimation();
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
     };
   }, [
     enableTilt,
@@ -228,14 +248,19 @@ const ProfileCardComponent = ({
     >
       <section ref={cardRef} className="pc-card">
         <div className="pc-inside">
-          <div className="pc-shine" />
-          <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
             <img
               className="avatar"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
+              width="370"
+              height="540"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                objectFit: 'cover'
+              }}
               onError={(e) => {
                 const target = e.target;
                 target.style.display = "none";

@@ -44,7 +44,7 @@
 .pc-card-wrapper::before {
   content: '';
   position: absolute;
-  inset: -10px;
+  inset: -10px; 
   background: inherit;
   background-position: inherit;
   border-radius: inherit;
