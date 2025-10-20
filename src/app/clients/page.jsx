@@ -76,14 +76,13 @@ const ProjectCard = ({ project, index }) => {
   const projectBackgroundClasses = `${gradientDirectionClass} ${project.bgGradient}`;
 
   return (
-    <motion.div
+     <motion.div
       key={project.id}
       className={`relative py-16 overflow-hidden ${projectBackgroundClasses}`}
-      // Removed y-axis animation, added x-axis animation for directional fade-in
-      initial={{ opacity: 0, x: isEven ? -50 : 50 }} // Fade in from left for even, right for odd
-      whileInView={{ opacity: 1, x: 0 }} // Slide to original position
-      viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of element is in view
-      transition={{ duration: 1.0, delay: 0.5 + index * 0.3 }} // Slower and later animations
+      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -137,9 +136,9 @@ export default function Clients() {
     // Main content area, pushed down by the absolute hero section for top padding
     <main className="min-h-screen bg-gray-700 text-gray-200 pt-72">
       {/* Hero Section - Fixed at the top, acting as a header */}
-      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b to-gray-700 text-white text-center flex flex-col justify-end pb-12">
+      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b to-gray-700 text-white text-center flex flex-col justify-end pb-16">
         <motion.p
-          className="text-5xl md:text-6xl font-extrabold mb-4 relative z-10 text-center bg-clip-text text-transparent"
+          className="text-5xl md:text-6xl pb-2 py-8 font-extrabold mb-4 relative z-10 text-center bg-clip-text text-transparent"
           style={{
             backgroundImage: `linear-gradient(
       64deg,
