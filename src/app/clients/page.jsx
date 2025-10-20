@@ -163,7 +163,7 @@ export default function Clients() {
           establish their digital presence.
         </motion.p>
       </div>
-
+ 
       {/* Clients Section - Contains the ProjectCard components with spacing */}
       <section className="pb-12">
         {" "}

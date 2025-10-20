@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="relative text-white overflow-hidden pt-16 bg-transparent -mt-12">
-      {/* SVG Background */}
+      {/* SVG Background */} 
       <div
         className="absolute bottom-0 left-0 w-full hidden md:block"
         style={{ height: "600px" }}
