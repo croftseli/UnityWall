@@ -11,7 +11,7 @@ const clients = [
     title: "Copper to Gold",
     description:
       "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts. Coming soon!",
-    logo: "/images/teamNoBg/COPPERTOGOLD3.png",
+    logo: "/images/clients/COPPERTOGOLD3.png",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
@@ -20,7 +20,7 @@ const clients = [
     title: "Collaborative Developments LLC",
     description:
       "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
-    logo: "/images/teamNoBg/CollaborativedevLLC.jpeg",
+    logo: "/images/clients/CollaborativedevLLC.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://collaborative-developments-bftj.vercel.app",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
@@ -30,7 +30,7 @@ const clients = [
     title: "Safayra Saffron",
     description:
       "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This site showcases the brand's commitment to quality and provides an elegant experience for customers.",
-    logo: "/images/teamNoBg/safayra-logo.jpg",
+    logo: "/images/clients/safayra-logo.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://safayra.co",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
@@ -40,7 +40,7 @@ const clients = [
     title: "Cossa Embroidery",
     description:
       "Embroidery service based in Franklin, TN. This project is the online face of Cossa, showcasing their portfolio, and providing a platform for customers to learn more about their offerings.",
-    logo: "/images/teamNoBg/lone C.jpeg",
+    logo: "/images/clients/cossaEmbroideryLogo.jpg",
     technologies: ["Coming Soon"],
     link: "https://cossaembroidery.com",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
@@ -50,7 +50,7 @@ const clients = [
     title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
-    logo: "/images/teamNoBg/unitywall-coming-soon.jpg",
+    logo: "/images/clients/unitywall-coming-soon.jpg",
     technologies: ["Coming Soon"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
@@ -59,7 +59,7 @@ const clients = [
     title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
     description:
       "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
-    logo: "/images/teamNoBg/HotelLaPanoramica.jpg",
+    logo: "/images/clients/HotelLaPanoramica.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://centrostudibahai.it",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",

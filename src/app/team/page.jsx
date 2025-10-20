@@ -7,7 +7,7 @@ const engineersTeam = [
   {
     name: "Elijah Crofts",
     title: "Managing Director & Founder",
-    image: "/images/teamNoBg/eli.png",
+    image: "/images/teamNoBg/eli.webp",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
     handle: "elijahcrofts",
@@ -16,7 +16,7 @@ const engineersTeam = [
   {
     name: "Michael Sanei",
     title: "Associate Director & Full-Stack",
-    image: "/images/teamNoBg/michael.png",
+    image: "/images/teamNoBg/michael.webp",
     contact: "michael@unitywall.co",
     linkedin: "https://linkedin.com/in/michael-sanei",
     handle: "michael-sanei",
@@ -25,7 +25,7 @@ const engineersTeam = [
   {
     name: "Iman Motlagh",
     title: "Technical Architect & Dev Team Lead",
-    image: "/images/teamNoBg/iman1.png",
+    image: "/images/teamNoBg/iman.webp",
     contact: "iman@unitywall.co",
     linkedin: "https://linkedin.com/in/iman-motlagh",
     handle: "iman-motlagh",
@@ -34,7 +34,7 @@ const engineersTeam = [
   {
     name: "Simeon Checherin",
     title: "Database Engineer & Full-Stack",
-    image: "/images/teamNoBg/simeon.png",
+    image: "/images/teamNoBg/simeon.webp",
     contact: "simeon@unitywall.co",
     linkedin: "https://linkedin.com/in/simon-checherin-b06796218",
     handle: "simeon-checherin",
@@ -43,7 +43,7 @@ const engineersTeam = [
   {
     name: "Jason Terjenian",
     title: "Outreach Coordinator & Full-Stack",
-    image: "/images/teamNoBg/jason.png",
+    image: "/images/teamNoBg/jason.webp",
     contact: "jason@unitywall.co",
     linkedin: "https://linkedin.com/in/jasonterjenian",
     handle: "jasonterjenian",
@@ -54,7 +54,7 @@ const designersTeam = [
   {
     name: "Elijah Crofts",
     title: "Managing Director & Founder",
-    image: "/images/teamNoBg/eli.png",
+    image: "/images/teamNoBg/eli.webp",
     contact: "elijah@unitywall.co",
     linkedin: "https://linkedin.com/in/elijahcrofts",
     handle: "elijahcrofts",
@@ -63,7 +63,7 @@ const designersTeam = [
   {
     name: "Jalen M. Johnson",
     title: "Social Media Manager",
-    image: "/images/teamNoBg/jalen.png",
+    image: "/images/teamNoBg/jalen.webp",
     contact: "jalen@unitywall.co",
     linkedin: "https://linkedin.com/in/jalen-m-johnson-120510251",
     handle: "jalen-m-johnson",
@@ -71,7 +71,7 @@ const designersTeam = [
   {
     name: "Saoirse Kane",
     title: "Social Media Consultant",
-    image: "/images/teamNoBg/saoirse.png",
+    image: "/images/teamNoBg/saoirse.webp",
     contact: "saoirse@unitywall.co",
     linkedin: "https://www.linkedin.com/in/saoirse-kane/",
     handle: "saoirse-kane",
@@ -79,7 +79,7 @@ const designersTeam = [
   {
     name: "Zimeng Cheng",
     title: "Brand Unity & Design Lead",
-    image: "/images/teamNoBg/elizabeth.png",
+    image: "/images/teamNoBg/elizabeth.webp",
     contact: "zimeng@unitywall.co",
     linkedin: "https://www.linkedin.com/in/zimeng-elizabeth-cheng/",
     handle: "zimeng-cheng",
@@ -87,7 +87,7 @@ const designersTeam = [
   {
     name: "Mey Spiegel",
     title: "Graphic Design & UX",
-    image: "/images/teamNoBg/mey.png",
+    image: "/images/teamNoBg/mey.webp",
     contact: "mey@unitywall.co",
     linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
     handle: "mey-spiegel",
@@ -95,7 +95,7 @@ const designersTeam = [
   {
     name: "Ashley Dowd",
     title: "Client Relations & Social Media",
-    image: "/images/teamNoBg/ashley.png",
+    image: "/images/teamNoBg/ashley.webp",
     contact: "ashley@unitywall.co",
     linkedin: "https://www.linkedin.com/in/ashley-dowd-411973303",
     handle: "ashley-dowd",
