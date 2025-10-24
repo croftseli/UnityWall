@@ -236,10 +236,10 @@ export default function Hero() {
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
                     The internet should amplify good ideas — not bury them under slow, clunky, <br />
-                    or outdated websites. We founded UnityWall because too many visionary <br />
-                    people were being held back by technology that didn&apos;t match their passion. <br />
-                    Our mission is to make high-quality, reliable digital presence accessible to <br />
-                    every business with heart and ambition.
+                    or outdated websites. We founded UnityWall because too many visionaries <br />
+                    were being held back by technology that didn&apos;t reflect their passion. <br />
+                    Our mission is to make high-quality, reliable digital homes accessible to <br />
+                    every heart and every ambition.
                   </p>
                 </motion.div>
               </div>
@@ -287,7 +287,7 @@ export default function Hero() {
                     <br />
                     Human-Centered Design: Every interaction feels intuitive, welcoming, and clear.
                     <br />
-                    Ongoing Partnership: We maintain, secure, and evolve your platform — so you never fall behind.
+                    Ongoing Partnership: We maintain, secure, and evolve your platform. You'll never fall behind.
                   </p>
                 </motion.div>
               </div>
