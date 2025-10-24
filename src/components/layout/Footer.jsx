@@ -127,7 +127,7 @@ export default function Footer() {
                 className="mb-4 rounded-lg translate-y-8 translate-x-[-12px]"
               />
               <p className="text-xl translate-y-[-24px] translate-x-[-64px] relative left-8 mb-6 text-white">
-                <span className="font-bold">UnityWall.co</span> is a dedicated team focused on <br /> designing,
+                <span className="font-bold">UnityWall Technological Solutions, LLC</span> is a dedicated team focused on <br /> designing,
                 developing, and maintaining <br /> modern, high-performance
                 websites.
               </p>
