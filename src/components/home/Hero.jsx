@@ -148,7 +148,7 @@ export default function Hero() {
                 >
                   
                                     <span className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                    Your vision deserves a digital home that works as hard as you do.  <br /> At UnityWall,
+                    Your vision deserves a digital home that works as hard as you do. At UnityWall,
                     we believe everyone deserves a website that builds trust,
                     runs fast, and reflects purpose.
                   </span>
@@ -235,10 +235,10 @@ export default function Hero() {
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                    The internet should amplify good ideas — not bury them under slow, clunky, <br />
-                    or outdated websites. We founded UnityWall because too many visionaries <br />
-                    were being held back by technology that didn&apos;t reflect their passion. <br />
-                    Our mission is to make high-quality, reliable digital homes accessible to <br />
+                    The internet should amplify good ideas — not bury them under slow, clunky,
+                    or outdated websites. We founded UnityWall because too many visionaries
+                    were being held back by technology that didn&apos;t reflect their passion.
+                    Our mission is to make high-quality, reliable digital homes accessible to
                     every heart and every ambition.
                   </p>
                 </motion.div>
@@ -282,13 +282,11 @@ export default function Hero() {
                   className="flex flex-row-reverse items-start gap-10"
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                    Performance-First: Your site loads fast, runs smooth, and scales effortlessly.
-                    <br />
-                    Human-Centered Design: Every interaction feels intuitive, welcoming, and clear.
-                    <br />
-                    Ongoing Partnership: We maintain, secure, and evolve your platform. You'll never fall behind.
-                  </p>
+                  <div className="leading-relaxed text-base lg:text-lg website-maintenance-body space-y-3">
+                    <p><span className="font-bold text-lg lg:text-xl">Performance-First:</span> Your site loads fast, runs smooth, and scales effortlessly.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Human-Centered Design:</span> Every interaction feels intuitive, welcoming, and clear.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Ongoing Partnership:</span> We maintain, secure, and evolve your platform. You'll never fall behind.</p>
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -330,13 +328,11 @@ export default function Hero() {
                   className="flex items-start gap-10"
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                    <span className="font-bold text-lg lg:text-xl">Website Development:</span> We craft custom, responsive websites that embody your brand.
-                    <br />
-                    <span className="font-bold text-lg lg:text-xl">Website Maintenance:</span> We keep your site worry-free through security updates and optimization.
-                    <br />
-                    <span className="font-bold text-lg lg:text-xl">Branding & Social Media:</span> We build cohesive digital ecosystems — uniting your brand into one story.
-                  </p>
+                  <div className="leading-relaxed text-base lg:text-lg website-maintenance-body space-y-3">
+                    <p><span className="font-bold text-lg lg:text-xl">Website Development:</span> We craft custom, responsive websites that embody your brand.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Website Maintenance:</span> We keep your site worry-free through security updates and optimization.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Branding & Social Media:</span> We build cohesive digital ecosystems — uniting your brand into one story.</p>
+                  </div>
                 </motion.div>
               </div>
             </div>
