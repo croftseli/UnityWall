@@ -149,7 +149,7 @@ export default function Hero() {
                   
                                     <span className="leading-relaxed text-base lg:text-lg website-maintenance-body">
                     Your vision deserves a digital home that works as hard as you do.  <br /> At UnityWall,
-                    we believe every creator and small business deserves a website that builds trust,
+                    we believe everyone deserves a website that builds trust,
                     runs fast, and reflects purpose.
                   </span>
                 
