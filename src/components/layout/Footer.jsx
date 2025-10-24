@@ -275,7 +275,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="bg-zinc-800/80 py-4 backdrop-blur-sm relative">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          UnityWall. All Rights Reserved.
+          UnityWall Technological Solutions, LLC. All Rights Reserved.
         </div>
       </div>
     </footer>
