@@ -235,8 +235,8 @@ export default function Hero() {
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
-                    The internet should amplify good ideas — not bury them under slow, clunky,
-                    or outdated websites. We founded UnityWall because too many visionaries
+                    The internet should amplify good ideas — not bury them under clunky
+                    or outdated websites.  <br /> We founded UnityWall because too many visionaries
                     were being held back by technology that didn&apos;t reflect their passion.
                     Our mission is to make high-quality, reliable digital homes accessible to
                     every heart and every ambition.
@@ -283,9 +283,9 @@ export default function Hero() {
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <div className="leading-relaxed text-base lg:text-lg website-maintenance-body space-y-3">
-                    <p><span className="font-bold text-lg lg:text-xl">Performance-First:</span> Your site loads fast, runs smooth, and scales effortlessly.</p>
-                    <p><span className="font-bold text-lg lg:text-xl">Human-Centered Design:</span> Every interaction feels intuitive, welcoming, and clear.</p>
-                    <p><span className="font-bold text-lg lg:text-xl">Ongoing Partnership:</span> We maintain, secure, and evolve your platform. You'll never fall behind.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Performance-First:</span> <br /> Your site loads fast, runs smooth, and scales effortlessly.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Human-Centered Design:</span> <br /> Every interaction feels intuitive, welcoming, and clear.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Ongoing Partnership:</span> <br /> We maintain, secure, and evolve your platform. You'll never fall behind.</p>
                   </div>
                 </motion.div>
               </div>
@@ -329,9 +329,9 @@ export default function Hero() {
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <div className="leading-relaxed text-base lg:text-lg website-maintenance-body space-y-3">
-                    <p><span className="font-bold text-lg lg:text-xl">Website Development:</span> We craft custom, responsive websites that embody your brand.</p>
-                    <p><span className="font-bold text-lg lg:text-xl">Website Maintenance:</span> We keep your site worry-free through security updates and optimization.</p>
-                    <p><span className="font-bold text-lg lg:text-xl">Branding & Social Media:</span> We build cohesive digital ecosystems — uniting your brand into one story.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Website Development:</span>  <br /> We craft custom, responsive websites that embody your brand.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Website Maintenance:</span>  <br /> We keep your site worry-free through security updates and optimization.</p>
+                    <p><span className="font-bold text-lg lg:text-xl">Branding & Social Media:</span>  <br /> We build cohesive digital ecosystems — uniting your brand into one story.</p>
                   </div>
                 </motion.div>
               </div>
