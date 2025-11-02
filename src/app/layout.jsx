@@ -1,14 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-//import { CartProvider } from '@/context/CartContext';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { StarsBackground } from "@/components/ui/stars-background";
 import { ShootingStars } from "@/components/ui/shooting-stars";
-import "./styles/typography.css";  
-
+import "./styles/typography.css";
+import NavShell from "./nav-shell";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-<body className="!bg-gray-700" style={{backgroundColor: 'rgb(55, 65, 81)'}}>        <Navbar />
-        <main className="flex-grow">{children}</main>
+      <body
+        className="!bg-gray-700"
+        style={{ backgroundColor: "rgb(55, 65, 81)" }}
+      >
+        <NavShell>{children}</NavShell>
+
         <Analytics />
         <SpeedInsights />
-        <Footer />
       </body>
     </html>
   );
