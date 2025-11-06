@@ -39,10 +39,10 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center pb-12 md:pb-16 pt-8"
+          className="text-center pb-12 md:pb-8 pt-8"
         >
           {/* Desktop CTA */}
-          <div className="hidden md:block p-16">
+          <div className="hidden md:block">
             <motion.h3 variants={fadeIn} className="cta-title">
               Ready to Start Your Project?
             </motion.h3>
@@ -50,7 +50,7 @@ export default function Footer() {
               Let's discuss how we can help bring your vision to life. Contact us
               today to get started.
             </motion.p>
-            <motion.div variants={fadeIn} className="pointer-events-auto">
+            <motion.div className="pointer-events-auto">
               <Link href="/contact" passHref>
                 <motion.button
                   className="cta-button"
@@ -109,8 +109,14 @@ export default function Footer() {
 
 
 
+
+
+
+
+ {/* Bottom Bar */}
+
           {/* Desktop Layout */}
-          <div className="hidden md:grid md:grid-cols-3 gap-12">
+          <div className="hidden md:grid md:grid-cols-3 translate-y-16">
             {/* About Section */}
             <motion.div
               className="flex flex-col items-center md:items-start"
@@ -124,12 +130,13 @@ export default function Footer() {
                 alt="UnityWall Logo"
                 width={300}
                 height={144}
-                className="mb-4 rounded-lg translate-y-8 translate-x-[-12px]"
+                className="mb-4 scale-125 rounded-lg text-center"
               />
-              <p className="text-xl translate-y-[-24px] translate-x-[-64px] relative left-8 mb-6 text-white">
-                <span className="font-bold">UnityWall Technological Solutions, LLC</span> is a dedicated team focused on <br /> designing,
-                developing, and maintaining <br /> modern, high-performance
+              <p className="text-m translate-y-[-24px] translate-x-[-64px] relative left-8 mb-6 text-white">
+                <span className="text-xl block font-bold">UnityWall Technological Solutions, LLC</span> is a dedicated team focused on designing,
+                developing, and maintaining modern, high-performance
                 websites.
+
               </p>
             </motion.div>
 
@@ -160,7 +167,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <motion.div
-              className="flex flex-col items-center md:ml-8 mt-48"
+              className="flex flex-col items-center md:ml-64 mt-48"
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
@@ -272,9 +279,12 @@ export default function Footer() {
         </div>
       </div>
 
+
+
+
       {/* Copyright */}
-      <div className="bg-zinc-800/80 py-4 backdrop-blur-sm relative">
-        <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
+      <div className="bg-zinc-800/80 py-2 backdrop-blur-sm relative">
+        <div className="container mx-auto text-center text-gray-400 text-m">
           UnityWall Technological Solutions, LLC. All Rights Reserved.
         </div>
       </div>

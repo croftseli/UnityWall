@@ -234,13 +234,13 @@ export default function Hero() {
                   className="flex items-start gap-10"
                 >
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
-                  <p className="leading-relaxed text-base lg:text-lg website-maintenance-body">
+                  <div className="leading-relaxed text-base lg:text-lg website-maintenance-body flex-1">
                     The internet should amplify good ideas — not bury them under clunky
                     or outdated websites.  <br /> We founded UnityWall because too many visionaries
                     were being held back by technology that didn&apos;t reflect their passion.
                     Our mission is to make high-quality, reliable digital homes accessible to
                     every heart and every ambition.
-                  </p>
+                  </div>
                 </motion.div>
               </div>
             </div>
