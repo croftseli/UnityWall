@@ -188,7 +188,7 @@ export default function Hero() {
       <div className="relative bg-gray-700 text-white py-20 px-4 sm:px-8 lg:px-16 xl:px-24 overflow-hidden">
  
 
-        {/* Original Shadow Effect */}
+        {/* Background Shaddow Effect */}
         <img
           src="/mainBodyShadow.svg"
           alt="Background shadow effect"
@@ -236,8 +236,8 @@ export default function Hero() {
                   <div className="service-line-matched mt-1.5 rounded-full self-stretch min-h-[60px]"></div>
                   <div className="leading-relaxed text-base lg:text-lg website-maintenance-body flex-1">
                     The internet should amplify good ideas — not bury them under clunky
-                    or outdated websites.  <br /> We founded UnityWall because too many visionaries
-                    were being held back by technology that didn&apos;t reflect their passion.
+                    or outdated websites. We founded UnityWall because too many visionaries
+                    were being held back by technology that didn't reflect their passion.
                     Our mission is to make high-quality, reliable digital homes accessible to
                     every heart and every ambition.
                   </div>
