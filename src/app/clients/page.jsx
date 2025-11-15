@@ -10,7 +10,7 @@ const clients = [
     id: 1,
     title: "Copper to Gold",
     description:
-      "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts. Coming soon!",
+      "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts.",
     logo: "/images/clients/COPPERTOGOLD3.png",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
@@ -37,16 +37,6 @@ const clients = [
   },
   {
     id: 4,
-    title: "Cossa Embroidery",
-    description:
-      "Embroidery service based in Franklin, TN. This project is the online face of Cossa, showcasing their portfolio, and providing a platform for customers to learn more about their offerings.",
-    logo: "/images/clients/cossaEmbroideryLogo.jpg",
-    technologies: ["Coming Soon"],
-    link: "https://cossaembroidery.com",
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
-  },
-  {
-    id: 5,
     title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
@@ -55,10 +45,10 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
-    id: 6,
-    title: "Centro Studi Baha'i, Hotel la Panoramica - Acuto, Italy",
+    id: 5,
+    title: "Hotel la Panoramica - Acuto, Italy",
     description:
-      "A modern website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Aculto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings.",
+      "A pro-bono website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Acuto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings done entirely free of charge.",
     logo: "/images/clients/HotelLaPanoramica.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://centrostudibahai.it",
