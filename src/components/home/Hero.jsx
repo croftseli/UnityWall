@@ -129,8 +129,8 @@ export default function Hero() {
 
 <motion.div
   variants={letterContainerVariants}
-  className="text-wrapper text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent"
->
+  className="text-wrapper text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+  > 
   {unitywallText.map((char, index) => (
     <motion.span key={index} variants={letterVariants}>
       {char}
