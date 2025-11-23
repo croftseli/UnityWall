@@ -125,17 +125,19 @@ export default function Hero() {
                   className="div text-xl md:text-2xl lg:text-3xl"
                 >
                   Welcome to
-                </motion.div>
-                <motion.div
-                  variants={letterContainerVariants}
-                  className="text-wrapper text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-                >
-                  {unitywallText.map((char, index) => (
-                    <motion.span key={index} variants={letterVariants}>
-                      {char}
-                    </motion.span>
-                  ))}
-                </motion.div>
+</motion.div>
+
+<motion.div
+  variants={letterContainerVariants}
+  className="text-wrapper text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent"
+>
+  {unitywallText.map((char, index) => (
+    <motion.span key={index} variants={letterVariants}>
+      {char}
+    </motion.span>
+  ))}
+</motion.div>
+
               </div>
               <div className="md:flex md:items-center md:space-x-8 mt-6 md:mt-6">
                 <motion.div
