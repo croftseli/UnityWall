@@ -7,19 +7,6 @@ export default function TechSupportPage() {
   const [submitting, setSubmitting] = useState(false);
   const [html, setHtml] = useState("");
 
-  const selectStyle = {
-    ...inputStyle,
-    paddingRight: "40px",
-    WebkitAppearance: "none",
-    MozAppearance: "none",
-    appearance: "none",
-    backgroundImage:
-      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23E5E7EB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "right 12px center",
-    backgroundSize: "14px 14px",
-  };
-
   if (html) return <div dangerouslySetInnerHTML={{ __html: html }} />;
 
   return (
@@ -254,11 +241,24 @@ const inputStyle = {
   width: "100%",
   padding: "10px 12px",
   borderRadius: 10,
-  border: "1px solid #475569", // slate-600
-  background: "#0B1220", // very dark input bg
-  color: "#F8FAFC", // text
+  border: "1px solid #475569",
+  background: "#0B1220",
+  color: "#F8FAFC",
   fontSize: 14,
   outline: "none",
+};
+
+const selectStyle = {
+  ...inputStyle,
+  paddingRight: "40px",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
+  appearance: "none",
+  backgroundImage:
+    "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23E5E7EB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "right 12px center",
+  backgroundSize: "14px 14px",
 };
 
 const fileStyle = {
