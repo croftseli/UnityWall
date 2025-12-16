@@ -3,17 +3,16 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const UPLOADS_ENABLED = false; // ← toggle this to true when you’re ready
+const UPLOADS_ENABLED = false; // toggle to true when ready
+const HOME_URL = "/";
 
 export default function TechSupportPage() {
   const [submitting, setSubmitting] = useState(false);
   const [html, setHtml] = useState("");
 
+  // When thank-you HTML is rendered, jump to top
   useEffect(() => {
-    if (html) {
-      // instant jump (use behavior:"smooth" if you prefer)
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    }
+    if (html) window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [html]);
 
   if (html) return <div dangerouslySetInnerHTML={{ __html: html }} />;
@@ -42,7 +41,8 @@ export default function TechSupportPage() {
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent"
           style={{
-            backgroundImage: `linear-gradient(64deg, rgba(139,172,223,1) 0%, rgba(177,211,233,1) 50%, rgb(251,246,156) 90%)`,
+            backgroundImage:
+              "linear-gradient(64deg, rgba(139,172,223,1) 0%, rgba(177,211,233,1) 50%, rgb(251,246,156) 90%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -66,15 +66,16 @@ export default function TechSupportPage() {
             const form = e.currentTarget;
             const fd = new FormData(form);
 
+            // Honeypot
             if (fd.get("website")) {
               setHtml(renderThankYou("HIDDEN"));
               return;
             }
 
-            // Files: only collect if uploads are enabled
-            let files = [];
             if (UPLOADS_ENABLED) {
-              files = fd.getAll("attachments").filter((v) => v instanceof File);
+              const files = fd
+                .getAll("attachments")
+                .filter((v) => v instanceof File);
               let total = 0;
               for (const f of files) {
                 total += f.size || 0;
@@ -87,8 +88,7 @@ export default function TechSupportPage() {
                 }
               }
             } else {
-              // Ensure no empty file parts get sent
-              fd.delete("attachments");
+              fd.delete("attachments"); // ensure no empty parts
             }
 
             const res = await fetch("/api/techsupport", {
@@ -104,15 +104,8 @@ export default function TechSupportPage() {
 
             const data = await res.json();
             if (data?.ok) {
-              const match =
-                data.ticketId ||
-                (typeof data.html === "string" &&
-                  (data.html.match(/T-\d{4}-\d{6}/) || [])[0]) ||
-                "T-PENDING-000000";
-              setHtml(renderThankYou(match));
-              // ensure viewport is at the top so it never sits under footer
-              if (typeof window !== "undefined")
-                window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+              const id = data.ticketId || "T-PENDING-000000";
+              setHtml(renderThankYou(id));
             } else {
               alert("Submission failed.");
               setSubmitting(false);
@@ -192,7 +185,7 @@ export default function TechSupportPage() {
               />
             </Field>
 
-            {/* Attachments (disabled) */}
+            {/* Attachments (disabled for now) */}
             <Field label="Attachments">
               {UPLOADS_ENABLED ? (
                 <>
@@ -240,7 +233,6 @@ export default function TechSupportPage() {
             <button disabled={submitting} style={btnStyle}>
               {submitting ? "Submitting…" : "Submit request"}
             </button>
-
             <span style={{ color: "#A7B1C2", fontSize: 13 }}>
               {submitting ? "Uploading files…" : ""}
             </span>
@@ -298,12 +290,7 @@ const selectStyle = {
   backgroundSize: "14px 14px",
 };
 
-const fileStyle = {
-  ...inputStyle,
-  padding: "8px 10px",
-  cursor: "pointer",
-};
-
+const fileStyle = { ...inputStyle, padding: "8px 10px", cursor: "pointer" };
 const fileStyleDisabled = {
   ...inputStyle,
   padding: "8px 10px",
@@ -334,13 +321,13 @@ const btnStyle = {
   fontWeight: 700,
 };
 
-/* ---- Thank-you HTML with matching colors ---- */
+/* ---- Thank-you HTML with big bottom space (never collides with footer) ---- */
 function renderThankYou(ticketId) {
   return `<!doctype html><html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Thanks — Request Received</title>
 <style>
-  :root { --pb: calc(32vh + env(safe-area-inset-bottom, 0px)); } /* big, responsive bottom pad */
+  :root { --pb: calc(32vh + env(safe-area-inset-bottom, 0px)); }
   html, body { height: auto; }
   body{
     box-sizing:border-box;
@@ -349,26 +336,33 @@ function renderThankYou(ticketId) {
     padding:24px 24px var(--pb);
     background:#364153;
     color:#E5E7EB;
-    min-height:100vh; /* ensure at least full viewport height */
+    min-height:100vh;
   }
+  .wrap{max-width:720px;margin:0 auto}
   .card{
-    max-width:720px;
-    margin:0 auto;
-    background:#1e2939;
-    border:1px solid #334155;
-    border-radius:16px;
-    padding:24px;
-    box-shadow:0 2px 10px rgba(0,0,0,.25)
+    background:#1e2939;border:1px solid #334155;border-radius:16px;
+    padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.25)
   }
   h1{margin:0 0 12px;font-size:1.6rem;color:#F8FAFC}
   p{color:#CBD5E1}
   .spacer{height:10vh;}
+  .pill{
+    display:inline-block;margin-top:16px;padding:8px 14px;border-radius:999px;
+    background:#0B1220;border:1px solid #475569;color:#E5E7EB;
+    text-decoration:none;font-weight:600;font-size:14px
+  }
+  .pill:focus{outline:2px solid #3B82F6;outline-offset:3px}
 </style></head><body>
-  <div class="card">
-    <h1>Thanks — we’ve got your request!</h1>
-    <p>Your ticket number is <strong style="color:#F8FAFC">${ticketId}</strong>.</p>
-    <p>We’ll be in touch by email shortly. You can reply to the confirmation to add more details or attachments.</p>
+  <div class="wrap">
+    <div class="card">
+      <h1>Thanks — we’ve got your request!</h1>
+      <p>Your ticket number is <strong style="color:#F8FAFC">${ticketId}</strong>.</p>
+      <p>We’ll be in touch by email shortly. You can reply to the confirmation to add more details or attachments.</p>
+      <a class="pill" href="${
+        typeof HOME_URL !== "undefined" ? HOME_URL : "/"
+      }">← Back to site</a>
+    </div>
+    <div class="spacer"></div>
   </div>
-  <div class="spacer"></div>
 </body></html>`;
 }
