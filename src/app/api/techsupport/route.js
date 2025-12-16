@@ -31,7 +31,15 @@ export async function POST(req) {
     };
 
     // Files from multipart
-    const files = form.getAll("attachments").filter((f) => typeof f === "object" && "arrayBuffer" in f);
+    const files = form.getAll("attachments").filter(
+      (f) =>
+        typeof f === "object" &&
+        "arrayBuffer" in f &&
+        typeof f.size === "number" &&
+        f.size > 0 &&
+        typeof f.name === "string" &&
+        f.name.trim() !== ""
+    );
 
     // Auth (Service Account)
     const auth = new google.auth.JWT({
@@ -76,7 +84,9 @@ export async function POST(req) {
     // Upload files (wrap Buffer -> Readable)
     const uploadedNames = [];
     for (const f of files) {
-      const fileName = sanitize(f.name || "upload.bin");
+      const fileName = sanitize(f.name);
+      if (!fileName) continue;
+
       const mimeType = f.type || "application/octet-stream";
       const buffer = Buffer.from(await f.arrayBuffer());
 
@@ -161,8 +171,13 @@ async function getRowCount(sheets, spreadsheetId, tab) {
 }
 
 function sanitize(name) {
-  return String(name || "file").replace(/[\n\r/\\\t\0]/g, "-").slice(0, 200);
+  const n = String(name || "")
+    .replace(/[\n\r/\\\t\0]/g, "-")
+    .slice(0, 200)
+    .trim();
+  return n;
 }
+
 
 function renderThankYou(ticketId) {
   return `<!doctype html><html><head>

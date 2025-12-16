@@ -1,11 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+const UPLOADS_ENABLED = false; // ← toggle this to true when you’re ready
 
 export default function TechSupportPage() {
   const [submitting, setSubmitting] = useState(false);
   const [html, setHtml] = useState("");
+
+  useEffect(() => {
+    if (html) {
+      // instant jump (use behavior:"smooth" if you prefer)
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [html]);
 
   if (html) return <div dangerouslySetInnerHTML={{ __html: html }} />;
 
@@ -15,7 +24,7 @@ export default function TechSupportPage() {
         fontFamily: "system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
         background: "#364153",
         minHeight: "100vh",
-        padding: "24px",
+        padding: "24px 24px 96px",
         color: "#E5E7EB",
       }}
     >
@@ -30,15 +39,10 @@ export default function TechSupportPage() {
           boxShadow: "0 2px 10px rgba(0,0,0,.25)",
         }}
       >
-        <h1
+        <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent"
           style={{
-            backgroundImage: `linear-gradient(
-                  64deg,
-                  rgba(139, 172, 223, 1) 0%,
-                  rgba(177, 211, 233, 1) 50%,
-                  rgb(251, 246, 156) 90%
-                )`,
+            backgroundImage: `linear-gradient(64deg, rgba(139,172,223,1) 0%, rgba(177,211,233,1) 50%, rgb(251,246,156) 90%)`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -47,7 +51,7 @@ export default function TechSupportPage() {
           transition={{ duration: 0.8 }}
         >
           Get in Touch
-        </h1>
+        </motion.h1>
 
         <p style={{ color: "#CBD5E1", margin: "0 0 18px" }}>
           Tell us what you need help with. We’ll email you a ticket number after
@@ -67,19 +71,24 @@ export default function TechSupportPage() {
               return;
             }
 
-            const files = fd
-              .getAll("attachments")
-              .filter((v) => v instanceof File);
-            let total = 0;
-            for (const f of files) {
-              total += f.size || 0;
-              if (total > 25 * 1024 * 1024) {
-                alert(
-                  "Total file size exceeds ~25 MB. Please upload smaller files."
-                );
-                setSubmitting(false);
-                return;
+            // Files: only collect if uploads are enabled
+            let files = [];
+            if (UPLOADS_ENABLED) {
+              files = fd.getAll("attachments").filter((v) => v instanceof File);
+              let total = 0;
+              for (const f of files) {
+                total += f.size || 0;
+                if (total > 25 * 1024 * 1024) {
+                  alert(
+                    "Total file size exceeds ~25 MB. Please upload smaller files."
+                  );
+                  setSubmitting(false);
+                  return;
+                }
               }
+            } else {
+              // Ensure no empty file parts get sent
+              fd.delete("attachments");
             }
 
             const res = await fetch("/api/techsupport", {
@@ -92,9 +101,18 @@ export default function TechSupportPage() {
               setSubmitting(false);
               return;
             }
+
             const data = await res.json();
-            if (data?.ok && data.html) {
-              setHtml(data.html);
+            if (data?.ok) {
+              const match =
+                data.ticketId ||
+                (typeof data.html === "string" &&
+                  (data.html.match(/T-\d{4}-\d{6}/) || [])[0]) ||
+                "T-PENDING-000000";
+              setHtml(renderThankYou(match));
+              // ensure viewport is at the top so it never sits under footer
+              if (typeof window !== "undefined")
+                window.scrollTo({ top: 0, left: 0, behavior: "auto" });
             } else {
               alert("Submission failed.");
               setSubmitting(false);
@@ -141,7 +159,6 @@ export default function TechSupportPage() {
                 <option>Urgent</option>
               </select>
             </Field>
-
             <Field label="Category *">
               <select name="category" required style={selectStyle}>
                 <option value="">Select…</option>
@@ -174,16 +191,35 @@ export default function TechSupportPage() {
                 style={{ ...inputStyle, minHeight: 140 }}
               />
             </Field>
+
+            {/* Attachments (disabled) */}
             <Field label="Attachments">
-              <input
-                type="file"
-                name="attachments"
-                multiple
-                style={fileStyle}
-              />
-              <p style={{ color: "#94A3B8", fontSize: 13 }}>
-                You can select multiple files (max total ~25MB).
-              </p>
+              {UPLOADS_ENABLED ? (
+                <>
+                  <input
+                    type="file"
+                    name="attachments"
+                    multiple
+                    style={fileStyle}
+                  />
+                  <p style={{ color: "#94A3B8", fontSize: 13 }}>
+                    You can select multiple files (max total ~25MB).
+                  </p>
+                </>
+              ) : (
+                <>
+                  <input
+                    type="file"
+                    name="attachments"
+                    multiple
+                    disabled
+                    aria-disabled="true"
+                    title="File uploads coming soon"
+                    style={fileStyleDisabled}
+                  />
+                  <span style={pill}>Coming soon</span>
+                </>
+              )}
             </Field>
           </div>
 
@@ -204,6 +240,7 @@ export default function TechSupportPage() {
             <button disabled={submitting} style={btnStyle}>
               {submitting ? "Submitting…" : "Submit request"}
             </button>
+
             <span style={{ color: "#A7B1C2", fontSize: 13 }}>
               {submitting ? "Uploading files…" : ""}
             </span>
@@ -267,6 +304,25 @@ const fileStyle = {
   cursor: "pointer",
 };
 
+const fileStyleDisabled = {
+  ...inputStyle,
+  padding: "8px 10px",
+  cursor: "not-allowed",
+  opacity: 0.6,
+};
+
+const pill = {
+  display: "inline-block",
+  marginTop: 8,
+  padding: "6px 10px",
+  borderRadius: 999,
+  background: "#0B1220",
+  border: "1px solid #475569",
+  color: "#E5E7EB",
+  fontSize: 12,
+  fontWeight: 600,
+};
+
 const btnStyle = {
   appearance: "none",
   border: "1px solid #3B82F6",
@@ -284,15 +340,35 @@ function renderThankYou(ticketId) {
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Thanks — Request Received</title>
 <style>
-  body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:24px;background:#364153;color:#E5E7EB}
-  .card{max-width:720px;margin:0 auto;background:#1e2939;border:1px solid #334155;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  :root { --pb: calc(32vh + env(safe-area-inset-bottom, 0px)); } /* big, responsive bottom pad */
+  html, body { height: auto; }
+  body{
+    box-sizing:border-box;
+    font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin:0;
+    padding:24px 24px var(--pb);
+    background:#364153;
+    color:#E5E7EB;
+    min-height:100vh; /* ensure at least full viewport height */
+  }
+  .card{
+    max-width:720px;
+    margin:0 auto;
+    background:#1e2939;
+    border:1px solid #334155;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 2px 10px rgba(0,0,0,.25)
+  }
   h1{margin:0 0 12px;font-size:1.6rem;color:#F8FAFC}
   p{color:#CBD5E1}
+  .spacer{height:10vh;}
 </style></head><body>
   <div class="card">
     <h1>Thanks — we’ve got your request!</h1>
     <p>Your ticket number is <strong style="color:#F8FAFC">${ticketId}</strong>.</p>
     <p>We’ll be in touch by email shortly. You can reply to the confirmation to add more details or attachments.</p>
   </div>
+  <div class="spacer"></div>
 </body></html>`;
 }
