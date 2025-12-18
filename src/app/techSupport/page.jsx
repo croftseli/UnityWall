@@ -10,6 +10,12 @@ export default function TechSupportPage() {
   const [submitting, setSubmitting] = useState(false);
   const [html, setHtml] = useState("");
 
+  const [email, setEmail] = useState("");
+  const [emailConfirm, setEmailConfirm] = useState("");
+  const emailsMatch =
+    !emailConfirm ||
+    email.trim().toLowerCase() === emailConfirm.trim().toLowerCase();
+
   // When thank-you HTML is rendered, jump to top
   useEffect(() => {
     if (html) window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -72,6 +78,23 @@ export default function TechSupportPage() {
               return;
             }
 
+            // ✅ Email confirmation check
+            const emailVal = (fd.get("email") || "")
+              .toString()
+              .trim()
+              .toLowerCase();
+            const emailConfirmVal = (fd.get("emailConfirm") || "")
+              .toString()
+              .trim()
+              .toLowerCase();
+            if (emailVal !== emailConfirmVal) {
+              alert("Please make sure Email and Confirm email match.");
+              setSubmitting(false);
+              return;
+            }
+            fd.delete("emailConfirm"); // don't submit this field
+
+            // Files (only if enabled)
             if (UPLOADS_ENABLED) {
               const files = fd
                 .getAll("attachments")
@@ -138,10 +161,40 @@ export default function TechSupportPage() {
               <input name="company" style={inputStyle} />
             </Field>
             <Field label="Email *">
-              <input type="email" name="email" required style={inputStyle} />
+              <input
+                type="email"
+                name="email"
+                required
+                style={inputStyle}
+                value={email} // NEW
+                onChange={(e) => setEmail(e.target.value)} // NEW
+              />
             </Field>
+
+            <Field label="Confirm email *">
+              {" "}
+              {/* NEW */}
+              <input
+                type="email"
+                name="emailConfirm"
+                required
+                style={inputStyle}
+                value={emailConfirm}
+                onChange={(e) => setEmailConfirm(e.target.value)}
+                aria-invalid={emailConfirm && !emailsMatch ? "true" : "false"}
+              />
+              {!emailsMatch && (
+                <p style={{ color: "#fca5a5", fontSize: 13, marginTop: 6 }}>
+                  Emails don’t match.
+                </p>
+              )}
+            </Field>
+
             <Field label="Phone">
               <input name="phone" placeholder="+1 ..." style={inputStyle} />
+            </Field>
+            <Field label="Subject *">
+              <input name="subject" required style={inputStyle} />
             </Field>
             <Field label="Priority *">
               <select name="priority" required style={selectStyle}>
@@ -230,9 +283,10 @@ export default function TechSupportPage() {
               marginTop: 8,
             }}
           >
-            <button disabled={submitting} style={btnStyle}>
+            <button disabled={submitting || !emailsMatch} style={btnStyle}>
               {submitting ? "Submitting…" : "Submit request"}
             </button>
+
             <span style={{ color: "#A7B1C2", fontSize: 13 }}>
               {submitting ? "Uploading files…" : ""}
             </span>
