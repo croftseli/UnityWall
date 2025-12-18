@@ -238,9 +238,9 @@ export default function TechSupportPage() {
             </span>
           </div>
 
-          {/* <footer style={{ marginTop: 16, color: "#9FB1C7", fontSize: 12 }}>
+          <footer style={{ marginTop: 16, color: "#9FB1C7", fontSize: 12 }}>
             By submitting, you agree to our support terms.
-          </footer> */}
+          </footer>
         </form>
       </div>
     </div>
