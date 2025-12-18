@@ -6,7 +6,8 @@ import { google } from "googleapis";
 import { Readable } from "stream";
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
-const SHEET_TAB = process.env.GOOGLE_SHEET_TAB || "Sheet1";
+// const SHEET_TAB = process.env.GOOGLE_SHEET_TAB || "Submissions";
+const SHEET_TAB = "Submissions";
 const DRIVE_PARENT = process.env.GOOGLE_DRIVE_PARENT_FOLDER_ID;
 
 export async function POST(req) {
