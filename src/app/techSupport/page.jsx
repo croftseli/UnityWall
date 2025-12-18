@@ -226,9 +226,6 @@ export default function TechSupportPage() {
               marginTop: 16,
             }}
           >
-            <Field label="Subject *">
-              <input name="subject" required style={inputStyle} />
-            </Field>
             <Field label="Description *">
               <textarea
                 name="description"
