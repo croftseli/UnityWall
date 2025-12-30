@@ -168,10 +168,10 @@ export default function Footer() {
                 <p>
                   <span className="font-semibold">Email: </span>
                   <a
-                    href="mailto:support@unitywall.co"
+                    href="mailto:elijah@unitywall.co"
                     className="text-white hover:underline underline"
                   >
-                    support@unitywall.co
+                    elijah@unitywall.co
                   </a>
                 </p>
                 <p>

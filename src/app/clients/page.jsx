@@ -13,6 +13,7 @@ const clients = [
       "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts.",
     logo: "/images/clients/COPPERTOGOLD3.png",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://coppertogold.org",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {

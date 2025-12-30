@@ -98,7 +98,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {/* Email Button */}
                 <a
-                  href="mailto:support@unitywall.co"
+                  href="mailto:elijah@unitywall.co"
                   className="flex items-center space-x-4 border border-transparent rounded-lg p-4 hover:bg-blue-900 transition relative"
                   style={{
                     borderRadius: "1rem",
@@ -113,7 +113,7 @@ export default function Contact() {
                     </h3>
                     <p className="text-gray-300">
                       <a
-                        href="mailto:support@unitywall.co"
+                        href="mailto:elijah@unitywall.co"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:underline text-blue-400"
