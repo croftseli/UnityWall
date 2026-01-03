@@ -14,10 +14,8 @@ export default function Footer() {
   };
 
   return (
-
-
     <footer className="relative text-white overflow-hidden pt-16 bg-transparent -mt-12">
-      {/* SVG Background */} 
+      {/* SVG Background */}
       <div
         className="absolute bottom-0 left-0 w-full hidden md:block"
         style={{ height: "600px" }}
@@ -35,9 +33,6 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10" style={{ transform: "translateY(-64px)" }}>
-
-
-
         {/* CTA Section */}
         <motion.div
           variants={fadeIn}
@@ -52,8 +47,8 @@ export default function Footer() {
               Ready to Start Your Project?
             </motion.h3>
             <motion.p variants={fadeIn} className="cta-body-text px-4">
-              Let's discuss how we can help bring your vision to life. Contact us
-              today to get started.
+              Let's discuss how we can help bring your vision to life. Contact
+              us today to get started.
             </motion.p>
             <motion.div className="pointer-events-auto">
               <Link href="/contact" passHref>
@@ -72,14 +67,13 @@ export default function Footer() {
             </motion.div>
           </div>
 
-
           {/* MOBILE CTA*/}
           <div className="md:hidden grid grid-cols-2 gap-4 px-4 items-center">
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-                className="origin-center absolute left-0 top-0 h-[1px] w-3/4 bg-white translate-x-16"
+              className="origin-center absolute left-0 top-0 h-[1px] w-3/4 bg-white translate-x-16"
             />
             <motion.div variants={fadeIn} className="text-left">
               <motion.h3 className="text-l text-center font-bold mb-4 pt-14">
@@ -106,7 +100,6 @@ export default function Footer() {
               </motion.div>
             </motion.div>
 
-
             {/* MOBILE LOGO for some reason*/}
             <motion.div variants={fadeIn}>
               <Image
@@ -121,13 +114,7 @@ export default function Footer() {
         </motion.div>
 
         <div className="container mx-auto px-6 md:px-10 py-4 md:py-8">
-
-
-
-
           {/* Bottom Bar*/}
-
-
 
           {/* Desktop Layout */}
           <div className="hidden md:grid md:grid-cols-3 translate-y-16">
@@ -147,13 +134,13 @@ export default function Footer() {
                 className="mb-4 scale-125 rounded-lg text-center"
               />
               <p className="text-m translate-y-[-24px] translate-x-[-64px] relative left-8 mb-6 text-white">
-                <span className="text-xl block font-bold">UnityWall Technological Solutions, LLC</span> is a dedicated team focused on designing,
-                developing, and maintaining modern, high-performance
-                websites.
+                <span className="text-xl block font-bold">
+                  UnityWall Technological Solutions, LLC
+                </span>{" "}
+                is a dedicated team focused on designing, developing, and
+                maintaining modern, high-performance websites.
               </p>
             </motion.div>
-
-
 
             {/* Contact Us */}
             <motion.div
@@ -163,24 +150,26 @@ export default function Footer() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-bold mb-1 text-white pt-13">Contact Us</h3>
+              <h3 className="text-lg font-bold mb-1 text-white pt-13">
+                Contact Us
+              </h3>
               <div className="space-y-1 mb-1 text-white">
                 <p>
                   <span className="font-semibold">Email: </span>
                   <a
-                    href="mailto:elijah@unitywall.co"
+                    href="mailto:support@unitywall.co"
                     className="text-white hover:underline underline"
                   >
-                    elijah@unitywall.co
+                    support@unitywall.co
                   </a>
                 </p>
                 <p>
-                  <span className="font-semibold">Phone: +1 (615)-424-3176</span>
+                  <span className="font-semibold">
+                    Phone: +1 (615)-424-3176
+                  </span>
                 </p>
               </div>
             </motion.div>
-
-
 
             {/* Quick Links */}
             <motion.div
@@ -210,8 +199,6 @@ export default function Footer() {
               </ul>
             </motion.div>
           </div>
-
-
 
           {/* Mobile Layout | Icon & CTA above in code*/}
           <div className="md:hidden space-y-3">
@@ -244,8 +231,6 @@ export default function Footer() {
                 </div>
               </motion.div>
 
-
-
               {/* Quick Links */}
               <motion.div
                 className="flex flex-col items-start"
@@ -277,8 +262,6 @@ export default function Footer() {
               </motion.div>
             </div>
 
-
-
             {/* Logo and Description */}
             <motion.div
               className="flex flex-col items-center"
@@ -288,16 +271,14 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <p className="text-sm text-white text-center translate-y-10">
-                <span className="font-bold">UnityWall.co</span> is a dedicated team focused on designing, developing,
-                and maintaining modern, high-performance websites.
+                <span className="font-bold">UnityWall.co</span> is a dedicated
+                team focused on designing, developing, and maintaining modern,
+                high-performance websites.
               </p>
             </motion.div>
-            
           </div>
         </div>
       </div>
-
-
 
       {/* Copyright */}
       <div className="bg-zinc-800/80 py-2 backdrop-blur-sm relative">
