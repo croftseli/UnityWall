@@ -88,7 +88,7 @@ const designersTeam = [
     title: "Graphic Design & UX",
     image: "/images/teamNoBg/mey.webp",
     contact: "mey@unitywall.co",
-    linkedin: "https://linkedin.com/in/mey-spiegel-708ba9225",
+    linkedin: "https://www.linkedin.com/in/mey-spiegel-lutley-708ba9225/",
     handle: "mey-spiegel",
   },
   {
