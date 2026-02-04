@@ -8,6 +8,16 @@ import CTA from "@/components/layout/CTA";
 const clients = [
   {
     id: 1,
+    title: "DJQ",
+    description:
+      "DJQ is a web app that streamlines DJ workflows by organizing song requests, tips, and crowd interactions in one place. The platform enhances audience engagement and simplifies event management for DJs.",
+    logo: "/images/clients/DJQ.life.logo.jpeg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://djq.life",
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
+  },
+  {
+    id: 2,
     title: "Copper to Gold",
     description:
       "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts.",
@@ -17,7 +27,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 2,
+    id: 3,
     title: "Collaborative Developments LLC",
     description:
       "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
@@ -27,7 +37,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 3,
+    id: 4,
     title: "Safayra Saffron",
     description:
       "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This site showcases the brand's commitment to quality and provides an elegant experience for customers.",
@@ -37,7 +47,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 4,
+    id: 5,
     title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
@@ -46,7 +56,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
-    id: 5,
+    id: 6,
     title: "Hotel la Panoramica - Acuto, Italy",
     description:
       "A pro-bono website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Acuto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings done entirely free of charge.",
