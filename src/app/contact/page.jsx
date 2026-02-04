@@ -16,9 +16,9 @@ export default function Contact() {
   const [formErrors, setFormErrors] = useState({});
   const formRef = useRef();
 
-  const SERVICE_ID = "service_u861zjh";
-  const TEMPLATE_ID = "template_l7n7cu1";
-  const PUBLIC_KEY = "EYjZPvB2Kv3urKZ5u";
+  const SERVICE_ID = "service_8z032vf";
+  const TEMPLATE_ID = "template_xqywg0a";
+  const PUBLIC_KEY = "Ui8oT9xmHi_cRg1D2";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -139,7 +139,8 @@ export default function Contact() {
                           rgb(251, 246, 156) 90%
                         )
                         border-box;
-                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                      -webkit-mask:
+                        linear-gradient(#fff 0 0) padding-box,
                         linear-gradient(#fff 0 0);
                       -webkit-mask-composite: destination-out;
                       mask-composite: exclude;
@@ -194,7 +195,8 @@ export default function Contact() {
                           rgb(251, 246, 156) 90%
                         )
                         border-box;
-                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                      -webkit-mask:
+                        linear-gradient(#fff 0 0) padding-box,
                         linear-gradient(#fff 0 0);
                       -webkit-mask-composite: destination-out;
                       mask-composite: exclude;
@@ -248,7 +250,8 @@ export default function Contact() {
                           rgb(251, 246, 156) 90%
                         )
                         border-box;
-                      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+                      -webkit-mask:
+                        linear-gradient(#fff 0 0) padding-box,
                         linear-gradient(#fff 0 0);
                       -webkit-mask-composite: destination-out;
                       mask-composite: exclude;
