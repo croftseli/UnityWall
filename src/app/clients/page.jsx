@@ -30,7 +30,7 @@ const clients = [
     id: 3,
     title: "E's Supper Club",
     description:
-      "The website for E's Supper Club will serve as an online presence to communicate the club's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
+      "The website for E's Supper Club will serve as an online presence to communicate the club's mission, activities, and principles. It will also serve to allow the club to develop more into a brand. UnityWall provides consultative support for ESC.",
     logo: "/images/clients/esc_logo.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
@@ -97,17 +97,20 @@ const ProjectCard = ({ project, index }) => {
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Logo Section */}
-          <div className="w-full md:w-1/3 flex justify-center md:justify-end">
-            <div className="w-48 h-48 rounded-full overflow-hidden bg-white shadow-xl">
-              <Image
-                src={project.logo}
-                alt={`${project.title} logo`}
-                width={192}
-                height={192}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
+         {/* Logo Section */}
+{/* Logo Section */}
+<div className="w-full md:w-1/3 flex justify-center md:justify-end">
+  <div className="bg-white rounded-xl p-3 w-fit shadow-lg">
+    <Image
+  src={project.logo}
+  alt={`${project.title} logo`}
+  width={360}
+  height={120}
+  className="object-contain w-64 sm:w-72 md:w-80 h-auto"
+ />
+
+  </div>
+</div>
 
           {/* Content Section */}
           <div className="w-full md:w-2/3 text-white text-center md:text-left">
