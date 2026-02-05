@@ -28,6 +28,15 @@ const clients = [
   },
   {
     id: 3,
+    title: "E's Supper Club",
+    description:
+      "The website for E's Supper Club will serve as an online presence to communicate the club's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
+    logo: "/images/clients/esc_logo.jpeg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
+  },
+  {
+    id: 4,
     title: "Collaborative Developments LLC",
     description:
       "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
@@ -37,7 +46,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 4,
+    id: 5,
     title: "Safayra Saffron",
     description:
       "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This site showcases the brand's commitment to quality and provides an elegant experience for customers.",
@@ -47,7 +56,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 5,
+    id: 6,
     title: "Permanent Makeup by Lauren",
     description:
       "A modern website for Permanent Makeup by Lauren, a beauty service specializing in permanent makeup solutions. The project will focus on creating an elegant and user-friendly experience to showcase services and attract clients.",
@@ -56,7 +65,7 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700", // Brightened from gray-700/800/800
   },
   {
-    id: 6,
+    id: 7,
     title: "Hotel la Panoramica - Acuto, Italy",
     description:
       "A pro-bono website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Acuto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings done entirely free of charge.",
