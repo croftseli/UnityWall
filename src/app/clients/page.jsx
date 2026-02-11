@@ -8,16 +8,24 @@ import CTA from "@/components/layout/CTA";
 const clients = [
   {
     id: 1,
-    title: "DJQ",
+    title: "E's Supper Club",
     description:
-      "DJQ is a web app that streamlines DJ workflows by organizing song requests, tips, and crowd interactions in one place. The platform enhances audience engagement and simplifies event management for DJs.",
-    logo: "/images/clients/DJQ.life.logo.jpeg",
+      "The website for E's Supper Club will serve as an online presence to communicate the club's mission, activities, and principles. It will also serve to allow the club to develop more into a brand. UnityWall provides consultative support for ESC.",
+    logo: "/images/clients/esc_logo.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://djq.life",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
     id: 2,
+    title: "EARS Sun Gear",
+    description:
+      "EARS Sun Gear is a company that provides high-quality sun protection clips that attach onto baseball hats. Their website showcases their innovative product line and provides an easy-to-use platform for customers to purchase their sun protection gear.",
+    logo: "/images/clients/EarsLogo.jpg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
+  },
+  {
+    id: 3,
     title: "Copper to Gold",
     description:
       "Copper to Gold is a non-profit organization dedicated to achieving race amity through personal transformation. Their website will be redesigned and will aid in Copper to Gold's rapid expansion. Custom API's will be built to manage events, donations, and user accounts.",
@@ -27,32 +35,23 @@ const clients = [
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 3,
-    title: "E's Supper Club",
+    id: 4,
+    title: "DJQ",
     description:
-      "The website for E's Supper Club will serve as an online presence to communicate the club's mission, activities, and principles. It will also serve to allow the club to develop more into a brand. UnityWall provides consultative support for ESC.",
-    logo: "/images/clients/esc_logo.jpeg",
+      "DJQ is a web app that streamlines DJ workflows by organizing song requests, tips, and crowd interactions in one place. The platform enhances audience engagement and simplifies event management for DJs.",
+    logo: "/images/clients/DJQ.life.logo.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://djq.life",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
-    id: 4,
+    id: 5,
     title: "Collaborative Developments LLC",
     description:
       "The website for Collaborative Developments LLC will serve as an online presence to communicate the company's mission, activities, and principles. The website will aid in providing a face for the initiative, helping to attain their goal of increasing investment capital from $1M to $2M.",
     logo: "/images/clients/CollaborativedevLLC.jpeg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://collaborative-developments.com/",
-    bgGradient: "from-gray-600 via-gray-700 to-gray-700",
-  },
-  {
-    id: 5,
-    title: "Safayra Saffron",
-    description:
-      "Based in Luxembourg, Safayra is a premium importer that offers high-quality saffron sourced from the best farms in Iran. This site showcases the brand's commitment to quality and provides an elegant experience for customers.",
-    logo: "/images/clients/safayra-logo.jpg",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://safayra.co",
     bgGradient: "from-gray-600 via-gray-700 to-gray-700",
   },
   {
@@ -66,7 +65,7 @@ const clients = [
   },
   {
     id: 7,
-    title: "Hotel la Panoramica - Acuto, Italy",
+    title: "Hotel la Panoramica",
     description:
       "A pro-bono website for Centro Studi Baha'i - Hotel Panoramica, a hotel and conference center located in Acuto, Italy. The project aimed to create a user-friendly experience that highlights the hotel's amenities and scenic surroundings done entirely free of charge.",
     logo: "/images/clients/HotelLaPanoramica.jpg",
